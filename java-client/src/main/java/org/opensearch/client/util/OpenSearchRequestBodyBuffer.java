@@ -22,11 +22,11 @@ import org.apache.hc.core5.http.ContentType;
 import org.opensearch.client.json.JsonpMapper;
 import org.opensearch.client.json.NdJsonpSerializable;
 import org.opensearch.client.transport.GenericSerializable;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.transport.UdbsxTransport;
 
 /**
  * Serializes and captures an OpenSearch request body, and then provides access to it in convenient
- * forms for HTTP requests.  This is a utility class for use by various {@link OpenSearchTransport}
+ * forms for HTTP requests.  This is a utility class for use by various {@link UdbsxTransport}
  * implementations.
  * <P>
  *     Request bodies can be automatically compressed when they exceed a given size.

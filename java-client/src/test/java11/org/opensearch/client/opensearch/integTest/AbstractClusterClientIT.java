@@ -18,9 +18,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.opensearch.client.ResponseException;
 import org.opensearch.client.json.JsonData;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.HealthStatus;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch.cluster.ClusterStatsRequest;
 import org.opensearch.client.opensearch.cluster.ClusterStatsResponse;
 import org.opensearch.client.opensearch.cluster.GetClusterSettingsRequest;
@@ -38,7 +38,7 @@ import org.opensearch.indices.recovery.RecoverySettings;
 
 public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCase {
     public void testClusterPutSettings() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
 
         final String transientSettingKey = RecoverySettings.INDICES_RECOVERY_MAX_BYTES_PER_SEC_SETTING.getKey();
         String[] transientSettingKeySplit = transientSettingKey.split("\\.");
@@ -57,7 +57,7 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
         PutClusterSettingsRequest request = new PutClusterSettingsRequest.Builder().persistent(persistentSettingsMap)
             .transient_(transientSettingsMap)
             .build();
-        PutClusterSettingsResponse response = openSearchClient.cluster().putSettings(request);
+        PutClusterSettingsResponse response = udbsxClient.cluster().putSettings(request);
 
         assertTrue(response.acknowledged());
         assertThat(response.transient_().get(transientSettingKeySplit[0]), notNullValue());
@@ -86,7 +86,7 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterUpdateSettingNonExistent() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
         String setting = "no_idea_what_you_are_talking_about";
         int value = 10;
 
@@ -95,9 +95,9 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
 
         PutClusterSettingsRequest request = new PutClusterSettingsRequest.Builder().transient_(transientSettingsMap).build();
         try {
-            openSearchClient.cluster().putSettings(request);
+            udbsxClient.cluster().putSettings(request);
             fail();
-        } catch (OpenSearchException e) {
+        } catch (UdbsxException e) {
             assertNotNull(e);
             assertEquals(e.response().status().intValue(), 400);
             assertTrue(e.getMessage().contains("transient setting [no_idea_what_you_are_talking_about], not recognized"));
@@ -105,7 +105,7 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterGetSettings() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
 
         final String transientSettingKey = RecoverySettings.INDICES_RECOVERY_MAX_BYTES_PER_SEC_SETTING.getKey();
         final String transientSettingValue = "10b";
@@ -122,10 +122,9 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
         PutClusterSettingsRequest request = new PutClusterSettingsRequest.Builder().persistent(persistentSettingsMap)
             .transient_(transientSettingsMap)
             .build();
-        openSearchClient.cluster().putSettings(request);
+        udbsxClient.cluster().putSettings(request);
 
-        GetClusterSettingsResponse getSettingsResponse = openSearchClient.cluster()
-            .getSettings(new GetClusterSettingsRequest.Builder().build());
+        GetClusterSettingsResponse getSettingsResponse = udbsxClient.cluster().getSettings(new GetClusterSettingsRequest.Builder().build());
         assertTrue(getSettingsResponse.persistent().containsKey("cluster"));
         assertEquals(
             getSettingsResponse.persistent()
@@ -142,7 +141,7 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterGetSettingsWithDefault() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
 
         final String transientSettingKey = RecoverySettings.INDICES_RECOVERY_MAX_BYTES_PER_SEC_SETTING.getKey();
         final String transientSettingValue = "10b";
@@ -159,9 +158,9 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
         PutClusterSettingsRequest request = new PutClusterSettingsRequest.Builder().persistent(persistentSettingsMap)
             .transient_(transientSettingsMap)
             .build();
-        openSearchClient.cluster().putSettings(request);
+        udbsxClient.cluster().putSettings(request);
 
-        GetClusterSettingsResponse getSettingsResponse = openSearchClient.cluster()
+        GetClusterSettingsResponse getSettingsResponse = udbsxClient.cluster()
             .getSettings(new GetClusterSettingsRequest.Builder().includeDefaults(true).build());
         assertTrue(getSettingsResponse.persistent().containsKey("cluster"));
         assertEquals(
@@ -179,16 +178,16 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterHealthYellowClusterLevel() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
         createIndex("index", Settings.EMPTY);
         createIndex("index2", Settings.EMPTY);
         HealthRequest request = new HealthRequest.Builder().timeout(t -> t.time("5s")).build();
-        HealthResponse response = openSearchClient.cluster().health(request);
+        HealthResponse response = udbsxClient.cluster().health(request);
         assertEquals(response.indices().size(), 0);
     }
 
     public void testClusterHealthYellowIndicesLevel() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
         String firstIndex = "index";
         String secondIndex = "index2";
         // including another index that we do not assert on, to ensure that we are not
@@ -203,7 +202,7 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
             .timeout(t -> t.time("5s"))
             .level(ClusterHealthLevel.Indices)
             .build();
-        HealthResponse response = openSearchClient.cluster().health(request);
+        HealthResponse response = udbsxClient.cluster().health(request);
         assertYellowShards(response);
         assertEquals(response.indices().size(), 2);
         for (Map.Entry<String, IndexHealthStats> entry : response.indices().entrySet()) {
@@ -225,14 +224,14 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterHealthYellowSpecificIndex() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
         createIndex("index", Settings.EMPTY);
         createIndex("index2", Settings.EMPTY);
         HealthRequest request = new HealthRequest.Builder().index("index")
             .timeout(t -> t.time("5s"))
             .level(ClusterHealthLevel.Shards)
             .build();
-        HealthResponse response = openSearchClient.cluster().health(request);
+        HealthResponse response = udbsxClient.cluster().health(request);
 
         assertNotNull(response);
         assertFalse(response.timedOut());
@@ -289,14 +288,14 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterHealthNotFoundIndex() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
         createIndex("index", Settings.EMPTY);
         HealthRequest request = new HealthRequest.Builder().index("notexisted-index")
             .timeout(t -> t.time("5s"))
             .level(ClusterHealthLevel.Indices)
             .build();
         try {
-            HealthResponse response = openSearchClient.cluster().health(request);
+            HealthResponse response = udbsxClient.cluster().health(request);
             assertNotNull(response);
             assertTrue(response.timedOut());
             assertEquals(response.status(), HealthStatus.Red);
@@ -307,10 +306,10 @@ public abstract class AbstractClusterClientIT extends OpenSearchJavaClientTestCa
     }
 
     public void testClusterStats() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
+        UdbsxClient udbsxClient = javaClient();
         javaClient().indices().create(b -> b.index("index"));
         ClusterStatsRequest request = new ClusterStatsRequest.Builder().build();
-        ClusterStatsResponse response = openSearchClient.cluster().stats(request);
+        ClusterStatsResponse response = udbsxClient.cluster().stats(request);
         assertNotNull(response);
         assertNotNull(response.clusterName());
         assertNotEquals(0, response.nodes().count().total());

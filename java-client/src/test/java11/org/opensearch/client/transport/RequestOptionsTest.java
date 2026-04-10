@@ -52,7 +52,7 @@ import org.junit.Test;
 import org.opensearch.client.ResponseException;
 import org.opensearch.client.RestClient;
 import org.opensearch.client.json.jsonb.JsonbJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.transport.rest_client.RestClientTransport;
 
 public class RequestOptionsTest extends Assert {
@@ -103,7 +103,7 @@ public class RequestOptionsTest extends Assert {
         restClient.close();
     }
 
-    private Properties getProps(OpenSearchClient client) throws IOException {
+    private Properties getProps(UdbsxClient client) throws IOException {
         ResponseException ex = assertThrows(ResponseException.class, client::info);
         assertEquals(418, ex.getResponse().getStatusLine().getStatusCode());
         Properties result = new Properties();
@@ -114,7 +114,7 @@ public class RequestOptionsTest extends Assert {
     @Test
     public void testClientHeader() throws IOException {
         final RestClientTransport trsp = new RestClientTransport(restClient, new JsonbJsonpMapper());
-        final OpenSearchClient client = new OpenSearchClient(trsp).withTransportOptions(
+        final UdbsxClient client = new UdbsxClient(trsp).withTransportOptions(
             trsp.options().with(b -> b.addHeader("X-Foo", "Bar").addHeader("uSer-agEnt", "MegaClient/1.2.3"))
         );
 

@@ -30,13 +30,44 @@
  * GitHub history for details.
  */
 
-package org.opensearch.client.transport;
+package org.opensearch.client.opensearch._types;
 
 /**
- * A transport layer that implements OpenSearch specificities.
- *
- * Currently an empty placeholder for future extension.
+ * Exception thrown by API client methods when OpenSearch could not accept or
+ * process a request.
+ * <p>
+ * The {@link #error()} contains the error's type and reason along with
+ * additional details that depend on the error type and the API endpoint that
+ * was called.
  */
-public interface OpenSearchTransport extends Transport {
+public class UdbsxException extends RuntimeException {
 
+    private final ErrorResponse response;
+
+    public UdbsxException(ErrorResponse response) {
+        super("Request failed: [" + response.error().type() + "] " + response.error().reason());
+        this.response = response;
+    }
+
+    /**
+     * The error response sent by OpenSearch
+     */
+    public ErrorResponse response() {
+        return this.response;
+    }
+
+    /**
+     * The cause of the error. Shortcut for {@code response().error()}.
+     */
+    public ErrorCause error() {
+        return this.response.error();
+    }
+
+    /**
+     * Status code returned by OpenSearch. Shortcut for
+     * {@code response().status()}.
+     */
+    public int status() {
+        return this.response.status();
+    }
 }

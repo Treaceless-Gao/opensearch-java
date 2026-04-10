@@ -18,10 +18,10 @@ import org.joda.time.format.DateTimeFormat;
 import org.opensearch.client.json.JsonData;
 import org.opensearch.client.opensearch._types.BuiltinScriptLanguage;
 import org.opensearch.client.opensearch._types.InlineScript;
-import org.opensearch.client.opensearch._types.OpenSearchException;
 import org.opensearch.client.opensearch._types.Refresh;
 import org.opensearch.client.opensearch._types.Result;
 import org.opensearch.client.opensearch._types.Script;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch.core.BulkRequest;
 import org.opensearch.client.opensearch.core.BulkResponse;
 import org.opensearch.client.opensearch.core.DeleteResponse;
@@ -119,8 +119,8 @@ public abstract class AbstractCrudIT extends OpenSearchJavaClientTestCase {
     public void testGet() throws IOException {
 
         {
-            OpenSearchException exception = expectThrows(
-                OpenSearchException.class,
+            UdbsxException exception = expectThrows(
+                UdbsxException.class,
                 () -> javaClient().get(new GetRequest.Builder().index("index").id("id").build(), String.class)
             );
             assertEquals(404, exception.status());
@@ -209,7 +209,7 @@ public abstract class AbstractCrudIT extends OpenSearchJavaClientTestCase {
                 .build();
             try {
                 javaClient().update(updateRequest, AppData.class);
-            } catch (OpenSearchException e) {
+            } catch (UdbsxException e) {
                 // 1.x: [document_missing_exception] [_doc][does_not_exist]: document missing
                 // 2.x: [document_missing_exception] [does_not_exist]: document missing
                 assertTrue(e.getMessage().contains("[document_missing_exception]"));

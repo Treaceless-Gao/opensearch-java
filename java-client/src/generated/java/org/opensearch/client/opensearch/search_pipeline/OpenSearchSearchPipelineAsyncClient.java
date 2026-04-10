@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the search_pipeline namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchSearchPipelineAsyncClient> {
-    public OpenSearchSearchPipelineAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchSearchPipelineAsyncClient extends ApiClient<UdbsxTransport, OpenSearchSearchPipelineAsyncClient> {
+    public OpenSearchSearchPipelineAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchSearchPipelineAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchSearchPipelineAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -70,8 +70,7 @@ public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTra
     /**
      * Deletes the specified search pipeline.
      */
-    public CompletableFuture<DeleteSearchPipelineResponse> delete(DeleteSearchPipelineRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<DeleteSearchPipelineResponse> delete(DeleteSearchPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteSearchPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -82,7 +81,7 @@ public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTra
      */
     public final CompletableFuture<DeleteSearchPipelineResponse> delete(
         Function<DeleteSearchPipelineRequest.Builder, ObjectBuilder<DeleteSearchPipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return delete(fn.apply(new DeleteSearchPipelineRequest.Builder()).build());
     }
 
@@ -91,7 +90,7 @@ public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTra
     /**
      * Retrieves information about a specified search pipeline.
      */
-    public CompletableFuture<GetSearchPipelineResponse> get(GetSearchPipelineRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetSearchPipelineResponse> get(GetSearchPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetSearchPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -102,14 +101,14 @@ public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTra
      */
     public final CompletableFuture<GetSearchPipelineResponse> get(
         Function<GetSearchPipelineRequest.Builder, ObjectBuilder<GetSearchPipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return get(fn.apply(new GetSearchPipelineRequest.Builder()).build());
     }
 
     /**
      * Retrieves information about a specified search pipeline.
      */
-    public final CompletableFuture<GetSearchPipelineResponse> get() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetSearchPipelineResponse> get() throws IOException, UdbsxException {
         return get(new GetSearchPipelineRequest.Builder().build());
     }
 
@@ -118,7 +117,7 @@ public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTra
     /**
      * Creates or replaces the specified search pipeline.
      */
-    public CompletableFuture<PutSearchPipelineResponse> put(PutSearchPipelineRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PutSearchPipelineResponse> put(PutSearchPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutSearchPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -129,7 +128,7 @@ public class OpenSearchSearchPipelineAsyncClient extends ApiClient<OpenSearchTra
      */
     public final CompletableFuture<PutSearchPipelineResponse> put(
         Function<PutSearchPipelineRequest.Builder, ObjectBuilder<PutSearchPipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return put(fn.apply(new PutSearchPipelineRequest.Builder()).build());
     }
 }

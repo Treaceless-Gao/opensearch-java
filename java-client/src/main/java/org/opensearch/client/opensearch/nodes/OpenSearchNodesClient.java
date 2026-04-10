@@ -36,10 +36,10 @@ import java.io.IOException;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
@@ -47,11 +47,11 @@ import org.opensearch.client.util.ObjectBuilder;
  */
 public class OpenSearchNodesClient extends OpenSearchNodesClientBase<OpenSearchNodesClient> {
 
-    public OpenSearchNodesClient(OpenSearchTransport transport) {
+    public OpenSearchNodesClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchNodesClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchNodesClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -68,7 +68,7 @@ public class OpenSearchNodesClient extends OpenSearchNodesClientBase<OpenSearchN
      *
      */
 
-    public HotThreadsResponse hotThreads(HotThreadsRequest request) throws IOException, OpenSearchException {
+    public HotThreadsResponse hotThreads(HotThreadsRequest request) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<HotThreadsRequest, HotThreadsResponse, ErrorResponse> endpoint = (JsonEndpoint<
             HotThreadsRequest,
@@ -88,7 +88,7 @@ public class OpenSearchNodesClient extends OpenSearchNodesClientBase<OpenSearchN
      */
 
     public final HotThreadsResponse hotThreads(Function<HotThreadsRequest.Builder, ObjectBuilder<HotThreadsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return hotThreads(fn.apply(new HotThreadsRequest.Builder()).build());
     }
 
@@ -98,7 +98,7 @@ public class OpenSearchNodesClient extends OpenSearchNodesClientBase<OpenSearchN
      *
      */
 
-    public HotThreadsResponse hotThreads() throws IOException, OpenSearchException {
+    public HotThreadsResponse hotThreads() throws IOException, UdbsxException {
         return this.transport.performRequest(new HotThreadsRequest.Builder().build(), HotThreadsRequest._ENDPOINT, this.transportOptions);
     }
 }

@@ -28,19 +28,19 @@ import org.junit.Test;
 import org.opensearch.client.RestClient;
 import org.opensearch.client.json.JsonData;
 import org.opensearch.client.json.jackson.JacksonJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.core.SearchRequest;
 import org.opensearch.client.opensearch.indices.CreateIndexRequest;
 import org.opensearch.client.opensearch.indices.IndexSettings;
 import org.opensearch.client.opensearch.integTest.AbstractRequestIT;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportException;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.rest_client.RestClientTransport;
 import org.opensearch.common.settings.Settings;
 
 public class RequestIT extends AbstractRequestIT {
     @Override
-    public OpenSearchTransport buildTransport(Settings settings, HttpHost[] hosts) throws IOException {
+    public UdbsxTransport buildTransport(Settings settings, HttpHost[] hosts) throws IOException {
         return new RestClientTransport(buildClient(settings, hosts), new JacksonJsonpMapper());
     }
 
@@ -79,7 +79,7 @@ public class RequestIT extends AbstractRequestIT {
             .build();
 
         final RestClientTransport transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
-        final OpenSearchClient client = new OpenSearchClient(transport);
+        final UdbsxClient client = new UdbsxClient(transport);
         final TransportException transportException = assertThrows(TransportException.class, () -> client.cluster().getSettings());
         assertEquals("Unauthorized access", transportException.getMessage());
         restClient.close();
@@ -87,16 +87,16 @@ public class RequestIT extends AbstractRequestIT {
 
     @Test
     public void testForbidden() throws Exception {
-        final OpenSearchClient openSearchClient = javaClient();
+        final UdbsxClient udbsxClient = javaClient();
         final String testIndex = "test-index";
         final CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder().index(testIndex)
             .settings(new IndexSettings.Builder().blocksRead(true).build())
             .build();
-        openSearchClient.indices().create(createIndexRequest);
+        udbsxClient.indices().create(createIndexRequest);
         final SearchRequest searchRequest = new SearchRequest.Builder().index(testIndex).build();
         final TransportException transportException = assertThrows(
             TransportException.class,
-            () -> openSearchClient.search(searchRequest, JsonData.class)
+            () -> udbsxClient.search(searchRequest, JsonData.class)
         );
         assertEquals("Forbidden access", transportException.getMessage());
     }

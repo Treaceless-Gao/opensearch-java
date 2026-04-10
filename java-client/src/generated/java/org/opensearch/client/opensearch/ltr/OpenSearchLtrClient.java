@@ -41,21 +41,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ltr namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSearchLtrClient> {
-    public OpenSearchLtrClient(OpenSearchTransport transport) {
+public class OpenSearchLtrClient extends ApiClient<UdbsxTransport, OpenSearchLtrClient> {
+    public OpenSearchLtrClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchLtrClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchLtrClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,7 +69,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Add features to an existing feature set in the default feature store.
      */
-    public AddFeaturesToSetResponse addFeaturesToSet(AddFeaturesToSetRequest request) throws IOException, OpenSearchException {
+    public AddFeaturesToSetResponse addFeaturesToSet(AddFeaturesToSetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AddFeaturesToSetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -80,7 +80,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final AddFeaturesToSetResponse addFeaturesToSet(
         Function<AddFeaturesToSetRequest.Builder, ObjectBuilder<AddFeaturesToSetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return addFeaturesToSet(fn.apply(new AddFeaturesToSetRequest.Builder()).build());
     }
 
@@ -90,7 +90,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * Add features to an existing feature set in the default feature store.
      */
     public AddFeaturesToSetByQueryResponse addFeaturesToSetByQuery(AddFeaturesToSetByQueryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequest(request, AddFeaturesToSetByQueryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -101,7 +101,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final AddFeaturesToSetByQueryResponse addFeaturesToSetByQuery(
         Function<AddFeaturesToSetByQueryRequest.Builder, ObjectBuilder<AddFeaturesToSetByQueryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return addFeaturesToSetByQuery(fn.apply(new AddFeaturesToSetByQueryRequest.Builder()).build());
     }
 
@@ -110,7 +110,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Retrieves cache statistics for all feature stores.
      */
-    public CacheStatsResponse cacheStats(CacheStatsRequest request) throws IOException, OpenSearchException {
+    public CacheStatsResponse cacheStats(CacheStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CacheStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -120,14 +120,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link CacheStatsRequest}
      */
     public final CacheStatsResponse cacheStats(Function<CacheStatsRequest.Builder, ObjectBuilder<CacheStatsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return cacheStats(fn.apply(new CacheStatsRequest.Builder()).build());
     }
 
     /**
      * Retrieves cache statistics for all feature stores.
      */
-    public final CacheStatsResponse cacheStats() throws IOException, OpenSearchException {
+    public final CacheStatsResponse cacheStats() throws IOException, UdbsxException {
         return cacheStats(new CacheStatsRequest.Builder().build());
     }
 
@@ -136,7 +136,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Clears the store caches.
      */
-    public ClearCacheResponse clearCache(ClearCacheRequest request) throws IOException, OpenSearchException {
+    public ClearCacheResponse clearCache(ClearCacheRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ClearCacheRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -146,14 +146,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link ClearCacheRequest}
      */
     public final ClearCacheResponse clearCache(Function<ClearCacheRequest.Builder, ObjectBuilder<ClearCacheRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return clearCache(fn.apply(new ClearCacheRequest.Builder()).build());
     }
 
     /**
      * Clears the store caches.
      */
-    public final ClearCacheResponse clearCache() throws IOException, OpenSearchException {
+    public final ClearCacheResponse clearCache() throws IOException, UdbsxException {
         return clearCache(new ClearCacheRequest.Builder().build());
     }
 
@@ -162,7 +162,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Creates the default feature store.
      */
-    public CreateDefaultStoreResponse createDefaultStore(CreateDefaultStoreRequest request) throws IOException, OpenSearchException {
+    public CreateDefaultStoreResponse createDefaultStore(CreateDefaultStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateDefaultStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -173,14 +173,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final CreateDefaultStoreResponse createDefaultStore(
         Function<CreateDefaultStoreRequest.Builder, ObjectBuilder<CreateDefaultStoreRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createDefaultStore(fn.apply(new CreateDefaultStoreRequest.Builder()).build());
     }
 
     /**
      * Creates the default feature store.
      */
-    public final CreateDefaultStoreResponse createDefaultStore() throws IOException, OpenSearchException {
+    public final CreateDefaultStoreResponse createDefaultStore() throws IOException, UdbsxException {
         return createDefaultStore(new CreateDefaultStoreRequest.Builder().build());
     }
 
@@ -189,7 +189,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Create or update a feature in the default feature store.
      */
-    public CreateFeatureResponse createFeature(CreateFeatureRequest request) throws IOException, OpenSearchException {
+    public CreateFeatureResponse createFeature(CreateFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -199,7 +199,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link CreateFeatureRequest}
      */
     public final CreateFeatureResponse createFeature(Function<CreateFeatureRequest.Builder, ObjectBuilder<CreateFeatureRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createFeature(fn.apply(new CreateFeatureRequest.Builder()).build());
     }
 
@@ -208,7 +208,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Create or update a feature set in the default feature store.
      */
-    public CreateFeaturesetResponse createFeatureset(CreateFeaturesetRequest request) throws IOException, OpenSearchException {
+    public CreateFeaturesetResponse createFeatureset(CreateFeaturesetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -219,7 +219,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final CreateFeaturesetResponse createFeatureset(
         Function<CreateFeaturesetRequest.Builder, ObjectBuilder<CreateFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createFeatureset(fn.apply(new CreateFeaturesetRequest.Builder()).build());
     }
 
@@ -228,7 +228,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Create or update a model in the default feature store.
      */
-    public CreateModelResponse createModel(CreateModelRequest request) throws IOException, OpenSearchException {
+    public CreateModelResponse createModel(CreateModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -238,7 +238,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link CreateModelRequest}
      */
     public final CreateModelResponse createModel(Function<CreateModelRequest.Builder, ObjectBuilder<CreateModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createModel(fn.apply(new CreateModelRequest.Builder()).build());
     }
 
@@ -247,7 +247,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Create a model from an existing feature set in the default feature store.
      */
-    public CreateModelFromSetResponse createModelFromSet(CreateModelFromSetRequest request) throws IOException, OpenSearchException {
+    public CreateModelFromSetResponse createModelFromSet(CreateModelFromSetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateModelFromSetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -258,7 +258,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final CreateModelFromSetResponse createModelFromSet(
         Function<CreateModelFromSetRequest.Builder, ObjectBuilder<CreateModelFromSetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createModelFromSet(fn.apply(new CreateModelFromSetRequest.Builder()).build());
     }
 
@@ -267,7 +267,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Creates a new feature store with the specified name.
      */
-    public CreateStoreResponse createStore(CreateStoreRequest request) throws IOException, OpenSearchException {
+    public CreateStoreResponse createStore(CreateStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -277,7 +277,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link CreateStoreRequest}
      */
     public final CreateStoreResponse createStore(Function<CreateStoreRequest.Builder, ObjectBuilder<CreateStoreRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createStore(fn.apply(new CreateStoreRequest.Builder()).build());
     }
 
@@ -286,7 +286,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Deletes the default feature store.
      */
-    public DeleteDefaultStoreResponse deleteDefaultStore(DeleteDefaultStoreRequest request) throws IOException, OpenSearchException {
+    public DeleteDefaultStoreResponse deleteDefaultStore(DeleteDefaultStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteDefaultStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -297,14 +297,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final DeleteDefaultStoreResponse deleteDefaultStore(
         Function<DeleteDefaultStoreRequest.Builder, ObjectBuilder<DeleteDefaultStoreRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteDefaultStore(fn.apply(new DeleteDefaultStoreRequest.Builder()).build());
     }
 
     /**
      * Deletes the default feature store.
      */
-    public final DeleteDefaultStoreResponse deleteDefaultStore() throws IOException, OpenSearchException {
+    public final DeleteDefaultStoreResponse deleteDefaultStore() throws IOException, UdbsxException {
         return deleteDefaultStore(new DeleteDefaultStoreRequest.Builder().build());
     }
 
@@ -313,7 +313,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Delete a feature from the default feature store.
      */
-    public DeleteFeatureResponse deleteFeature(DeleteFeatureRequest request) throws IOException, OpenSearchException {
+    public DeleteFeatureResponse deleteFeature(DeleteFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -323,7 +323,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link DeleteFeatureRequest}
      */
     public final DeleteFeatureResponse deleteFeature(Function<DeleteFeatureRequest.Builder, ObjectBuilder<DeleteFeatureRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteFeature(fn.apply(new DeleteFeatureRequest.Builder()).build());
     }
 
@@ -332,7 +332,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Delete a feature set from the default feature store.
      */
-    public DeleteFeaturesetResponse deleteFeatureset(DeleteFeaturesetRequest request) throws IOException, OpenSearchException {
+    public DeleteFeaturesetResponse deleteFeatureset(DeleteFeaturesetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -343,7 +343,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final DeleteFeaturesetResponse deleteFeatureset(
         Function<DeleteFeaturesetRequest.Builder, ObjectBuilder<DeleteFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteFeatureset(fn.apply(new DeleteFeaturesetRequest.Builder()).build());
     }
 
@@ -352,7 +352,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Delete a model from the default feature store.
      */
-    public DeleteModelResponse deleteModel(DeleteModelRequest request) throws IOException, OpenSearchException {
+    public DeleteModelResponse deleteModel(DeleteModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -362,7 +362,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link DeleteModelRequest}
      */
     public final DeleteModelResponse deleteModel(Function<DeleteModelRequest.Builder, ObjectBuilder<DeleteModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteModel(fn.apply(new DeleteModelRequest.Builder()).build());
     }
 
@@ -371,7 +371,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Deletes a feature store with the specified name.
      */
-    public DeleteStoreResponse deleteStore(DeleteStoreRequest request) throws IOException, OpenSearchException {
+    public DeleteStoreResponse deleteStore(DeleteStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -381,7 +381,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link DeleteStoreRequest}
      */
     public final DeleteStoreResponse deleteStore(Function<DeleteStoreRequest.Builder, ObjectBuilder<DeleteStoreRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteStore(fn.apply(new DeleteStoreRequest.Builder()).build());
     }
 
@@ -390,7 +390,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Get a feature from the default feature store.
      */
-    public GetFeatureResponse getFeature(GetFeatureRequest request) throws IOException, OpenSearchException {
+    public GetFeatureResponse getFeature(GetFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -400,7 +400,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetFeatureRequest}
      */
     public final GetFeatureResponse getFeature(Function<GetFeatureRequest.Builder, ObjectBuilder<GetFeatureRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getFeature(fn.apply(new GetFeatureRequest.Builder()).build());
     }
 
@@ -409,7 +409,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Get a feature set from the default feature store.
      */
-    public GetFeaturesetResponse getFeatureset(GetFeaturesetRequest request) throws IOException, OpenSearchException {
+    public GetFeaturesetResponse getFeatureset(GetFeaturesetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -419,7 +419,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetFeaturesetRequest}
      */
     public final GetFeaturesetResponse getFeatureset(Function<GetFeaturesetRequest.Builder, ObjectBuilder<GetFeaturesetRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getFeatureset(fn.apply(new GetFeaturesetRequest.Builder()).build());
     }
 
@@ -428,7 +428,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Get a model from the default feature store.
      */
-    public GetModelResponse getModel(GetModelRequest request) throws IOException, OpenSearchException {
+    public GetModelResponse getModel(GetModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -438,7 +438,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetModelRequest}
      */
     public final GetModelResponse getModel(Function<GetModelRequest.Builder, ObjectBuilder<GetModelRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getModel(fn.apply(new GetModelRequest.Builder()).build());
     }
 
@@ -447,7 +447,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Checks if a store exists.
      */
-    public GetStoreResponse getStore(GetStoreRequest request) throws IOException, OpenSearchException {
+    public GetStoreResponse getStore(GetStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -457,7 +457,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetStoreRequest}
      */
     public final GetStoreResponse getStore(Function<GetStoreRequest.Builder, ObjectBuilder<GetStoreRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getStore(fn.apply(new GetStoreRequest.Builder()).build());
     }
 
@@ -466,7 +466,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Lists all available feature stores.
      */
-    public ListStoresResponse listStores(ListStoresRequest request) throws IOException, OpenSearchException {
+    public ListStoresResponse listStores(ListStoresRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ListStoresRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -476,14 +476,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link ListStoresRequest}
      */
     public final ListStoresResponse listStores(Function<ListStoresRequest.Builder, ObjectBuilder<ListStoresRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return listStores(fn.apply(new ListStoresRequest.Builder()).build());
     }
 
     /**
      * Lists all available feature stores.
      */
-    public final ListStoresResponse listStores() throws IOException, OpenSearchException {
+    public final ListStoresResponse listStores() throws IOException, UdbsxException {
         return listStores(new ListStoresRequest.Builder().build());
     }
 
@@ -492,7 +492,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Search for features in a feature store.
      */
-    public SearchFeaturesResponse searchFeatures(SearchFeaturesRequest request) throws IOException, OpenSearchException {
+    public SearchFeaturesResponse searchFeatures(SearchFeaturesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SearchFeaturesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -502,14 +502,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link SearchFeaturesRequest}
      */
     public final SearchFeaturesResponse searchFeatures(Function<SearchFeaturesRequest.Builder, ObjectBuilder<SearchFeaturesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return searchFeatures(fn.apply(new SearchFeaturesRequest.Builder()).build());
     }
 
     /**
      * Search for features in a feature store.
      */
-    public final SearchFeaturesResponse searchFeatures() throws IOException, OpenSearchException {
+    public final SearchFeaturesResponse searchFeatures() throws IOException, UdbsxException {
         return searchFeatures(new SearchFeaturesRequest.Builder().build());
     }
 
@@ -518,7 +518,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Search for feature sets in a feature store.
      */
-    public SearchFeaturesetsResponse searchFeaturesets(SearchFeaturesetsRequest request) throws IOException, OpenSearchException {
+    public SearchFeaturesetsResponse searchFeaturesets(SearchFeaturesetsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SearchFeaturesetsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -529,14 +529,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final SearchFeaturesetsResponse searchFeaturesets(
         Function<SearchFeaturesetsRequest.Builder, ObjectBuilder<SearchFeaturesetsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return searchFeaturesets(fn.apply(new SearchFeaturesetsRequest.Builder()).build());
     }
 
     /**
      * Search for feature sets in a feature store.
      */
-    public final SearchFeaturesetsResponse searchFeaturesets() throws IOException, OpenSearchException {
+    public final SearchFeaturesetsResponse searchFeaturesets() throws IOException, UdbsxException {
         return searchFeaturesets(new SearchFeaturesetsRequest.Builder().build());
     }
 
@@ -545,7 +545,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Search for models in a feature store.
      */
-    public SearchModelsResponse searchModels(SearchModelsRequest request) throws IOException, OpenSearchException {
+    public SearchModelsResponse searchModels(SearchModelsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SearchModelsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -555,14 +555,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link SearchModelsRequest}
      */
     public final SearchModelsResponse searchModels(Function<SearchModelsRequest.Builder, ObjectBuilder<SearchModelsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return searchModels(fn.apply(new SearchModelsRequest.Builder()).build());
     }
 
     /**
      * Search for models in a feature store.
      */
-    public final SearchModelsResponse searchModels() throws IOException, OpenSearchException {
+    public final SearchModelsResponse searchModels() throws IOException, UdbsxException {
         return searchModels(new SearchModelsRequest.Builder().build());
     }
 
@@ -571,7 +571,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Provides information about the current status of the LTR plugin.
      */
-    public LtrStatsResponse stats(LtrStatsRequest request) throws IOException, OpenSearchException {
+    public LtrStatsResponse stats(LtrStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, LtrStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -581,14 +581,14 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link LtrStatsRequest}
      */
     public final LtrStatsResponse stats(Function<LtrStatsRequest.Builder, ObjectBuilder<LtrStatsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return stats(fn.apply(new LtrStatsRequest.Builder()).build());
     }
 
     /**
      * Provides information about the current status of the LTR plugin.
      */
-    public final LtrStatsResponse stats() throws IOException, OpenSearchException {
+    public final LtrStatsResponse stats() throws IOException, UdbsxException {
         return stats(new LtrStatsRequest.Builder().build());
     }
 
@@ -597,7 +597,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Update a feature in the default feature store.
      */
-    public UpdateFeatureResponse updateFeature(UpdateFeatureRequest request) throws IOException, OpenSearchException {
+    public UpdateFeatureResponse updateFeature(UpdateFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -607,7 +607,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link UpdateFeatureRequest}
      */
     public final UpdateFeatureResponse updateFeature(Function<UpdateFeatureRequest.Builder, ObjectBuilder<UpdateFeatureRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return updateFeature(fn.apply(new UpdateFeatureRequest.Builder()).build());
     }
 
@@ -616,7 +616,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Update a feature set in the default feature store.
      */
-    public UpdateFeaturesetResponse updateFeatureset(UpdateFeaturesetRequest request) throws IOException, OpenSearchException {
+    public UpdateFeaturesetResponse updateFeatureset(UpdateFeaturesetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -627,7 +627,7 @@ public class OpenSearchLtrClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final UpdateFeaturesetResponse updateFeatureset(
         Function<UpdateFeaturesetRequest.Builder, ObjectBuilder<UpdateFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateFeatureset(fn.apply(new UpdateFeaturesetRequest.Builder()).build());
     }
 }

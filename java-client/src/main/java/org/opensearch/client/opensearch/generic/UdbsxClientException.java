@@ -15,11 +15,11 @@ package org.opensearch.client.opensearch.generic;
  * The {@link #response()} contains the the raw response as returned by the API
  * endpoint that was called.
  */
-public class OpenSearchClientException extends RuntimeException {
+public class UdbsxClientException extends RuntimeException {
 
     private final Response response;
 
-    public OpenSearchClientException(Response response) {
+    public UdbsxClientException(Response response) {
         super("Request failed: [" + response.getStatus() + "] " + response.getReason());
         this.response = response;
     }

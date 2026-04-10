@@ -42,9 +42,9 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.util.ObjectBuilder;
 
@@ -52,12 +52,12 @@ import org.opensearch.client.util.ObjectBuilder;
  * Client for the cluster namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchClusterAsyncClient> {
-    public OpenSearchClusterAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchClusterAsyncClient extends ApiClient<UdbsxTransport, OpenSearchClusterAsyncClient> {
+    public OpenSearchClusterAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchClusterAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchClusterAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -73,7 +73,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * a node.
      */
     public CompletableFuture<AllocationExplainResponse> allocationExplain(AllocationExplainRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, AllocationExplainRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -85,7 +85,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<AllocationExplainResponse> allocationExplain(
         Function<AllocationExplainRequest.Builder, ObjectBuilder<AllocationExplainRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return allocationExplain(fn.apply(new AllocationExplainRequest.Builder()).build());
     }
 
@@ -93,7 +93,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Explains how shards are allocated in the current cluster and provides an explanation for why unassigned shards can't be allocated to
      * a node.
      */
-    public final CompletableFuture<AllocationExplainResponse> allocationExplain() throws IOException, OpenSearchException {
+    public final CompletableFuture<AllocationExplainResponse> allocationExplain() throws IOException, UdbsxException {
         return allocationExplain(new AllocationExplainRequest.Builder().build());
     }
 
@@ -103,7 +103,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Deletes a component template.
      */
     public CompletableFuture<DeleteComponentTemplateResponse> deleteComponentTemplate(DeleteComponentTemplateRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteComponentTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -114,7 +114,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<DeleteComponentTemplateResponse> deleteComponentTemplate(
         Function<DeleteComponentTemplateRequest.Builder, ObjectBuilder<DeleteComponentTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteComponentTemplate(fn.apply(new DeleteComponentTemplateRequest.Builder()).build());
     }
 
@@ -124,7 +124,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Recommissions a decommissioned zone.
      */
     public CompletableFuture<DeleteDecommissionAwarenessResponse> deleteDecommissionAwareness(DeleteDecommissionAwarenessRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteDecommissionAwarenessRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -135,15 +135,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<DeleteDecommissionAwarenessResponse> deleteDecommissionAwareness(
         Function<DeleteDecommissionAwarenessRequest.Builder, ObjectBuilder<DeleteDecommissionAwarenessRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteDecommissionAwareness(fn.apply(new DeleteDecommissionAwarenessRequest.Builder()).build());
     }
 
     /**
      * Recommissions a decommissioned zone.
      */
-    public final CompletableFuture<DeleteDecommissionAwarenessResponse> deleteDecommissionAwareness() throws IOException,
-        OpenSearchException {
+    public final CompletableFuture<DeleteDecommissionAwarenessResponse> deleteDecommissionAwareness() throws IOException, UdbsxException {
         return deleteDecommissionAwareness(new DeleteDecommissionAwarenessRequest.Builder().build());
     }
 
@@ -153,7 +152,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Clears any cluster voting configuration exclusions.
      */
     public CompletableFuture<BooleanResponse> deleteVotingConfigExclusions(DeleteVotingConfigExclusionsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteVotingConfigExclusionsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -164,14 +163,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<BooleanResponse> deleteVotingConfigExclusions(
         Function<DeleteVotingConfigExclusionsRequest.Builder, ObjectBuilder<DeleteVotingConfigExclusionsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteVotingConfigExclusions(fn.apply(new DeleteVotingConfigExclusionsRequest.Builder()).build());
     }
 
     /**
      * Clears any cluster voting configuration exclusions.
      */
-    public final CompletableFuture<BooleanResponse> deleteVotingConfigExclusions() throws IOException, OpenSearchException {
+    public final CompletableFuture<BooleanResponse> deleteVotingConfigExclusions() throws IOException, UdbsxException {
         return deleteVotingConfigExclusions(new DeleteVotingConfigExclusionsRequest.Builder().build());
     }
 
@@ -181,7 +180,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Delete weighted shard routing weights.
      */
     public CompletableFuture<DeleteWeightedRoutingResponse> deleteWeightedRouting(DeleteWeightedRoutingRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteWeightedRoutingRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -192,14 +191,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<DeleteWeightedRoutingResponse> deleteWeightedRouting(
         Function<DeleteWeightedRoutingRequest.Builder, ObjectBuilder<DeleteWeightedRoutingRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteWeightedRouting(fn.apply(new DeleteWeightedRoutingRequest.Builder()).build());
     }
 
     /**
      * Delete weighted shard routing weights.
      */
-    public final CompletableFuture<DeleteWeightedRoutingResponse> deleteWeightedRouting() throws IOException, OpenSearchException {
+    public final CompletableFuture<DeleteWeightedRoutingResponse> deleteWeightedRouting() throws IOException, UdbsxException {
         return deleteWeightedRouting(new DeleteWeightedRoutingRequest.Builder().build());
     }
 
@@ -209,7 +208,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Returns information about whether a particular component template exist.
      */
     public CompletableFuture<BooleanResponse> existsComponentTemplate(ExistsComponentTemplateRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, ExistsComponentTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -220,7 +219,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<BooleanResponse> existsComponentTemplate(
         Function<ExistsComponentTemplateRequest.Builder, ObjectBuilder<ExistsComponentTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return existsComponentTemplate(fn.apply(new ExistsComponentTemplateRequest.Builder()).build());
     }
 
@@ -230,7 +229,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Returns one or more component templates.
      */
     public CompletableFuture<GetComponentTemplateResponse> getComponentTemplate(GetComponentTemplateRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetComponentTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -241,14 +240,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<GetComponentTemplateResponse> getComponentTemplate(
         Function<GetComponentTemplateRequest.Builder, ObjectBuilder<GetComponentTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getComponentTemplate(fn.apply(new GetComponentTemplateRequest.Builder()).build());
     }
 
     /**
      * Returns one or more component templates.
      */
-    public final CompletableFuture<GetComponentTemplateResponse> getComponentTemplate() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetComponentTemplateResponse> getComponentTemplate() throws IOException, UdbsxException {
         return getComponentTemplate(new GetComponentTemplateRequest.Builder().build());
     }
 
@@ -258,7 +257,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Retrieves the decommission status for all zones.
      */
     public CompletableFuture<GetDecommissionAwarenessResponse> getDecommissionAwareness(GetDecommissionAwarenessRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetDecommissionAwarenessRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -269,7 +268,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<GetDecommissionAwarenessResponse> getDecommissionAwareness(
         Function<GetDecommissionAwarenessRequest.Builder, ObjectBuilder<GetDecommissionAwarenessRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getDecommissionAwareness(fn.apply(new GetDecommissionAwarenessRequest.Builder()).build());
     }
 
@@ -278,8 +277,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Returns cluster settings.
      */
-    public CompletableFuture<GetClusterSettingsResponse> getSettings(GetClusterSettingsRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<GetClusterSettingsResponse> getSettings(GetClusterSettingsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetClusterSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -290,14 +288,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<GetClusterSettingsResponse> getSettings(
         Function<GetClusterSettingsRequest.Builder, ObjectBuilder<GetClusterSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getSettings(fn.apply(new GetClusterSettingsRequest.Builder()).build());
     }
 
     /**
      * Returns cluster settings.
      */
-    public final CompletableFuture<GetClusterSettingsResponse> getSettings() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetClusterSettingsResponse> getSettings() throws IOException, UdbsxException {
         return getSettings(new GetClusterSettingsRequest.Builder().build());
     }
 
@@ -307,7 +305,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Fetches weighted shard routing weights.
      */
     public CompletableFuture<GetWeightedRoutingResponse> getWeightedRouting(GetWeightedRoutingRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetWeightedRoutingRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -318,7 +316,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<GetWeightedRoutingResponse> getWeightedRouting(
         Function<GetWeightedRoutingRequest.Builder, ObjectBuilder<GetWeightedRoutingRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getWeightedRouting(fn.apply(new GetWeightedRoutingRequest.Builder()).build());
     }
 
@@ -327,7 +325,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Returns basic information about the health of the cluster.
      */
-    public CompletableFuture<HealthResponse> health(HealthRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<HealthResponse> health(HealthRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, HealthRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -337,14 +335,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * @param fn a function that initializes a builder to create the {@link HealthRequest}
      */
     public final CompletableFuture<HealthResponse> health(Function<HealthRequest.Builder, ObjectBuilder<HealthRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return health(fn.apply(new HealthRequest.Builder()).build());
     }
 
     /**
      * Returns basic information about the health of the cluster.
      */
-    public final CompletableFuture<HealthResponse> health() throws IOException, OpenSearchException {
+    public final CompletableFuture<HealthResponse> health() throws IOException, UdbsxException {
         return health(new HealthRequest.Builder().build());
     }
 
@@ -353,7 +351,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Returns a list of pending cluster-level tasks, such as index creation, mapping updates, or new allocations.
      */
-    public CompletableFuture<PendingTasksResponse> pendingTasks(PendingTasksRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PendingTasksResponse> pendingTasks(PendingTasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PendingTasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -364,14 +362,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<PendingTasksResponse> pendingTasks(
         Function<PendingTasksRequest.Builder, ObjectBuilder<PendingTasksRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return pendingTasks(fn.apply(new PendingTasksRequest.Builder()).build());
     }
 
     /**
      * Returns a list of pending cluster-level tasks, such as index creation, mapping updates, or new allocations.
      */
-    public final CompletableFuture<PendingTasksResponse> pendingTasks() throws IOException, OpenSearchException {
+    public final CompletableFuture<PendingTasksResponse> pendingTasks() throws IOException, UdbsxException {
         return pendingTasks(new PendingTasksRequest.Builder().build());
     }
 
@@ -381,7 +379,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Updates the cluster voting configuration by excluding certain node IDs or names.
      */
     public CompletableFuture<BooleanResponse> postVotingConfigExclusions(PostVotingConfigExclusionsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, PostVotingConfigExclusionsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -392,14 +390,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<BooleanResponse> postVotingConfigExclusions(
         Function<PostVotingConfigExclusionsRequest.Builder, ObjectBuilder<PostVotingConfigExclusionsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return postVotingConfigExclusions(fn.apply(new PostVotingConfigExclusionsRequest.Builder()).build());
     }
 
     /**
      * Updates the cluster voting configuration by excluding certain node IDs or names.
      */
-    public final CompletableFuture<BooleanResponse> postVotingConfigExclusions() throws IOException, OpenSearchException {
+    public final CompletableFuture<BooleanResponse> postVotingConfigExclusions() throws IOException, UdbsxException {
         return postVotingConfigExclusions(new PostVotingConfigExclusionsRequest.Builder().build());
     }
 
@@ -409,7 +407,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Creates or updates a component template.
      */
     public CompletableFuture<PutComponentTemplateResponse> putComponentTemplate(PutComponentTemplateRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, PutComponentTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -420,7 +418,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<PutComponentTemplateResponse> putComponentTemplate(
         Function<PutComponentTemplateRequest.Builder, ObjectBuilder<PutComponentTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putComponentTemplate(fn.apply(new PutComponentTemplateRequest.Builder()).build());
     }
 
@@ -431,7 +429,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * in applying new upgrades to a cluster in a controlled fashion.
      */
     public CompletableFuture<PutDecommissionAwarenessResponse> putDecommissionAwareness(PutDecommissionAwarenessRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutDecommissionAwarenessRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -443,7 +441,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<PutDecommissionAwarenessResponse> putDecommissionAwareness(
         Function<PutDecommissionAwarenessRequest.Builder, ObjectBuilder<PutDecommissionAwarenessRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putDecommissionAwareness(fn.apply(new PutDecommissionAwarenessRequest.Builder()).build());
     }
 
@@ -452,8 +450,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Updates the cluster settings.
      */
-    public CompletableFuture<PutClusterSettingsResponse> putSettings(PutClusterSettingsRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<PutClusterSettingsResponse> putSettings(PutClusterSettingsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutClusterSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -464,14 +461,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<PutClusterSettingsResponse> putSettings(
         Function<PutClusterSettingsRequest.Builder, ObjectBuilder<PutClusterSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putSettings(fn.apply(new PutClusterSettingsRequest.Builder()).build());
     }
 
     /**
      * Updates the cluster settings.
      */
-    public final CompletableFuture<PutClusterSettingsResponse> putSettings() throws IOException, OpenSearchException {
+    public final CompletableFuture<PutClusterSettingsResponse> putSettings() throws IOException, UdbsxException {
         return putSettings(new PutClusterSettingsRequest.Builder().build());
     }
 
@@ -481,7 +478,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * Updates weighted shard routing weights.
      */
     public CompletableFuture<PutWeightedRoutingResponse> putWeightedRouting(PutWeightedRoutingRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, PutWeightedRoutingRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -492,7 +489,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      */
     public final CompletableFuture<PutWeightedRoutingResponse> putWeightedRouting(
         Function<PutWeightedRoutingRequest.Builder, ObjectBuilder<PutWeightedRoutingRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putWeightedRouting(fn.apply(new PutWeightedRoutingRequest.Builder()).build());
     }
 
@@ -501,7 +498,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Returns the information about configured remote clusters.
      */
-    public CompletableFuture<RemoteInfoResponse> remoteInfo(RemoteInfoRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RemoteInfoResponse> remoteInfo(RemoteInfoRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RemoteInfoRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -511,14 +508,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * @param fn a function that initializes a builder to create the {@link RemoteInfoRequest}
      */
     public final CompletableFuture<RemoteInfoResponse> remoteInfo(Function<RemoteInfoRequest.Builder, ObjectBuilder<RemoteInfoRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return remoteInfo(fn.apply(new RemoteInfoRequest.Builder()).build());
     }
 
     /**
      * Returns the information about configured remote clusters.
      */
-    public final CompletableFuture<RemoteInfoResponse> remoteInfo() throws IOException, OpenSearchException {
+    public final CompletableFuture<RemoteInfoResponse> remoteInfo() throws IOException, UdbsxException {
         return remoteInfo(new RemoteInfoRequest.Builder().build());
     }
 
@@ -527,7 +524,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Allows to manually change the allocation of individual shards in the cluster.
      */
-    public CompletableFuture<RerouteResponse> reroute(RerouteRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RerouteResponse> reroute(RerouteRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RerouteRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -537,14 +534,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * @param fn a function that initializes a builder to create the {@link RerouteRequest}
      */
     public final CompletableFuture<RerouteResponse> reroute(Function<RerouteRequest.Builder, ObjectBuilder<RerouteRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return reroute(fn.apply(new RerouteRequest.Builder()).build());
     }
 
     /**
      * Allows to manually change the allocation of individual shards in the cluster.
      */
-    public final CompletableFuture<RerouteResponse> reroute() throws IOException, OpenSearchException {
+    public final CompletableFuture<RerouteResponse> reroute() throws IOException, UdbsxException {
         return reroute(new RerouteRequest.Builder().build());
     }
 
@@ -553,7 +550,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Returns comprehensive information about the state of the cluster.
      */
-    public CompletableFuture<StateResponse> state(StateRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<StateResponse> state(StateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, StateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -563,14 +560,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * @param fn a function that initializes a builder to create the {@link StateRequest}
      */
     public final CompletableFuture<StateResponse> state(Function<StateRequest.Builder, ObjectBuilder<StateRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return state(fn.apply(new StateRequest.Builder()).build());
     }
 
     /**
      * Returns comprehensive information about the state of the cluster.
      */
-    public final CompletableFuture<StateResponse> state() throws IOException, OpenSearchException {
+    public final CompletableFuture<StateResponse> state() throws IOException, UdbsxException {
         return state(new StateRequest.Builder().build());
     }
 
@@ -579,7 +576,7 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
     /**
      * Returns a high-level overview of cluster statistics.
      */
-    public CompletableFuture<ClusterStatsResponse> stats(ClusterStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ClusterStatsResponse> stats(ClusterStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ClusterStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -589,14 +586,14 @@ public class OpenSearchClusterAsyncClient extends ApiClient<OpenSearchTransport,
      * @param fn a function that initializes a builder to create the {@link ClusterStatsRequest}
      */
     public final CompletableFuture<ClusterStatsResponse> stats(Function<ClusterStatsRequest.Builder, ObjectBuilder<ClusterStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return stats(fn.apply(new ClusterStatsRequest.Builder()).build());
     }
 
     /**
      * Returns a high-level overview of cluster statistics.
      */
-    public final CompletableFuture<ClusterStatsResponse> stats() throws IOException, OpenSearchException {
+    public final CompletableFuture<ClusterStatsResponse> stats() throws IOException, UdbsxException {
         return stats(new ClusterStatsRequest.Builder().build());
     }
 }

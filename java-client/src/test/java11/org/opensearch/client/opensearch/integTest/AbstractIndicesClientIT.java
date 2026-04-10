@@ -14,8 +14,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import org.opensearch.Version;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch._types.mapping.FlatObjectProperty;
 import org.opensearch.client.opensearch._types.mapping.Property;
 import org.opensearch.client.opensearch.core.InfoResponse;
@@ -59,7 +59,7 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
             try {
                 javaClient().indices().get(request);
                 fail(); // should never execute
-            } catch (OpenSearchException ex) {
+            } catch (UdbsxException ex) {
                 assertNotNull(ex);
                 assertEquals(ex.status(), 404);
                 assertEquals(ex.getMessage(), "Request failed: [index_not_found_exception] " + "no such index [non_existent_index]");
@@ -78,14 +78,14 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
             try {
                 javaClient().indices().get(request);
                 fail(); // should never execute
-            } catch (OpenSearchException ex) {
+            } catch (UdbsxException ex) {
                 assertNotNull(ex);
             }
         }
     }
 
     public void testCreateIndex() throws Exception {
-        OpenSearchAsyncClient asyncClient = new OpenSearchAsyncClient(javaClient()._transport());
+        UdbsxAsyncClient asyncClient = new UdbsxAsyncClient(javaClient()._transport());
         CreateIndexResponse createResponse = javaClient().indices().create(b -> b.index("my-index"));
         assertTrue(createResponse.acknowledged());
         assertTrue(createResponse.shardsAcknowledged());
@@ -109,7 +109,7 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
         try {
             javaClient().indices().getSettings(getIndicesSettingsRequest);
             fail();
-        } catch (OpenSearchException ex) {
+        } catch (UdbsxException ex) {
             assertNotNull(ex);
             assertEquals(ex.status(), 404);
             assertEquals(ex.getMessage(), "Request failed: [index_not_found_exception] " + "no such index [index_that_doesnt_exist]");
@@ -184,7 +184,7 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
         try {
             javaClient().indices().getDataStream(b -> b.name(dataStreamName));
             fail();
-        } catch (OpenSearchException ex) {
+        } catch (UdbsxException ex) {
             assertNotNull(ex);
             assertEquals(ex.status(), 404);
         }
@@ -196,7 +196,7 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
         try {
             GetAliasResponse response = javaClient().indices().getAlias(aliasRequest);
             fail();
-        } catch (OpenSearchException ex) {
+        } catch (UdbsxException ex) {
             assertNotNull(ex);
             assertEquals(ex.status(), 404);
             assertEquals(ex.getMessage(), "Request failed: [string_error] " + "alias [alias_not_exists] missing");
@@ -213,7 +213,7 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
                 .build();
             final CreateIndexResponse createIndexResponse = javaClient().indices().create(createIndexRequest);
             assertTrue(createIndexResponse.acknowledged());
-        } catch (OpenSearchException ex) {
+        } catch (UdbsxException ex) {
             fail(ex.getMessage());
         }
     }
@@ -233,7 +233,7 @@ public abstract class AbstractIndicesClientIT extends OpenSearchJavaClientTestCa
             final GetMappingResponse response = javaClient().indices().getMapping(GetMappingRequest.of(m -> m.index(indexName)));
             final Property.Kind mappingKind = response.result().get(indexName).mappings().properties().get("sample_flat_object")._kind();
             assertEquals(mappingKind, Property.Kind.FlatObject);
-        } catch (OpenSearchException ex) {
+        } catch (UdbsxException ex) {
             fail(ex.getMessage());
         }
     }

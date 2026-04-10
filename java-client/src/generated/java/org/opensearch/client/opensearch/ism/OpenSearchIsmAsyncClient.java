@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ism namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchIsmAsyncClient> {
-    public OpenSearchIsmAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchIsmAsyncClient extends ApiClient<UdbsxTransport, OpenSearchIsmAsyncClient> {
+    public OpenSearchIsmAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchIsmAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchIsmAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -70,7 +70,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Adds a policy to an index.
      */
-    public CompletableFuture<AddPolicyResponse> addPolicy(AddPolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<AddPolicyResponse> addPolicy(AddPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, AddPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -80,7 +80,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link AddPolicyRequest}
      */
     public final CompletableFuture<AddPolicyResponse> addPolicy(Function<AddPolicyRequest.Builder, ObjectBuilder<AddPolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return addPolicy(fn.apply(new AddPolicyRequest.Builder()).build());
     }
 
@@ -89,7 +89,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Updates the managed index policy to a new policy.
      */
-    public CompletableFuture<ChangePolicyResponse> changePolicy(ChangePolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ChangePolicyResponse> changePolicy(ChangePolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ChangePolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -100,7 +100,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<ChangePolicyResponse> changePolicy(
         Function<ChangePolicyRequest.Builder, ObjectBuilder<ChangePolicyRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return changePolicy(fn.apply(new ChangePolicyRequest.Builder()).build());
     }
 
@@ -109,7 +109,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Deletes a policy.
      */
-    public CompletableFuture<DeletePolicyResponse> deletePolicy(DeletePolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeletePolicyResponse> deletePolicy(DeletePolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeletePolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -120,7 +120,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeletePolicyResponse> deletePolicy(
         Function<DeletePolicyRequest.Builder, ObjectBuilder<DeletePolicyRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deletePolicy(fn.apply(new DeletePolicyRequest.Builder()).build());
     }
 
@@ -129,7 +129,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Checks for the existence of a policy.
      */
-    public CompletableFuture<ExistsPolicyResponse> existsPolicy(ExistsPolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ExistsPolicyResponse> existsPolicy(ExistsPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ExistsPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -140,7 +140,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<ExistsPolicyResponse> existsPolicy(
         Function<ExistsPolicyRequest.Builder, ObjectBuilder<ExistsPolicyRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return existsPolicy(fn.apply(new ExistsPolicyRequest.Builder()).build());
     }
 
@@ -149,7 +149,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Retrieves the currently applied policy on the specified indexes.
      */
-    public CompletableFuture<ExplainPolicyResponse> explainPolicy(ExplainPolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ExplainPolicyResponse> explainPolicy(ExplainPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ExplainPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -160,7 +160,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<ExplainPolicyResponse> explainPolicy(
         Function<ExplainPolicyRequest.Builder, ObjectBuilder<ExplainPolicyRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return explainPolicy(fn.apply(new ExplainPolicyRequest.Builder()).build());
     }
 
@@ -169,7 +169,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Retrieves the policies.
      */
-    public CompletableFuture<GetPoliciesResponse> getPolicies(GetPoliciesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetPoliciesResponse> getPolicies(GetPoliciesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetPoliciesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -180,14 +180,14 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<GetPoliciesResponse> getPolicies(
         Function<GetPoliciesRequest.Builder, ObjectBuilder<GetPoliciesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getPolicies(fn.apply(new GetPoliciesRequest.Builder()).build());
     }
 
     /**
      * Retrieves the policies.
      */
-    public final CompletableFuture<GetPoliciesResponse> getPolicies() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetPoliciesResponse> getPolicies() throws IOException, UdbsxException {
         return getPolicies(new GetPoliciesRequest.Builder().build());
     }
 
@@ -196,7 +196,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Retrieves a specific policy.
      */
-    public CompletableFuture<GetPolicyResponse> getPolicy(GetPolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetPolicyResponse> getPolicy(GetPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -206,7 +206,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link GetPolicyRequest}
      */
     public final CompletableFuture<GetPolicyResponse> getPolicy(Function<GetPolicyRequest.Builder, ObjectBuilder<GetPolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getPolicy(fn.apply(new GetPolicyRequest.Builder()).build());
     }
 
@@ -215,7 +215,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Creates or updates policies.
      */
-    public CompletableFuture<PutPoliciesResponse> putPolicies(PutPoliciesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PutPoliciesResponse> putPolicies(PutPoliciesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutPoliciesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -226,7 +226,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<PutPoliciesResponse> putPolicies(
         Function<PutPoliciesRequest.Builder, ObjectBuilder<PutPoliciesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putPolicies(fn.apply(new PutPoliciesRequest.Builder()).build());
     }
 
@@ -235,7 +235,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Creates or updates a policy.
      */
-    public CompletableFuture<PutPolicyResponse> putPolicy(PutPolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PutPolicyResponse> putPolicy(PutPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -245,7 +245,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link PutPolicyRequest}
      */
     public final CompletableFuture<PutPolicyResponse> putPolicy(Function<PutPolicyRequest.Builder, ObjectBuilder<PutPolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return putPolicy(fn.apply(new PutPolicyRequest.Builder()).build());
     }
 
@@ -255,7 +255,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Refreshes search analyzers in real time.
      */
     public CompletableFuture<RefreshSearchAnalyzersResponse> refreshSearchAnalyzers(RefreshSearchAnalyzersRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RefreshSearchAnalyzersRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -266,7 +266,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<RefreshSearchAnalyzersResponse> refreshSearchAnalyzers(
         Function<RefreshSearchAnalyzersRequest.Builder, ObjectBuilder<RefreshSearchAnalyzersRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return refreshSearchAnalyzers(fn.apply(new RefreshSearchAnalyzersRequest.Builder()).build());
     }
 
@@ -275,7 +275,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Removes a policy from an index.
      */
-    public CompletableFuture<RemovePolicyResponse> removePolicy(RemovePolicyRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RemovePolicyResponse> removePolicy(RemovePolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RemovePolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -286,14 +286,14 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<RemovePolicyResponse> removePolicy(
         Function<RemovePolicyRequest.Builder, ObjectBuilder<RemovePolicyRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return removePolicy(fn.apply(new RemovePolicyRequest.Builder()).build());
     }
 
     /**
      * Removes a policy from an index.
      */
-    public final CompletableFuture<RemovePolicyResponse> removePolicy() throws IOException, OpenSearchException {
+    public final CompletableFuture<RemovePolicyResponse> removePolicy() throws IOException, UdbsxException {
         return removePolicy(new RemovePolicyRequest.Builder().build());
     }
 
@@ -302,7 +302,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Retries the failed action for an index.
      */
-    public CompletableFuture<RetryIndexResponse> retryIndex(RetryIndexRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RetryIndexResponse> retryIndex(RetryIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RetryIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -312,7 +312,7 @@ public class OpenSearchIsmAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link RetryIndexRequest}
      */
     public final CompletableFuture<RetryIndexResponse> retryIndex(Function<RetryIndexRequest.Builder, ObjectBuilder<RetryIndexRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return retryIndex(fn.apply(new RetryIndexRequest.Builder()).build());
     }
 }

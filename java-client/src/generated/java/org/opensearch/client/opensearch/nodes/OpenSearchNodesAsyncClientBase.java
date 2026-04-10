@@ -42,9 +42,9 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
@@ -52,9 +52,9 @@ import org.opensearch.client.util.ObjectBuilder;
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
 public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNodesAsyncClientBase<Self>> extends ApiClient<
-    OpenSearchTransport,
+    UdbsxTransport,
     Self> {
-    public OpenSearchNodesAsyncClientBase(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchNodesAsyncClientBase(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -63,7 +63,7 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
     /**
      * Returns information about nodes in the cluster.
      */
-    public CompletableFuture<NodesInfoResponse> info(NodesInfoRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<NodesInfoResponse> info(NodesInfoRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, NodesInfoRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -73,14 +73,14 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
      * @param fn a function that initializes a builder to create the {@link NodesInfoRequest}
      */
     public final CompletableFuture<NodesInfoResponse> info(Function<NodesInfoRequest.Builder, ObjectBuilder<NodesInfoRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return info(fn.apply(new NodesInfoRequest.Builder()).build());
     }
 
     /**
      * Returns information about nodes in the cluster.
      */
-    public final CompletableFuture<NodesInfoResponse> info() throws IOException, OpenSearchException {
+    public final CompletableFuture<NodesInfoResponse> info() throws IOException, UdbsxException {
         return info(new NodesInfoRequest.Builder().build());
     }
 
@@ -90,7 +90,7 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
      * Reloads secure settings.
      */
     public CompletableFuture<ReloadSecureSettingsResponse> reloadSecureSettings(ReloadSecureSettingsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, ReloadSecureSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -101,14 +101,14 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
      */
     public final CompletableFuture<ReloadSecureSettingsResponse> reloadSecureSettings(
         Function<ReloadSecureSettingsRequest.Builder, ObjectBuilder<ReloadSecureSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return reloadSecureSettings(fn.apply(new ReloadSecureSettingsRequest.Builder()).build());
     }
 
     /**
      * Reloads secure settings.
      */
-    public final CompletableFuture<ReloadSecureSettingsResponse> reloadSecureSettings() throws IOException, OpenSearchException {
+    public final CompletableFuture<ReloadSecureSettingsResponse> reloadSecureSettings() throws IOException, UdbsxException {
         return reloadSecureSettings(new ReloadSecureSettingsRequest.Builder().build());
     }
 
@@ -117,7 +117,7 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
     /**
      * Returns statistical information about nodes in the cluster.
      */
-    public CompletableFuture<NodesStatsResponse> stats(NodesStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<NodesStatsResponse> stats(NodesStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, NodesStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -127,14 +127,14 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
      * @param fn a function that initializes a builder to create the {@link NodesStatsRequest}
      */
     public final CompletableFuture<NodesStatsResponse> stats(Function<NodesStatsRequest.Builder, ObjectBuilder<NodesStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return stats(fn.apply(new NodesStatsRequest.Builder()).build());
     }
 
     /**
      * Returns statistical information about nodes in the cluster.
      */
-    public final CompletableFuture<NodesStatsResponse> stats() throws IOException, OpenSearchException {
+    public final CompletableFuture<NodesStatsResponse> stats() throws IOException, UdbsxException {
         return stats(new NodesStatsRequest.Builder().build());
     }
 
@@ -143,7 +143,7 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
     /**
      * Returns low-level information about REST actions usage on nodes.
      */
-    public CompletableFuture<NodesUsageResponse> usage(NodesUsageRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<NodesUsageResponse> usage(NodesUsageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, NodesUsageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -153,14 +153,14 @@ public abstract class OpenSearchNodesAsyncClientBase<Self extends OpenSearchNode
      * @param fn a function that initializes a builder to create the {@link NodesUsageRequest}
      */
     public final CompletableFuture<NodesUsageResponse> usage(Function<NodesUsageRequest.Builder, ObjectBuilder<NodesUsageRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return usage(fn.apply(new NodesUsageRequest.Builder()).build());
     }
 
     /**
      * Returns low-level information about REST actions usage on nodes.
      */
-    public final CompletableFuture<NodesUsageResponse> usage() throws IOException, OpenSearchException {
+    public final CompletableFuture<NodesUsageResponse> usage() throws IOException, UdbsxException {
         return usage(new NodesUsageRequest.Builder().build());
     }
 }

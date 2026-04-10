@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the geospatial namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchGeospatialAsyncClient> {
-    public OpenSearchGeospatialAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchGeospatialAsyncClient extends ApiClient<UdbsxTransport, OpenSearchGeospatialAsyncClient> {
+    public OpenSearchGeospatialAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchGeospatialAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchGeospatialAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -71,7 +71,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      * Delete a specific IP2Geo data source.
      */
     public CompletableFuture<DeleteIp2geoDatasourceResponse> deleteIp2geoDatasource(DeleteIp2geoDatasourceRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteIp2geoDatasourceRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -82,7 +82,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<DeleteIp2geoDatasourceResponse> deleteIp2geoDatasource(
         Function<DeleteIp2geoDatasourceRequest.Builder, ObjectBuilder<DeleteIp2geoDatasourceRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteIp2geoDatasource(fn.apply(new DeleteIp2geoDatasourceRequest.Builder()).build());
     }
 
@@ -99,7 +99,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      * </ul>
      */
     public CompletableFuture<GeojsonUploadPostResponse> geojsonUploadPost(GeojsonUploadPostRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GeojsonUploadPostRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -117,7 +117,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<GeojsonUploadPostResponse> geojsonUploadPost(
         Function<GeojsonUploadPostRequest.Builder, ObjectBuilder<GeojsonUploadPostRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return geojsonUploadPost(fn.apply(new GeojsonUploadPostRequest.Builder()).build());
     }
 
@@ -134,7 +134,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      * </ul>
      */
     public CompletableFuture<GeojsonUploadPutResponse> geojsonUploadPut(GeojsonUploadPutRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GeojsonUploadPutRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -152,7 +152,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<GeojsonUploadPutResponse> geojsonUploadPut(
         Function<GeojsonUploadPutRequest.Builder, ObjectBuilder<GeojsonUploadPutRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return geojsonUploadPut(fn.apply(new GeojsonUploadPutRequest.Builder()).build());
     }
 
@@ -162,7 +162,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      * Get one or more IP2Geo data sources, defaulting to returning all if no names specified.
      */
     public CompletableFuture<GetIp2geoDatasourceResponse> getIp2geoDatasource(GetIp2geoDatasourceRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetIp2geoDatasourceRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -173,14 +173,14 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<GetIp2geoDatasourceResponse> getIp2geoDatasource(
         Function<GetIp2geoDatasourceRequest.Builder, ObjectBuilder<GetIp2geoDatasourceRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getIp2geoDatasource(fn.apply(new GetIp2geoDatasourceRequest.Builder()).build());
     }
 
     /**
      * Get one or more IP2Geo data sources, defaulting to returning all if no names specified.
      */
-    public final CompletableFuture<GetIp2geoDatasourceResponse> getIp2geoDatasource() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetIp2geoDatasourceResponse> getIp2geoDatasource() throws IOException, UdbsxException {
         return getIp2geoDatasource(new GetIp2geoDatasourceRequest.Builder().build());
     }
 
@@ -189,7 +189,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
     /**
      * Retrieves statistics for all geospatial uploads.
      */
-    public CompletableFuture<GetUploadStatsResponse> getUploadStats(GetUploadStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetUploadStatsResponse> getUploadStats(GetUploadStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetUploadStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -200,14 +200,14 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<GetUploadStatsResponse> getUploadStats(
         Function<GetUploadStatsRequest.Builder, ObjectBuilder<GetUploadStatsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getUploadStats(fn.apply(new GetUploadStatsRequest.Builder()).build());
     }
 
     /**
      * Retrieves statistics for all geospatial uploads.
      */
-    public final CompletableFuture<GetUploadStatsResponse> getUploadStats() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetUploadStatsResponse> getUploadStats() throws IOException, UdbsxException {
         return getUploadStats(new GetUploadStatsRequest.Builder().build());
     }
 
@@ -223,7 +223,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      * </ul>
      */
     public CompletableFuture<PutIp2geoDatasourceResponse> putIp2geoDatasource(PutIp2geoDatasourceRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, PutIp2geoDatasourceRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -240,7 +240,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<PutIp2geoDatasourceResponse> putIp2geoDatasource(
         Function<PutIp2geoDatasourceRequest.Builder, ObjectBuilder<PutIp2geoDatasourceRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putIp2geoDatasource(fn.apply(new PutIp2geoDatasourceRequest.Builder()).build());
     }
 
@@ -250,7 +250,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      * Update a specific IP2Geo data source.
      */
     public CompletableFuture<PutIp2geoDatasourceSettingsResponse> putIp2geoDatasourceSettings(PutIp2geoDatasourceSettingsRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutIp2geoDatasourceSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -261,7 +261,7 @@ public class OpenSearchGeospatialAsyncClient extends ApiClient<OpenSearchTranspo
      */
     public final CompletableFuture<PutIp2geoDatasourceSettingsResponse> putIp2geoDatasourceSettings(
         Function<PutIp2geoDatasourceSettingsRequest.Builder, ObjectBuilder<PutIp2geoDatasourceSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putIp2geoDatasourceSettings(fn.apply(new PutIp2geoDatasourceSettingsRequest.Builder()).build());
     }
 }

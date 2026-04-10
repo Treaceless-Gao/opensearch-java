@@ -38,17 +38,17 @@ import javax.net.ssl.SSLHandshakeException;
 import org.opensearch.client.json.JsonpDeserializer;
 import org.opensearch.client.json.JsonpMapper;
 import org.opensearch.client.json.jackson.JacksonJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.ErrorCause;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.opensearch.generic.OpenSearchClientException;
+import org.opensearch.client.opensearch._types.UdbsxException;
+import org.opensearch.client.opensearch.generic.UdbsxClientException;
 import org.opensearch.client.transport.Endpoint;
 import org.opensearch.client.transport.GenericEndpoint;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanEndpoint;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.util.MissingRequiredPropertyException;
@@ -77,7 +77,7 @@ import software.amazon.awssdk.utils.SdkAutoCloseable;
  * Implementation of the OpenSearchTransport interface that sends signed requests using
  * the AWS v2 SDK HTTP clients, to connect to an AWS OpenSearch service using IAM authentication.
  */
-public class AwsSdk2Transport implements OpenSearchTransport {
+public class AwsSdk2Transport implements UdbsxTransport {
     /**
      * By default, requests that exceed this size will be automatically compressed.
      * {@link AwsSdk2TransportOptions} can be used to override this setting or disable compression.
@@ -94,7 +94,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
     private final AwsSdk2TransportOptions transportOptions;
 
     /**
-     * Create an {@link OpenSearchTransport} with an asynchronous AWS HTTP client.
+     * Create an {@link UdbsxTransport} with an asynchronous AWS HTTP client.
      * <p>
      * Note that asynchronous OpenSearch requests sent through this transport will be dispatched
      * *synchronously* on the calling thread.
@@ -116,7 +116,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
     }
 
     /**
-     * Create an {@link OpenSearchTransport} with a synchronous AWS HTTP client.
+     * Create an {@link UdbsxTransport} with a synchronous AWS HTTP client.
      *
      * @param syncHttpClient Synchronous HTTP client to use for OpenSearch requests.
      * @param host The fully qualified domain name to connect to.
@@ -126,7 +126,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
      *                compression options, etc.
      *
      * @implNote Using {@code software.amazon.awssdk.http.apache.ApacheHttpClient} is discouraged as it does not support request bodies on GET or DELETE requests.
-     *           This leads to incorrect handling of requests such as {@link OpenSearchClient#clearScroll(org.opensearch.client.opensearch.core.ClearScrollRequest)} and {@link OpenSearchClient#deletePit(org.opensearch.client.opensearch.core.pit.DeletePitRequest)}.
+     *           This leads to incorrect handling of requests such as {@link UdbsxClient#clearScroll(org.opensearch.client.opensearch.core.ClearScrollRequest)} and {@link UdbsxClient#deletePit(org.opensearch.client.opensearch.core.pit.DeletePitRequest)}.
      *           As such {@link #performRequest(Object, Endpoint, TransportOptions)} &amp; {@link #performRequestAsync(Object, Endpoint, TransportOptions)} will throw a {@link TransportException} if an unsupported request is encountered while using {@code ApacheHttpClient}.
      */
     public AwsSdk2Transport(
@@ -139,7 +139,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
     }
 
     /**
-     * Create an {@link OpenSearchTransport} with an asynchronous AWS HTTP client.
+     * Create an {@link UdbsxTransport} with an asynchronous AWS HTTP client.
      * <p>
      * Note that asynchronous OpenSearch requests sent through this transport will be dispatched
      * *synchronously* on the calling thread.
@@ -163,7 +163,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
     }
 
     /**
-     * Create an {@link OpenSearchTransport} with a synchronous AWS HTTP client.
+     * Create an {@link UdbsxTransport} with a synchronous AWS HTTP client.
      *
      * @param syncHttpClient Synchronous HTTP client to use for OpenSearch requests.
      * @param host The fully qualified domain name to connect to.
@@ -174,7 +174,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
      *                compression options, etc.
      *
      * @implNote Using {@code software.amazon.awssdk.http.apache.ApacheHttpClient} is discouraged as it does not support request bodies on GET or DELETE requests.
-     *           This leads to incorrect handling of requests such as {@link OpenSearchClient#clearScroll(org.opensearch.client.opensearch.core.ClearScrollRequest)} and {@link OpenSearchClient#deletePit(org.opensearch.client.opensearch.core.pit.DeletePitRequest)}.
+     *           This leads to incorrect handling of requests such as {@link UdbsxClient#clearScroll(org.opensearch.client.opensearch.core.ClearScrollRequest)} and {@link UdbsxClient#deletePit(org.opensearch.client.opensearch.core.pit.DeletePitRequest)}.
      *           As such {@link #performRequest(Object, Endpoint, TransportOptions)} &amp; {@link #performRequestAsync(Object, Endpoint, TransportOptions)} will throw a {@link TransportException} if an unsupported request is encountered while using {@code ApacheHttpClient}.
      */
     public AwsSdk2Transport(
@@ -539,7 +539,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
             }
 
             ErrorResponse error = ErrorResponse.of(err -> err.status(statusCode).error(cause.build()));
-            throw new OpenSearchException(error);
+            throw new UdbsxException(error);
         }
 
         if (endpoint.isError(statusCode)) {
@@ -580,12 +580,12 @@ public class AwsSdk2Transport implements OpenSearchTransport {
                 try {
                     try (JsonParser parser = mapper.jsonProvider().createParser(bodyStream)) {
                         ErrorT error = errorDeserializer.deserialize(parser, mapper);
-                        throw new OpenSearchException((ErrorResponse) error);
+                        throw new UdbsxException((ErrorResponse) error);
                     } catch (MissingRequiredPropertyException errorEx) {
                         bodyStream.reset();
                         return decodeResponse(uri, method, protocol, httpResponse, bodyStream, endpoint, mapper);
                     }
-                } catch (OpenSearchException e) {
+                } catch (UdbsxException e) {
                     throw e;
                 } catch (Exception e) {
                     // can't parse the error - use a general exception
@@ -593,7 +593,7 @@ public class AwsSdk2Transport implements OpenSearchTransport {
                     cause.type("http_exception");
                     cause.reason("server returned " + statusCode);
                     ErrorResponse error = ErrorResponse.of(err -> err.status(statusCode).error(cause.build()));
-                    throw new OpenSearchException(error);
+                    throw new UdbsxException(error);
                 }
             }
         } else {
@@ -721,13 +721,13 @@ public class AwsSdk2Transport implements OpenSearchTransport {
         if (exception instanceof IOException) {
             return new IOException(exception.getMessage(), exception);
         }
-        if (exception instanceof OpenSearchException) {
-            final OpenSearchException e = new OpenSearchException(((OpenSearchException) exception).response());
+        if (exception instanceof UdbsxException) {
+            final UdbsxException e = new UdbsxException(((UdbsxException) exception).response());
             e.initCause(exception);
             return e;
         }
-        if (exception instanceof OpenSearchClientException) {
-            final OpenSearchClientException e = new OpenSearchClientException(((OpenSearchClientException) exception).response());
+        if (exception instanceof UdbsxClientException) {
+            final UdbsxClientException e = new UdbsxClientException(((UdbsxClientException) exception).response());
             e.initCause(exception);
             return e;
         }

@@ -34,20 +34,20 @@ package org.opensearch.client.opensearch.cat;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 
 /**
  * Client for the cat namespace.
  */
 public class OpenSearchCatClient extends OpenSearchCatClientBase<OpenSearchCatClient> {
 
-    public OpenSearchCatClient(OpenSearchTransport transport) {
+    public OpenSearchCatClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchCatClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchCatClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -63,7 +63,7 @@ public class OpenSearchCatClient extends OpenSearchCatClientBase<OpenSearchCatCl
      *
      *
      */
-    public HelpResponse help() throws IOException, OpenSearchException {
+    public HelpResponse help() throws IOException, UdbsxException {
         return this.transport.performRequest(HelpRequest._INSTANCE, HelpRequest._ENDPOINT, this.transportOptions);
     }
 }

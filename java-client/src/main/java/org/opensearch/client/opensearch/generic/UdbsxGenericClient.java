@@ -19,13 +19,13 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 
 /**
  * Client for the generic HTTP requests.
  */
-public class OpenSearchGenericClient extends ApiClient<OpenSearchTransport, OpenSearchGenericClient> {
+public class UdbsxGenericClient extends ApiClient<UdbsxTransport, UdbsxGenericClient> {
     /**
      * Generic client options
      */
@@ -116,36 +116,32 @@ public class OpenSearchGenericClient extends ApiClient<OpenSearchTransport, Open
 
         @Override
         public <T extends RuntimeException> T exceptionConverter(int statusCode, @Nullable Response error) {
-            throw new OpenSearchClientException(error);
+            throw new UdbsxClientException(error);
         }
     }
 
     private final ClientOptions clientOptions;
 
-    public OpenSearchGenericClient(OpenSearchTransport transport) {
+    public UdbsxGenericClient(UdbsxTransport transport) {
         this(transport, null, ClientOptions.DEFAULT);
     }
 
-    public OpenSearchGenericClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public UdbsxGenericClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         this(transport, transportOptions, ClientOptions.DEFAULT);
     }
 
-    public OpenSearchGenericClient(
-        OpenSearchTransport transport,
-        @Nullable TransportOptions transportOptions,
-        ClientOptions clientOptions
-    ) {
+    public UdbsxGenericClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions, ClientOptions clientOptions) {
         super(transport, transportOptions);
         this.clientOptions = clientOptions;
     }
 
-    public OpenSearchGenericClient withClientOptions(ClientOptions clientOptions) {
-        return new OpenSearchGenericClient(this.transport, this.transportOptions, clientOptions);
+    public UdbsxGenericClient withClientOptions(ClientOptions clientOptions) {
+        return new UdbsxGenericClient(this.transport, this.transportOptions, clientOptions);
     }
 
     @Override
-    public OpenSearchGenericClient withTransportOptions(@Nullable TransportOptions transportOptions) {
-        return new OpenSearchGenericClient(this.transport, transportOptions, this.clientOptions);
+    public UdbsxGenericClient withTransportOptions(@Nullable TransportOptions transportOptions) {
+        return new UdbsxGenericClient(this.transport, transportOptions, this.clientOptions);
     }
 
     /**

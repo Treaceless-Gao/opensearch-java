@@ -18,21 +18,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ml namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchMlAsyncClient> {
-    public OpenSearchMlAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchMlAsyncClient extends ApiClient<UdbsxTransport, OpenSearchMlAsyncClient> {
+    public OpenSearchMlAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchMlAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchMlAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -47,7 +47,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Add agentic memory to a memory container.
      */
     public CompletableFuture<AddAgenticMemoryResponse> addAgenticMemory(AddAgenticMemoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, AddAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -58,7 +58,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<AddAgenticMemoryResponse> addAgenticMemory(
         Function<AddAgenticMemoryRequest.Builder, ObjectBuilder<AddAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return addAgenticMemory(fn.apply(new AddAgenticMemoryRequest.Builder()).build());
     }
 
@@ -67,8 +67,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Creates a standalone connector.
      */
-    public CompletableFuture<CreateConnectorResponse> createConnector(CreateConnectorRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<CreateConnectorResponse> createConnector(CreateConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -79,7 +78,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<CreateConnectorResponse> createConnector(
         Function<CreateConnectorRequest.Builder, ObjectBuilder<CreateConnectorRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createConnector(fn.apply(new CreateConnectorRequest.Builder()).build());
     }
 
@@ -89,7 +88,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Creates a controller.
      */
     public CompletableFuture<CreateControllerResponse> createController(CreateControllerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CreateControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -100,7 +99,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<CreateControllerResponse> createController(
         Function<CreateControllerRequest.Builder, ObjectBuilder<CreateControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createController(fn.apply(new CreateControllerRequest.Builder()).build());
     }
 
@@ -109,7 +108,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Create a memory.
      */
-    public CompletableFuture<CreateMemoryResponse> createMemory(CreateMemoryRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CreateMemoryResponse> createMemory(CreateMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -120,14 +119,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<CreateMemoryResponse> createMemory(
         Function<CreateMemoryRequest.Builder, ObjectBuilder<CreateMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createMemory(fn.apply(new CreateMemoryRequest.Builder()).build());
     }
 
     /**
      * Create a memory.
      */
-    public final CompletableFuture<CreateMemoryResponse> createMemory() throws IOException, OpenSearchException {
+    public final CompletableFuture<CreateMemoryResponse> createMemory() throws IOException, UdbsxException {
         return createMemory(new CreateMemoryRequest.Builder().build());
     }
 
@@ -137,7 +136,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Create a memory container.
      */
     public CompletableFuture<CreateMemoryContainerResponse> createMemoryContainer(CreateMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CreateMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -148,7 +147,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<CreateMemoryContainerResponse> createMemoryContainer(
         Function<CreateMemoryContainerRequest.Builder, ObjectBuilder<CreateMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createMemoryContainer(fn.apply(new CreateMemoryContainerRequest.Builder()).build());
     }
 
@@ -158,7 +157,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Create session in a memory container.
      */
     public CompletableFuture<CreateMemoryContainerSessionResponse> createMemoryContainerSession(CreateMemoryContainerSessionRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateMemoryContainerSessionRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -169,7 +168,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<CreateMemoryContainerSessionResponse> createMemoryContainerSession(
         Function<CreateMemoryContainerSessionRequest.Builder, ObjectBuilder<CreateMemoryContainerSessionRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createMemoryContainerSession(fn.apply(new CreateMemoryContainerSessionRequest.Builder()).build());
     }
 
@@ -178,7 +177,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Create a message.
      */
-    public CompletableFuture<CreateMessageResponse> createMessage(CreateMessageRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CreateMessageResponse> createMessage(CreateMessageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateMessageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -189,7 +188,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<CreateMessageResponse> createMessage(
         Function<CreateMessageRequest.Builder, ObjectBuilder<CreateMessageRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createMessage(fn.apply(new CreateMessageRequest.Builder()).build());
     }
 
@@ -199,8 +198,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Registers model metadata.
      */
     @Deprecated
-    public CompletableFuture<CreateModelMetaResponse> createModelMeta(CreateModelMetaRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<CreateModelMetaResponse> createModelMeta(CreateModelMetaRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateModelMetaRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -212,7 +210,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     @Deprecated
     public final CompletableFuture<CreateModelMetaResponse> createModelMeta(
         Function<CreateModelMetaRequest.Builder, ObjectBuilder<CreateModelMetaRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createModelMeta(fn.apply(new CreateModelMetaRequest.Builder()).build());
     }
 
@@ -221,7 +219,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Delete an agent.
      */
-    public CompletableFuture<DeleteAgentResponse> deleteAgent(DeleteAgentRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteAgentResponse> deleteAgent(DeleteAgentRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteAgentRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -232,7 +230,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteAgentResponse> deleteAgent(
         Function<DeleteAgentRequest.Builder, ObjectBuilder<DeleteAgentRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteAgent(fn.apply(new DeleteAgentRequest.Builder()).build());
     }
 
@@ -242,7 +240,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Delete a specific memory by its type and ID.
      */
     public CompletableFuture<DeleteAgenticMemoryResponse> deleteAgenticMemory(DeleteAgenticMemoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -253,7 +251,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteAgenticMemoryResponse> deleteAgenticMemory(
         Function<DeleteAgenticMemoryRequest.Builder, ObjectBuilder<DeleteAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteAgenticMemory(fn.apply(new DeleteAgenticMemoryRequest.Builder()).build());
     }
 
@@ -263,7 +261,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Delete multiple memories using a query to match specific criteria.
      */
     public CompletableFuture<DeleteAgenticMemoryQueryResponse> deleteAgenticMemoryQuery(DeleteAgenticMemoryQueryRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteAgenticMemoryQueryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -274,7 +272,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteAgenticMemoryQueryResponse> deleteAgenticMemoryQuery(
         Function<DeleteAgenticMemoryQueryRequest.Builder, ObjectBuilder<DeleteAgenticMemoryQueryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteAgenticMemoryQuery(fn.apply(new DeleteAgenticMemoryQueryRequest.Builder()).build());
     }
 
@@ -283,8 +281,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Deletes a standalone connector.
      */
-    public CompletableFuture<DeleteConnectorResponse> deleteConnector(DeleteConnectorRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<DeleteConnectorResponse> deleteConnector(DeleteConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -295,7 +292,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteConnectorResponse> deleteConnector(
         Function<DeleteConnectorRequest.Builder, ObjectBuilder<DeleteConnectorRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteConnector(fn.apply(new DeleteConnectorRequest.Builder()).build());
     }
 
@@ -305,7 +302,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Deletes a controller.
      */
     public CompletableFuture<DeleteControllerResponse> deleteController(DeleteControllerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -316,7 +313,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteControllerResponse> deleteController(
         Function<DeleteControllerRequest.Builder, ObjectBuilder<DeleteControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteController(fn.apply(new DeleteControllerRequest.Builder()).build());
     }
 
@@ -325,7 +322,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Delete a memory.
      */
-    public CompletableFuture<DeleteMemoryResponse> deleteMemory(DeleteMemoryRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteMemoryResponse> deleteMemory(DeleteMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -336,7 +333,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteMemoryResponse> deleteMemory(
         Function<DeleteMemoryRequest.Builder, ObjectBuilder<DeleteMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteMemory(fn.apply(new DeleteMemoryRequest.Builder()).build());
     }
 
@@ -346,7 +343,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Delete a memory container.
      */
     public CompletableFuture<DeleteMemoryContainerResponse> deleteMemoryContainer(DeleteMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -357,7 +354,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteMemoryContainerResponse> deleteMemoryContainer(
         Function<DeleteMemoryContainerRequest.Builder, ObjectBuilder<DeleteMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteMemoryContainer(fn.apply(new DeleteMemoryContainerRequest.Builder()).build());
     }
 
@@ -366,7 +363,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Deletes a model.
      */
-    public CompletableFuture<DeleteModelResponse> deleteModel(DeleteModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteModelResponse> deleteModel(DeleteModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -377,7 +374,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteModelResponse> deleteModel(
         Function<DeleteModelRequest.Builder, ObjectBuilder<DeleteModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteModel(fn.apply(new DeleteModelRequest.Builder()).build());
     }
 
@@ -387,7 +384,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Deletes a model group.
      */
     public CompletableFuture<DeleteModelGroupResponse> deleteModelGroup(DeleteModelGroupRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -398,7 +395,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeleteModelGroupResponse> deleteModelGroup(
         Function<DeleteModelGroupRequest.Builder, ObjectBuilder<DeleteModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteModelGroup(fn.apply(new DeleteModelGroupRequest.Builder()).build());
     }
 
@@ -407,7 +404,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Deletes a task.
      */
-    public CompletableFuture<DeleteTaskResponse> deleteTask(DeleteTaskRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteTaskResponse> deleteTask(DeleteTaskRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteTaskRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -417,7 +414,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link DeleteTaskRequest}
      */
     public final CompletableFuture<DeleteTaskResponse> deleteTask(Function<DeleteTaskRequest.Builder, ObjectBuilder<DeleteTaskRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteTask(fn.apply(new DeleteTaskRequest.Builder()).build());
     }
 
@@ -426,7 +423,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Deploys a model.
      */
-    public CompletableFuture<DeployModelResponse> deployModel(DeployModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeployModelResponse> deployModel(DeployModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeployModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -437,7 +434,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<DeployModelResponse> deployModel(
         Function<DeployModelRequest.Builder, ObjectBuilder<DeployModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deployModel(fn.apply(new DeployModelRequest.Builder()).build());
     }
 
@@ -446,7 +443,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Execute an agent.
      */
-    public CompletableFuture<ExecuteAgentResponse> executeAgent(ExecuteAgentRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ExecuteAgentResponse> executeAgent(ExecuteAgentRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ExecuteAgentRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -457,7 +454,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<ExecuteAgentResponse> executeAgent(
         Function<ExecuteAgentRequest.Builder, ObjectBuilder<ExecuteAgentRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return executeAgent(fn.apply(new ExecuteAgentRequest.Builder()).build());
     }
 
@@ -467,7 +464,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Execute an agent in streaming mode.
      */
     public CompletableFuture<ExecuteAgentStreamResponse> executeAgentStream(ExecuteAgentStreamRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, ExecuteAgentStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -478,7 +475,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<ExecuteAgentStreamResponse> executeAgentStream(
         Function<ExecuteAgentStreamRequest.Builder, ObjectBuilder<ExecuteAgentStreamRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return executeAgentStream(fn.apply(new ExecuteAgentStreamRequest.Builder()).build());
     }
 
@@ -487,7 +484,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Execute a tool.
      */
-    public CompletableFuture<ExecuteToolResponse> executeTool(ExecuteToolRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ExecuteToolResponse> executeTool(ExecuteToolRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ExecuteToolRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -498,7 +495,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<ExecuteToolResponse> executeTool(
         Function<ExecuteToolRequest.Builder, ObjectBuilder<ExecuteToolRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return executeTool(fn.apply(new ExecuteToolRequest.Builder()).build());
     }
 
@@ -507,7 +504,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get an agent.
      */
-    public CompletableFuture<GetAgentResponse> getAgent(GetAgentRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetAgentResponse> getAgent(GetAgentRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetAgentRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -517,7 +514,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetAgentRequest}
      */
     public final CompletableFuture<GetAgentResponse> getAgent(Function<GetAgentRequest.Builder, ObjectBuilder<GetAgentRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getAgent(fn.apply(new GetAgentRequest.Builder()).build());
     }
 
@@ -527,7 +524,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Get a specific memory by its type and ID.
      */
     public CompletableFuture<GetAgenticMemoryResponse> getAgenticMemory(GetAgenticMemoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -538,7 +535,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetAgenticMemoryResponse> getAgenticMemory(
         Function<GetAgenticMemoryRequest.Builder, ObjectBuilder<GetAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getAgenticMemory(fn.apply(new GetAgenticMemoryRequest.Builder()).build());
     }
 
@@ -547,7 +544,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get all memories.
      */
-    public CompletableFuture<GetAllMemoriesResponse> getAllMemories(GetAllMemoriesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetAllMemoriesResponse> getAllMemories(GetAllMemoriesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetAllMemoriesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -558,14 +555,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetAllMemoriesResponse> getAllMemories(
         Function<GetAllMemoriesRequest.Builder, ObjectBuilder<GetAllMemoriesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getAllMemories(fn.apply(new GetAllMemoriesRequest.Builder()).build());
     }
 
     /**
      * Get all memories.
      */
-    public final CompletableFuture<GetAllMemoriesResponse> getAllMemories() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetAllMemoriesResponse> getAllMemories() throws IOException, UdbsxException {
         return getAllMemories(new GetAllMemoriesRequest.Builder().build());
     }
 
@@ -574,7 +571,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get all messages in a memory.
      */
-    public CompletableFuture<GetAllMessagesResponse> getAllMessages(GetAllMessagesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetAllMessagesResponse> getAllMessages(GetAllMessagesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetAllMessagesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -585,7 +582,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetAllMessagesResponse> getAllMessages(
         Function<GetAllMessagesRequest.Builder, ObjectBuilder<GetAllMessagesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getAllMessages(fn.apply(new GetAllMessagesRequest.Builder()).build());
     }
 
@@ -594,7 +591,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get tools.
      */
-    public CompletableFuture<GetAllToolsResponse> getAllTools(GetAllToolsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetAllToolsResponse> getAllTools(GetAllToolsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetAllToolsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -605,14 +602,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetAllToolsResponse> getAllTools(
         Function<GetAllToolsRequest.Builder, ObjectBuilder<GetAllToolsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getAllTools(fn.apply(new GetAllToolsRequest.Builder()).build());
     }
 
     /**
      * Get tools.
      */
-    public final CompletableFuture<GetAllToolsResponse> getAllTools() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetAllToolsResponse> getAllTools() throws IOException, UdbsxException {
         return getAllTools(new GetAllToolsRequest.Builder().build());
     }
 
@@ -621,7 +618,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Retrieves a standalone connector.
      */
-    public CompletableFuture<GetConnectorResponse> getConnector(GetConnectorRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetConnectorResponse> getConnector(GetConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -632,7 +629,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetConnectorResponse> getConnector(
         Function<GetConnectorRequest.Builder, ObjectBuilder<GetConnectorRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getConnector(fn.apply(new GetConnectorRequest.Builder()).build());
     }
 
@@ -641,7 +638,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Retrieves a controller.
      */
-    public CompletableFuture<GetControllerResponse> getController(GetControllerRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetControllerResponse> getController(GetControllerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -652,7 +649,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetControllerResponse> getController(
         Function<GetControllerRequest.Builder, ObjectBuilder<GetControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getController(fn.apply(new GetControllerRequest.Builder()).build());
     }
 
@@ -661,7 +658,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get a memory.
      */
-    public CompletableFuture<GetMemoryResponse> getMemory(GetMemoryRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetMemoryResponse> getMemory(GetMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -671,7 +668,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetMemoryRequest}
      */
     public final CompletableFuture<GetMemoryResponse> getMemory(Function<GetMemoryRequest.Builder, ObjectBuilder<GetMemoryRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getMemory(fn.apply(new GetMemoryRequest.Builder()).build());
     }
 
@@ -681,7 +678,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Get a memory container.
      */
     public CompletableFuture<GetMemoryContainerResponse> getMemoryContainer(GetMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -692,7 +689,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetMemoryContainerResponse> getMemoryContainer(
         Function<GetMemoryContainerRequest.Builder, ObjectBuilder<GetMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getMemoryContainer(fn.apply(new GetMemoryContainerRequest.Builder()).build());
     }
 
@@ -701,7 +698,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get a message.
      */
-    public CompletableFuture<GetMessageResponse> getMessage(GetMessageRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetMessageResponse> getMessage(GetMessageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetMessageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -711,7 +708,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetMessageRequest}
      */
     public final CompletableFuture<GetMessageResponse> getMessage(Function<GetMessageRequest.Builder, ObjectBuilder<GetMessageRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getMessage(fn.apply(new GetMessageRequest.Builder()).build());
     }
 
@@ -721,7 +718,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Get a message traces.
      */
     public CompletableFuture<GetMessageTracesResponse> getMessageTraces(GetMessageTracesRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetMessageTracesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -732,7 +729,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetMessageTracesResponse> getMessageTraces(
         Function<GetMessageTracesRequest.Builder, ObjectBuilder<GetMessageTracesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getMessageTraces(fn.apply(new GetMessageTracesRequest.Builder()).build());
     }
 
@@ -741,7 +738,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Retrieves a model.
      */
-    public CompletableFuture<GetModelResponse> getModel(GetModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetModelResponse> getModel(GetModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -751,7 +748,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetModelRequest}
      */
     public final CompletableFuture<GetModelResponse> getModel(Function<GetModelRequest.Builder, ObjectBuilder<GetModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getModel(fn.apply(new GetModelRequest.Builder()).build());
     }
 
@@ -760,7 +757,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Retrieves a model group.
      */
-    public CompletableFuture<GetModelGroupResponse> getModelGroup(GetModelGroupRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetModelGroupResponse> getModelGroup(GetModelGroupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -771,7 +768,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetModelGroupResponse> getModelGroup(
         Function<GetModelGroupRequest.Builder, ObjectBuilder<GetModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getModelGroup(fn.apply(new GetModelGroupRequest.Builder()).build());
     }
 
@@ -780,7 +777,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get a profile.
      */
-    public CompletableFuture<GetProfileResponse> getProfile(GetProfileRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetProfileResponse> getProfile(GetProfileRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetProfileRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -790,14 +787,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetProfileRequest}
      */
     public final CompletableFuture<GetProfileResponse> getProfile(Function<GetProfileRequest.Builder, ObjectBuilder<GetProfileRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getProfile(fn.apply(new GetProfileRequest.Builder()).build());
     }
 
     /**
      * Get a profile.
      */
-    public final CompletableFuture<GetProfileResponse> getProfile() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetProfileResponse> getProfile() throws IOException, UdbsxException {
         return getProfile(new GetProfileRequest.Builder().build());
     }
 
@@ -807,7 +804,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Get a profile models.
      */
     public CompletableFuture<GetProfileModelsResponse> getProfileModels(GetProfileModelsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, GetProfileModelsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -818,14 +815,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetProfileModelsResponse> getProfileModels(
         Function<GetProfileModelsRequest.Builder, ObjectBuilder<GetProfileModelsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getProfileModels(fn.apply(new GetProfileModelsRequest.Builder()).build());
     }
 
     /**
      * Get a profile models.
      */
-    public final CompletableFuture<GetProfileModelsResponse> getProfileModels() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetProfileModelsResponse> getProfileModels() throws IOException, UdbsxException {
         return getProfileModels(new GetProfileModelsRequest.Builder().build());
     }
 
@@ -834,8 +831,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get a profile tasks.
      */
-    public CompletableFuture<GetProfileTasksResponse> getProfileTasks(GetProfileTasksRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<GetProfileTasksResponse> getProfileTasks(GetProfileTasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetProfileTasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -846,14 +842,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<GetProfileTasksResponse> getProfileTasks(
         Function<GetProfileTasksRequest.Builder, ObjectBuilder<GetProfileTasksRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getProfileTasks(fn.apply(new GetProfileTasksRequest.Builder()).build());
     }
 
     /**
      * Get a profile tasks.
      */
-    public final CompletableFuture<GetProfileTasksResponse> getProfileTasks() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetProfileTasksResponse> getProfileTasks() throws IOException, UdbsxException {
         return getProfileTasks(new GetProfileTasksRequest.Builder().build());
     }
 
@@ -862,7 +858,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get stats.
      */
-    public CompletableFuture<GetStatsResponse> getStats(GetStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetStatsResponse> getStats(GetStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -872,14 +868,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetStatsRequest}
      */
     public final CompletableFuture<GetStatsResponse> getStats(Function<GetStatsRequest.Builder, ObjectBuilder<GetStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getStats(fn.apply(new GetStatsRequest.Builder()).build());
     }
 
     /**
      * Get stats.
      */
-    public final CompletableFuture<GetStatsResponse> getStats() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetStatsResponse> getStats() throws IOException, UdbsxException {
         return getStats(new GetStatsRequest.Builder().build());
     }
 
@@ -888,7 +884,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Retrieves a task.
      */
-    public CompletableFuture<GetTaskResponse> getTask(GetTaskRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetTaskResponse> getTask(GetTaskRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetTaskRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -898,7 +894,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetTaskRequest}
      */
     public final CompletableFuture<GetTaskResponse> getTask(Function<GetTaskRequest.Builder, ObjectBuilder<GetTaskRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getTask(fn.apply(new GetTaskRequest.Builder()).build());
     }
 
@@ -907,7 +903,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Get tools.
      */
-    public CompletableFuture<GetToolResponse> getTool(GetToolRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetToolResponse> getTool(GetToolRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetToolRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -917,7 +913,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * @param fn a function that initializes a builder to create the {@link GetToolRequest}
      */
     public final CompletableFuture<GetToolResponse> getTool(Function<GetToolRequest.Builder, ObjectBuilder<GetToolRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getTool(fn.apply(new GetToolRequest.Builder()).build());
     }
 
@@ -927,7 +923,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Deploys a model.
      */
     @Deprecated
-    public CompletableFuture<LoadModelResponse> loadModel(LoadModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<LoadModelResponse> loadModel(LoadModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, LoadModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -938,7 +934,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     @Deprecated
     public final CompletableFuture<LoadModelResponse> loadModel(Function<LoadModelRequest.Builder, ObjectBuilder<LoadModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return loadModel(fn.apply(new LoadModelRequest.Builder()).build());
     }
 
@@ -948,7 +944,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Predicts a model in streaming mode.
      */
     public CompletableFuture<PredictModelStreamResponse> predictModelStream(PredictModelStreamRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, PredictModelStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -959,7 +955,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<PredictModelStreamResponse> predictModelStream(
         Function<PredictModelStreamRequest.Builder, ObjectBuilder<PredictModelStreamRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return predictModelStream(fn.apply(new PredictModelStreamRequest.Builder()).build());
     }
 
@@ -968,7 +964,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Register an agent.
      */
-    public CompletableFuture<RegisterAgentsResponse> registerAgents(RegisterAgentsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RegisterAgentsResponse> registerAgents(RegisterAgentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RegisterAgentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -979,7 +975,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<RegisterAgentsResponse> registerAgents(
         Function<RegisterAgentsRequest.Builder, ObjectBuilder<RegisterAgentsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return registerAgents(fn.apply(new RegisterAgentsRequest.Builder()).build());
     }
 
@@ -988,7 +984,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Registers a model.
      */
-    public CompletableFuture<RegisterModelResponse> registerModel(RegisterModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RegisterModelResponse> registerModel(RegisterModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RegisterModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -999,7 +995,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<RegisterModelResponse> registerModel(
         Function<RegisterModelRequest.Builder, ObjectBuilder<RegisterModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return registerModel(fn.apply(new RegisterModelRequest.Builder()).build());
     }
 
@@ -1009,7 +1005,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Registers a model group.
      */
     public CompletableFuture<RegisterModelGroupResponse> registerModelGroup(RegisterModelGroupRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, RegisterModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1020,7 +1016,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<RegisterModelGroupResponse> registerModelGroup(
         Function<RegisterModelGroupRequest.Builder, ObjectBuilder<RegisterModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return registerModelGroup(fn.apply(new RegisterModelGroupRequest.Builder()).build());
     }
 
@@ -1030,7 +1026,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Registers model metadata.
      */
     public CompletableFuture<RegisterModelMetaResponse> registerModelMeta(RegisterModelMetaRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, RegisterModelMetaRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1041,7 +1037,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<RegisterModelMetaResponse> registerModelMeta(
         Function<RegisterModelMetaRequest.Builder, ObjectBuilder<RegisterModelMetaRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return registerModelMeta(fn.apply(new RegisterModelMetaRequest.Builder()).build());
     }
 
@@ -1050,7 +1046,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Undeploys a model.
      */
-    public CompletableFuture<UndeployModelResponse> undeployModel(UndeployModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UndeployModelResponse> undeployModel(UndeployModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UndeployModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1061,14 +1057,14 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UndeployModelResponse> undeployModel(
         Function<UndeployModelRequest.Builder, ObjectBuilder<UndeployModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return undeployModel(fn.apply(new UndeployModelRequest.Builder()).build());
     }
 
     /**
      * Undeploys a model.
      */
-    public final CompletableFuture<UndeployModelResponse> undeployModel() throws IOException, OpenSearchException {
+    public final CompletableFuture<UndeployModelResponse> undeployModel() throws IOException, UdbsxException {
         return undeployModel(new UndeployModelRequest.Builder().build());
     }
 
@@ -1078,7 +1074,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Unloads a model.
      */
     @Deprecated
-    public CompletableFuture<UnloadModelResponse> unloadModel(UnloadModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UnloadModelResponse> unloadModel(UnloadModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UnloadModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1090,7 +1086,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     @Deprecated
     public final CompletableFuture<UnloadModelResponse> unloadModel(
         Function<UnloadModelRequest.Builder, ObjectBuilder<UnloadModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return unloadModel(fn.apply(new UnloadModelRequest.Builder()).build());
     }
 
@@ -1098,7 +1094,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Unloads a model.
      */
     @Deprecated
-    public final CompletableFuture<UnloadModelResponse> unloadModel() throws IOException, OpenSearchException {
+    public final CompletableFuture<UnloadModelResponse> unloadModel() throws IOException, UdbsxException {
         return unloadModel(new UnloadModelRequest.Builder().build());
     }
 
@@ -1108,7 +1104,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Update a specific memory by its type and ID.
      */
     public CompletableFuture<UpdateAgenticMemoryResponse> updateAgenticMemory(UpdateAgenticMemoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, UpdateAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1119,7 +1115,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateAgenticMemoryResponse> updateAgenticMemory(
         Function<UpdateAgenticMemoryRequest.Builder, ObjectBuilder<UpdateAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateAgenticMemory(fn.apply(new UpdateAgenticMemoryRequest.Builder()).build());
     }
 
@@ -1128,8 +1124,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Updates a standalone connector.
      */
-    public CompletableFuture<UpdateConnectorResponse> updateConnector(UpdateConnectorRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<UpdateConnectorResponse> updateConnector(UpdateConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UpdateConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1140,7 +1135,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateConnectorResponse> updateConnector(
         Function<UpdateConnectorRequest.Builder, ObjectBuilder<UpdateConnectorRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateConnector(fn.apply(new UpdateConnectorRequest.Builder()).build());
     }
 
@@ -1150,7 +1145,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Updates a controller.
      */
     public CompletableFuture<UpdateControllerResponse> updateController(UpdateControllerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, UpdateControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1161,7 +1156,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateControllerResponse> updateController(
         Function<UpdateControllerRequest.Builder, ObjectBuilder<UpdateControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateController(fn.apply(new UpdateControllerRequest.Builder()).build());
     }
 
@@ -1170,7 +1165,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Update a memory.
      */
-    public CompletableFuture<UpdateMemoryResponse> updateMemory(UpdateMemoryRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UpdateMemoryResponse> updateMemory(UpdateMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UpdateMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1181,7 +1176,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateMemoryResponse> updateMemory(
         Function<UpdateMemoryRequest.Builder, ObjectBuilder<UpdateMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateMemory(fn.apply(new UpdateMemoryRequest.Builder()).build());
     }
 
@@ -1191,7 +1186,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Update a memory container.
      */
     public CompletableFuture<UpdateMemoryContainerResponse> updateMemoryContainer(UpdateMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, UpdateMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1202,7 +1197,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateMemoryContainerResponse> updateMemoryContainer(
         Function<UpdateMemoryContainerRequest.Builder, ObjectBuilder<UpdateMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateMemoryContainer(fn.apply(new UpdateMemoryContainerRequest.Builder()).build());
     }
 
@@ -1211,7 +1206,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Update a message.
      */
-    public CompletableFuture<UpdateMessageResponse> updateMessage(UpdateMessageRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UpdateMessageResponse> updateMessage(UpdateMessageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UpdateMessageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1222,7 +1217,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateMessageResponse> updateMessage(
         Function<UpdateMessageRequest.Builder, ObjectBuilder<UpdateMessageRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateMessage(fn.apply(new UpdateMessageRequest.Builder()).build());
     }
 
@@ -1231,7 +1226,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Updates a model.
      */
-    public CompletableFuture<UpdateModelResponse> updateModel(UpdateModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UpdateModelResponse> updateModel(UpdateModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UpdateModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1242,7 +1237,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateModelResponse> updateModel(
         Function<UpdateModelRequest.Builder, ObjectBuilder<UpdateModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateModel(fn.apply(new UpdateModelRequest.Builder()).build());
     }
 
@@ -1252,7 +1247,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Updates a model group.
      */
     public CompletableFuture<UpdateModelGroupResponse> updateModelGroup(UpdateModelGroupRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, UpdateModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1263,7 +1258,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UpdateModelGroupResponse> updateModelGroup(
         Function<UpdateModelGroupRequest.Builder, ObjectBuilder<UpdateModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateModelGroup(fn.apply(new UpdateModelGroupRequest.Builder()).build());
     }
 
@@ -1272,7 +1267,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     /**
      * Uploads model chunk.
      */
-    public CompletableFuture<UploadChunkResponse> uploadChunk(UploadChunkRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UploadChunkResponse> uploadChunk(UploadChunkRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UploadChunkRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1283,7 +1278,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      */
     public final CompletableFuture<UploadChunkResponse> uploadChunk(
         Function<UploadChunkRequest.Builder, ObjectBuilder<UploadChunkRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return uploadChunk(fn.apply(new UploadChunkRequest.Builder()).build());
     }
 
@@ -1293,7 +1288,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
      * Registers a model.
      */
     @Deprecated
-    public CompletableFuture<UploadModelResponse> uploadModel(UploadModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UploadModelResponse> uploadModel(UploadModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UploadModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1305,7 +1300,7 @@ public class OpenSearchMlAsyncClient extends ApiClient<OpenSearchTransport, Open
     @Deprecated
     public final CompletableFuture<UploadModelResponse> uploadModel(
         Function<UploadModelRequest.Builder, ObjectBuilder<UploadModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return uploadModel(fn.apply(new UploadModelRequest.Builder()).build());
     }
 }

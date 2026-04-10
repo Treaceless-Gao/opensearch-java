@@ -30,7 +30,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 
 public class ConnectionConfigSocketTimeoutTest {
     private static ServerSocket serverSocket;
@@ -116,7 +116,7 @@ public class ConnectionConfigSocketTimeoutTest {
         int clientSocketTimeoutMs = 1000; // Client waits 1 second
 
         // Create OpenSearch client pointing to our raw socket server
-        OpenSearchClient client = createClientWithCustomTimeout(clientSocketTimeoutMs, "localhost");
+        UdbsxClient client = createClientWithCustomTimeout(clientSocketTimeoutMs, "localhost");
 
         // Execute a simple query
         // Or any other simple query
@@ -156,7 +156,7 @@ public class ConnectionConfigSocketTimeoutTest {
         );
     }
 
-    public static OpenSearchClient createClientWithCustomTimeout(int socketTimeoutMs, String hostName) {
+    public static UdbsxClient createClientWithCustomTimeout(int socketTimeoutMs, String hostName) {
 
         ApacheHttpClient5Transport apacheHttpClient5Transport = ApacheHttpClient5TransportBuilder.builder(new HttpHost(hostName, 9090))
             .setHttpClientConfigCallback(httpClientBuilder -> {
@@ -170,6 +170,6 @@ public class ConnectionConfigSocketTimeoutTest {
             })
             .build();
 
-        return new OpenSearchClient(apacheHttpClient5Transport);
+        return new UdbsxClient(apacheHttpClient5Transport);
     }
 }

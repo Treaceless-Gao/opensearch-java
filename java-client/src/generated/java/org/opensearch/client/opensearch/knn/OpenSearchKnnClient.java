@@ -41,21 +41,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the knn namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSearchKnnClient> {
-    public OpenSearchKnnClient(OpenSearchTransport transport) {
+public class OpenSearchKnnClient extends ApiClient<UdbsxTransport, OpenSearchKnnClient> {
+    public OpenSearchKnnClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchKnnClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchKnnClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,7 +69,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Used to delete a particular model in the cluster.
      */
-    public DeleteModelResponse deleteModel(DeleteModelRequest request) throws IOException, OpenSearchException {
+    public DeleteModelResponse deleteModel(DeleteModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -79,7 +79,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link DeleteModelRequest}
      */
     public final DeleteModelResponse deleteModel(Function<DeleteModelRequest.Builder, ObjectBuilder<DeleteModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteModel(fn.apply(new DeleteModelRequest.Builder()).build());
     }
 
@@ -88,7 +88,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Used to retrieve information about models present in the cluster.
      */
-    public GetModelResponse getModel(GetModelRequest request) throws IOException, OpenSearchException {
+    public GetModelResponse getModel(GetModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -98,7 +98,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetModelRequest}
      */
     public final GetModelResponse getModel(Function<GetModelRequest.Builder, ObjectBuilder<GetModelRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getModel(fn.apply(new GetModelRequest.Builder()).build());
     }
 
@@ -107,7 +107,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Use an OpenSearch query to search for models in the index.
      */
-    public SearchModelsResponse searchModels(SearchModelsRequest request) throws IOException, OpenSearchException {
+    public SearchModelsResponse searchModels(SearchModelsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SearchModelsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -117,14 +117,14 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link SearchModelsRequest}
      */
     public final SearchModelsResponse searchModels(Function<SearchModelsRequest.Builder, ObjectBuilder<SearchModelsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return searchModels(fn.apply(new SearchModelsRequest.Builder()).build());
     }
 
     /**
      * Use an OpenSearch query to search for models in the index.
      */
-    public final SearchModelsResponse searchModels() throws IOException, OpenSearchException {
+    public final SearchModelsResponse searchModels() throws IOException, UdbsxException {
         return searchModels(new SearchModelsRequest.Builder().build());
     }
 
@@ -133,7 +133,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Provides information about the current status of the k-NN plugin.
      */
-    public KnnStatsResponse stats(KnnStatsRequest request) throws IOException, OpenSearchException {
+    public KnnStatsResponse stats(KnnStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, KnnStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -143,14 +143,14 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link KnnStatsRequest}
      */
     public final KnnStatsResponse stats(Function<KnnStatsRequest.Builder, ObjectBuilder<KnnStatsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return stats(fn.apply(new KnnStatsRequest.Builder()).build());
     }
 
     /**
      * Provides information about the current status of the k-NN plugin.
      */
-    public final KnnStatsResponse stats() throws IOException, OpenSearchException {
+    public final KnnStatsResponse stats() throws IOException, UdbsxException {
         return stats(new KnnStatsRequest.Builder().build());
     }
 
@@ -159,7 +159,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Create and train a model that can be used for initializing k-NN native library indexes during indexing.
      */
-    public TrainModelResponse trainModel(TrainModelRequest request) throws IOException, OpenSearchException {
+    public TrainModelResponse trainModel(TrainModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, TrainModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -169,7 +169,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link TrainModelRequest}
      */
     public final TrainModelResponse trainModel(Function<TrainModelRequest.Builder, ObjectBuilder<TrainModelRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return trainModel(fn.apply(new TrainModelRequest.Builder()).build());
     }
 
@@ -178,7 +178,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Preloads native library files into memory, reducing initial search latency for specified indexes.
      */
-    public WarmupResponse warmup(WarmupRequest request) throws IOException, OpenSearchException {
+    public WarmupResponse warmup(WarmupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, WarmupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -188,7 +188,7 @@ public class OpenSearchKnnClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link WarmupRequest}
      */
     public final WarmupResponse warmup(Function<WarmupRequest.Builder, ObjectBuilder<WarmupRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return warmup(fn.apply(new WarmupRequest.Builder()).build());
     }
 }

@@ -41,9 +41,9 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.util.ObjectBuilder;
 
@@ -51,12 +51,12 @@ import org.opensearch.client.util.ObjectBuilder;
  * Client for the ubi namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchUbiClient extends ApiClient<OpenSearchTransport, OpenSearchUbiClient> {
-    public OpenSearchUbiClient(OpenSearchTransport transport) {
+public class OpenSearchUbiClient extends ApiClient<UdbsxTransport, OpenSearchUbiClient> {
+    public OpenSearchUbiClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchUbiClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchUbiClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -70,7 +70,7 @@ public class OpenSearchUbiClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Initializes the UBI indexes.
      */
-    public BooleanResponse initialize(InitializeRequest request) throws IOException, OpenSearchException {
+    public BooleanResponse initialize(InitializeRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, InitializeRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -80,14 +80,14 @@ public class OpenSearchUbiClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link InitializeRequest}
      */
     public final BooleanResponse initialize(Function<InitializeRequest.Builder, ObjectBuilder<InitializeRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return initialize(fn.apply(new InitializeRequest.Builder()).build());
     }
 
     /**
      * Initializes the UBI indexes.
      */
-    public final BooleanResponse initialize() throws IOException, OpenSearchException {
+    public final BooleanResponse initialize() throws IOException, UdbsxException {
         return initialize(new InitializeRequest.Builder().build());
     }
 }

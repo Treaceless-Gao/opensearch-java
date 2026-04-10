@@ -35,20 +35,20 @@ package org.opensearch.client.opensearch.cat;
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 
 /**
  * Client for the cat namespace.
  */
 public class OpenSearchCatAsyncClient extends OpenSearchCatAsyncClientBase<OpenSearchCatAsyncClient> {
 
-    public OpenSearchCatAsyncClient(OpenSearchTransport transport) {
+    public OpenSearchCatAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchCatAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchCatAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -64,7 +64,7 @@ public class OpenSearchCatAsyncClient extends OpenSearchCatAsyncClientBase<OpenS
      *
      *
      */
-    public CompletableFuture<HelpResponse> help() throws IOException, OpenSearchException {
+    public CompletableFuture<HelpResponse> help() throws IOException, UdbsxException {
         return this.transport.performRequestAsync(HelpRequest._INSTANCE, HelpRequest._ENDPOINT, this.transportOptions);
     }
 }

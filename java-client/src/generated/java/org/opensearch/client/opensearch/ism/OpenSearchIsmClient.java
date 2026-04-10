@@ -41,21 +41,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ism namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSearchIsmClient> {
-    public OpenSearchIsmClient(OpenSearchTransport transport) {
+public class OpenSearchIsmClient extends ApiClient<UdbsxTransport, OpenSearchIsmClient> {
+    public OpenSearchIsmClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchIsmClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchIsmClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,7 +69,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Adds a policy to an index.
      */
-    public AddPolicyResponse addPolicy(AddPolicyRequest request) throws IOException, OpenSearchException {
+    public AddPolicyResponse addPolicy(AddPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AddPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -79,7 +79,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link AddPolicyRequest}
      */
     public final AddPolicyResponse addPolicy(Function<AddPolicyRequest.Builder, ObjectBuilder<AddPolicyRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return addPolicy(fn.apply(new AddPolicyRequest.Builder()).build());
     }
 
@@ -88,7 +88,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Updates the managed index policy to a new policy.
      */
-    public ChangePolicyResponse changePolicy(ChangePolicyRequest request) throws IOException, OpenSearchException {
+    public ChangePolicyResponse changePolicy(ChangePolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ChangePolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -98,7 +98,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link ChangePolicyRequest}
      */
     public final ChangePolicyResponse changePolicy(Function<ChangePolicyRequest.Builder, ObjectBuilder<ChangePolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return changePolicy(fn.apply(new ChangePolicyRequest.Builder()).build());
     }
 
@@ -107,7 +107,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Deletes a policy.
      */
-    public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws IOException, OpenSearchException {
+    public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeletePolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -117,7 +117,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link DeletePolicyRequest}
      */
     public final DeletePolicyResponse deletePolicy(Function<DeletePolicyRequest.Builder, ObjectBuilder<DeletePolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deletePolicy(fn.apply(new DeletePolicyRequest.Builder()).build());
     }
 
@@ -126,7 +126,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Checks for the existence of a policy.
      */
-    public ExistsPolicyResponse existsPolicy(ExistsPolicyRequest request) throws IOException, OpenSearchException {
+    public ExistsPolicyResponse existsPolicy(ExistsPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExistsPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -136,7 +136,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link ExistsPolicyRequest}
      */
     public final ExistsPolicyResponse existsPolicy(Function<ExistsPolicyRequest.Builder, ObjectBuilder<ExistsPolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return existsPolicy(fn.apply(new ExistsPolicyRequest.Builder()).build());
     }
 
@@ -145,7 +145,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Retrieves the currently applied policy on the specified indexes.
      */
-    public ExplainPolicyResponse explainPolicy(ExplainPolicyRequest request) throws IOException, OpenSearchException {
+    public ExplainPolicyResponse explainPolicy(ExplainPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExplainPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -155,7 +155,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link ExplainPolicyRequest}
      */
     public final ExplainPolicyResponse explainPolicy(Function<ExplainPolicyRequest.Builder, ObjectBuilder<ExplainPolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return explainPolicy(fn.apply(new ExplainPolicyRequest.Builder()).build());
     }
 
@@ -164,7 +164,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Retrieves the policies.
      */
-    public GetPoliciesResponse getPolicies(GetPoliciesRequest request) throws IOException, OpenSearchException {
+    public GetPoliciesResponse getPolicies(GetPoliciesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetPoliciesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -174,14 +174,14 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetPoliciesRequest}
      */
     public final GetPoliciesResponse getPolicies(Function<GetPoliciesRequest.Builder, ObjectBuilder<GetPoliciesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getPolicies(fn.apply(new GetPoliciesRequest.Builder()).build());
     }
 
     /**
      * Retrieves the policies.
      */
-    public final GetPoliciesResponse getPolicies() throws IOException, OpenSearchException {
+    public final GetPoliciesResponse getPolicies() throws IOException, UdbsxException {
         return getPolicies(new GetPoliciesRequest.Builder().build());
     }
 
@@ -190,7 +190,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Retrieves a specific policy.
      */
-    public GetPolicyResponse getPolicy(GetPolicyRequest request) throws IOException, OpenSearchException {
+    public GetPolicyResponse getPolicy(GetPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -200,7 +200,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link GetPolicyRequest}
      */
     public final GetPolicyResponse getPolicy(Function<GetPolicyRequest.Builder, ObjectBuilder<GetPolicyRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getPolicy(fn.apply(new GetPolicyRequest.Builder()).build());
     }
 
@@ -209,7 +209,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Creates or updates policies.
      */
-    public PutPoliciesResponse putPolicies(PutPoliciesRequest request) throws IOException, OpenSearchException {
+    public PutPoliciesResponse putPolicies(PutPoliciesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutPoliciesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -219,7 +219,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link PutPoliciesRequest}
      */
     public final PutPoliciesResponse putPolicies(Function<PutPoliciesRequest.Builder, ObjectBuilder<PutPoliciesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return putPolicies(fn.apply(new PutPoliciesRequest.Builder()).build());
     }
 
@@ -228,7 +228,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Creates or updates a policy.
      */
-    public PutPolicyResponse putPolicy(PutPolicyRequest request) throws IOException, OpenSearchException {
+    public PutPolicyResponse putPolicy(PutPolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutPolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -238,7 +238,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link PutPolicyRequest}
      */
     public final PutPolicyResponse putPolicy(Function<PutPolicyRequest.Builder, ObjectBuilder<PutPolicyRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return putPolicy(fn.apply(new PutPolicyRequest.Builder()).build());
     }
 
@@ -247,8 +247,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Refreshes search analyzers in real time.
      */
-    public RefreshSearchAnalyzersResponse refreshSearchAnalyzers(RefreshSearchAnalyzersRequest request) throws IOException,
-        OpenSearchException {
+    public RefreshSearchAnalyzersResponse refreshSearchAnalyzers(RefreshSearchAnalyzersRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RefreshSearchAnalyzersRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -259,7 +258,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      */
     public final RefreshSearchAnalyzersResponse refreshSearchAnalyzers(
         Function<RefreshSearchAnalyzersRequest.Builder, ObjectBuilder<RefreshSearchAnalyzersRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return refreshSearchAnalyzers(fn.apply(new RefreshSearchAnalyzersRequest.Builder()).build());
     }
 
@@ -268,7 +267,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Removes a policy from an index.
      */
-    public RemovePolicyResponse removePolicy(RemovePolicyRequest request) throws IOException, OpenSearchException {
+    public RemovePolicyResponse removePolicy(RemovePolicyRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RemovePolicyRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -278,14 +277,14 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link RemovePolicyRequest}
      */
     public final RemovePolicyResponse removePolicy(Function<RemovePolicyRequest.Builder, ObjectBuilder<RemovePolicyRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return removePolicy(fn.apply(new RemovePolicyRequest.Builder()).build());
     }
 
     /**
      * Removes a policy from an index.
      */
-    public final RemovePolicyResponse removePolicy() throws IOException, OpenSearchException {
+    public final RemovePolicyResponse removePolicy() throws IOException, UdbsxException {
         return removePolicy(new RemovePolicyRequest.Builder().build());
     }
 
@@ -294,7 +293,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
     /**
      * Retries the failed action for an index.
      */
-    public RetryIndexResponse retryIndex(RetryIndexRequest request) throws IOException, OpenSearchException {
+    public RetryIndexResponse retryIndex(RetryIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RetryIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -304,7 +303,7 @@ public class OpenSearchIsmClient extends ApiClient<OpenSearchTransport, OpenSear
      * @param fn a function that initializes a builder to create the {@link RetryIndexRequest}
      */
     public final RetryIndexResponse retryIndex(Function<RetryIndexRequest.Builder, ObjectBuilder<RetryIndexRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return retryIndex(fn.apply(new RetryIndexRequest.Builder()).build());
     }
 }

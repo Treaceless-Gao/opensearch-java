@@ -37,10 +37,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.opensearch.client.RestClient;
 import org.opensearch.client.json.jackson.JacksonJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.core.SearchResponse;
 import org.opensearch.client.opensearch.core.search.Hit;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.rest_client.RestClientTransport;
 
 public class ConnectingTest {
@@ -53,14 +53,14 @@ public class ConnectingTest {
         //tag::create-client
         // Create the low-level client
         RestClient restClient = RestClient.builder(
-            new HttpHost("localhost", 9200)).build();
+            new HttpHost("localhost", 10200)).build();
 
         // Create the transport with a Jackson mapper
-        OpenSearchTransport transport = new RestClientTransport(
+        UdbsxTransport transport = new RestClientTransport(
             restClient, new JacksonJsonpMapper());
 
         // And create the API client
-        OpenSearchClient client = new OpenSearchClient(transport);
+        UdbsxClient client = new UdbsxClient(transport);
         //end::create-client
 
         //tag::first-request

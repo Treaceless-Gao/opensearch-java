@@ -20,10 +20,10 @@ import org.opensearch.client.json.JsonpMapper;
 import org.opensearch.client.opensearch._types.mapping.Property;
 import org.opensearch.client.opensearch.core.SearchResponse;
 import org.opensearch.client.opensearch.generic.Bodies;
-import org.opensearch.client.opensearch.generic.OpenSearchClientException;
-import org.opensearch.client.opensearch.generic.OpenSearchGenericClient.ClientOptions;
 import org.opensearch.client.opensearch.generic.Requests;
 import org.opensearch.client.opensearch.generic.Response;
+import org.opensearch.client.opensearch.generic.UdbsxClientException;
+import org.opensearch.client.opensearch.generic.UdbsxGenericClient.ClientOptions;
 import org.opensearch.client.opensearch.indices.CreateIndexRequest;
 import org.opensearch.client.opensearch.indices.CreateIndexResponse;
 import org.opensearch.client.opensearch.indices.SegmentSortOrder;
@@ -110,7 +110,7 @@ public abstract class AbstractGenericClientIT extends OpenSearchJavaClientTestCa
         final String index = "non_existing_doc";
         createIndex(index);
 
-        final OpenSearchClientException ex = assertThrows(OpenSearchClientException.class, () -> {
+        final UdbsxClientException ex = assertThrows(UdbsxClientException.class, () -> {
             try (
                 Response response = javaClient().generic()
                     .withClientOptions(ClientOptions.throwOnHttpErrors())

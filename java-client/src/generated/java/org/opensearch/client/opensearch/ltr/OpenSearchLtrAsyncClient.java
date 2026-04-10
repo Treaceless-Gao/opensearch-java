@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ltr namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchLtrAsyncClient> {
-    public OpenSearchLtrAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchLtrAsyncClient extends ApiClient<UdbsxTransport, OpenSearchLtrAsyncClient> {
+    public OpenSearchLtrAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchLtrAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchLtrAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -71,7 +71,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Add features to an existing feature set in the default feature store.
      */
     public CompletableFuture<AddFeaturesToSetResponse> addFeaturesToSet(AddFeaturesToSetRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, AddFeaturesToSetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -82,7 +82,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<AddFeaturesToSetResponse> addFeaturesToSet(
         Function<AddFeaturesToSetRequest.Builder, ObjectBuilder<AddFeaturesToSetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return addFeaturesToSet(fn.apply(new AddFeaturesToSetRequest.Builder()).build());
     }
 
@@ -92,7 +92,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Add features to an existing feature set in the default feature store.
      */
     public CompletableFuture<AddFeaturesToSetByQueryResponse> addFeaturesToSetByQuery(AddFeaturesToSetByQueryRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, AddFeaturesToSetByQueryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -103,7 +103,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<AddFeaturesToSetByQueryResponse> addFeaturesToSetByQuery(
         Function<AddFeaturesToSetByQueryRequest.Builder, ObjectBuilder<AddFeaturesToSetByQueryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return addFeaturesToSetByQuery(fn.apply(new AddFeaturesToSetByQueryRequest.Builder()).build());
     }
 
@@ -112,7 +112,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Retrieves cache statistics for all feature stores.
      */
-    public CompletableFuture<CacheStatsResponse> cacheStats(CacheStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CacheStatsResponse> cacheStats(CacheStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CacheStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -122,14 +122,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link CacheStatsRequest}
      */
     public final CompletableFuture<CacheStatsResponse> cacheStats(Function<CacheStatsRequest.Builder, ObjectBuilder<CacheStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return cacheStats(fn.apply(new CacheStatsRequest.Builder()).build());
     }
 
     /**
      * Retrieves cache statistics for all feature stores.
      */
-    public final CompletableFuture<CacheStatsResponse> cacheStats() throws IOException, OpenSearchException {
+    public final CompletableFuture<CacheStatsResponse> cacheStats() throws IOException, UdbsxException {
         return cacheStats(new CacheStatsRequest.Builder().build());
     }
 
@@ -138,7 +138,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Clears the store caches.
      */
-    public CompletableFuture<ClearCacheResponse> clearCache(ClearCacheRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ClearCacheResponse> clearCache(ClearCacheRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ClearCacheRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -148,14 +148,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link ClearCacheRequest}
      */
     public final CompletableFuture<ClearCacheResponse> clearCache(Function<ClearCacheRequest.Builder, ObjectBuilder<ClearCacheRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return clearCache(fn.apply(new ClearCacheRequest.Builder()).build());
     }
 
     /**
      * Clears the store caches.
      */
-    public final CompletableFuture<ClearCacheResponse> clearCache() throws IOException, OpenSearchException {
+    public final CompletableFuture<ClearCacheResponse> clearCache() throws IOException, UdbsxException {
         return clearCache(new ClearCacheRequest.Builder().build());
     }
 
@@ -165,7 +165,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Creates the default feature store.
      */
     public CompletableFuture<CreateDefaultStoreResponse> createDefaultStore(CreateDefaultStoreRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CreateDefaultStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -176,14 +176,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<CreateDefaultStoreResponse> createDefaultStore(
         Function<CreateDefaultStoreRequest.Builder, ObjectBuilder<CreateDefaultStoreRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createDefaultStore(fn.apply(new CreateDefaultStoreRequest.Builder()).build());
     }
 
     /**
      * Creates the default feature store.
      */
-    public final CompletableFuture<CreateDefaultStoreResponse> createDefaultStore() throws IOException, OpenSearchException {
+    public final CompletableFuture<CreateDefaultStoreResponse> createDefaultStore() throws IOException, UdbsxException {
         return createDefaultStore(new CreateDefaultStoreRequest.Builder().build());
     }
 
@@ -192,7 +192,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Create or update a feature in the default feature store.
      */
-    public CompletableFuture<CreateFeatureResponse> createFeature(CreateFeatureRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CreateFeatureResponse> createFeature(CreateFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -203,7 +203,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<CreateFeatureResponse> createFeature(
         Function<CreateFeatureRequest.Builder, ObjectBuilder<CreateFeatureRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createFeature(fn.apply(new CreateFeatureRequest.Builder()).build());
     }
 
@@ -213,7 +213,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Create or update a feature set in the default feature store.
      */
     public CompletableFuture<CreateFeaturesetResponse> createFeatureset(CreateFeaturesetRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CreateFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -224,7 +224,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<CreateFeaturesetResponse> createFeatureset(
         Function<CreateFeaturesetRequest.Builder, ObjectBuilder<CreateFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createFeatureset(fn.apply(new CreateFeaturesetRequest.Builder()).build());
     }
 
@@ -233,7 +233,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Create or update a model in the default feature store.
      */
-    public CompletableFuture<CreateModelResponse> createModel(CreateModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CreateModelResponse> createModel(CreateModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -244,7 +244,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<CreateModelResponse> createModel(
         Function<CreateModelRequest.Builder, ObjectBuilder<CreateModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createModel(fn.apply(new CreateModelRequest.Builder()).build());
     }
 
@@ -254,7 +254,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Create a model from an existing feature set in the default feature store.
      */
     public CompletableFuture<CreateModelFromSetResponse> createModelFromSet(CreateModelFromSetRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CreateModelFromSetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -265,7 +265,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<CreateModelFromSetResponse> createModelFromSet(
         Function<CreateModelFromSetRequest.Builder, ObjectBuilder<CreateModelFromSetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createModelFromSet(fn.apply(new CreateModelFromSetRequest.Builder()).build());
     }
 
@@ -274,7 +274,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Creates a new feature store with the specified name.
      */
-    public CompletableFuture<CreateStoreResponse> createStore(CreateStoreRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CreateStoreResponse> createStore(CreateStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -285,7 +285,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<CreateStoreResponse> createStore(
         Function<CreateStoreRequest.Builder, ObjectBuilder<CreateStoreRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createStore(fn.apply(new CreateStoreRequest.Builder()).build());
     }
 
@@ -295,7 +295,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Deletes the default feature store.
      */
     public CompletableFuture<DeleteDefaultStoreResponse> deleteDefaultStore(DeleteDefaultStoreRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteDefaultStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -306,14 +306,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeleteDefaultStoreResponse> deleteDefaultStore(
         Function<DeleteDefaultStoreRequest.Builder, ObjectBuilder<DeleteDefaultStoreRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteDefaultStore(fn.apply(new DeleteDefaultStoreRequest.Builder()).build());
     }
 
     /**
      * Deletes the default feature store.
      */
-    public final CompletableFuture<DeleteDefaultStoreResponse> deleteDefaultStore() throws IOException, OpenSearchException {
+    public final CompletableFuture<DeleteDefaultStoreResponse> deleteDefaultStore() throws IOException, UdbsxException {
         return deleteDefaultStore(new DeleteDefaultStoreRequest.Builder().build());
     }
 
@@ -322,7 +322,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Delete a feature from the default feature store.
      */
-    public CompletableFuture<DeleteFeatureResponse> deleteFeature(DeleteFeatureRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteFeatureResponse> deleteFeature(DeleteFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -333,7 +333,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeleteFeatureResponse> deleteFeature(
         Function<DeleteFeatureRequest.Builder, ObjectBuilder<DeleteFeatureRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteFeature(fn.apply(new DeleteFeatureRequest.Builder()).build());
     }
 
@@ -343,7 +343,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Delete a feature set from the default feature store.
      */
     public CompletableFuture<DeleteFeaturesetResponse> deleteFeatureset(DeleteFeaturesetRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -354,7 +354,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeleteFeaturesetResponse> deleteFeatureset(
         Function<DeleteFeaturesetRequest.Builder, ObjectBuilder<DeleteFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteFeatureset(fn.apply(new DeleteFeaturesetRequest.Builder()).build());
     }
 
@@ -363,7 +363,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Delete a model from the default feature store.
      */
-    public CompletableFuture<DeleteModelResponse> deleteModel(DeleteModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteModelResponse> deleteModel(DeleteModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -374,7 +374,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeleteModelResponse> deleteModel(
         Function<DeleteModelRequest.Builder, ObjectBuilder<DeleteModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteModel(fn.apply(new DeleteModelRequest.Builder()).build());
     }
 
@@ -383,7 +383,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Deletes a feature store with the specified name.
      */
-    public CompletableFuture<DeleteStoreResponse> deleteStore(DeleteStoreRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteStoreResponse> deleteStore(DeleteStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -394,7 +394,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeleteStoreResponse> deleteStore(
         Function<DeleteStoreRequest.Builder, ObjectBuilder<DeleteStoreRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteStore(fn.apply(new DeleteStoreRequest.Builder()).build());
     }
 
@@ -403,7 +403,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Get a feature from the default feature store.
      */
-    public CompletableFuture<GetFeatureResponse> getFeature(GetFeatureRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetFeatureResponse> getFeature(GetFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -413,7 +413,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link GetFeatureRequest}
      */
     public final CompletableFuture<GetFeatureResponse> getFeature(Function<GetFeatureRequest.Builder, ObjectBuilder<GetFeatureRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getFeature(fn.apply(new GetFeatureRequest.Builder()).build());
     }
 
@@ -422,7 +422,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Get a feature set from the default feature store.
      */
-    public CompletableFuture<GetFeaturesetResponse> getFeatureset(GetFeaturesetRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetFeaturesetResponse> getFeatureset(GetFeaturesetRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -433,7 +433,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<GetFeaturesetResponse> getFeatureset(
         Function<GetFeaturesetRequest.Builder, ObjectBuilder<GetFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getFeatureset(fn.apply(new GetFeaturesetRequest.Builder()).build());
     }
 
@@ -442,7 +442,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Get a model from the default feature store.
      */
-    public CompletableFuture<GetModelResponse> getModel(GetModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetModelResponse> getModel(GetModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -452,7 +452,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link GetModelRequest}
      */
     public final CompletableFuture<GetModelResponse> getModel(Function<GetModelRequest.Builder, ObjectBuilder<GetModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getModel(fn.apply(new GetModelRequest.Builder()).build());
     }
 
@@ -461,7 +461,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Checks if a store exists.
      */
-    public CompletableFuture<GetStoreResponse> getStore(GetStoreRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetStoreResponse> getStore(GetStoreRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetStoreRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -471,7 +471,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link GetStoreRequest}
      */
     public final CompletableFuture<GetStoreResponse> getStore(Function<GetStoreRequest.Builder, ObjectBuilder<GetStoreRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getStore(fn.apply(new GetStoreRequest.Builder()).build());
     }
 
@@ -480,7 +480,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Lists all available feature stores.
      */
-    public CompletableFuture<ListStoresResponse> listStores(ListStoresRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ListStoresResponse> listStores(ListStoresRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ListStoresRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -490,14 +490,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link ListStoresRequest}
      */
     public final CompletableFuture<ListStoresResponse> listStores(Function<ListStoresRequest.Builder, ObjectBuilder<ListStoresRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return listStores(fn.apply(new ListStoresRequest.Builder()).build());
     }
 
     /**
      * Lists all available feature stores.
      */
-    public final CompletableFuture<ListStoresResponse> listStores() throws IOException, OpenSearchException {
+    public final CompletableFuture<ListStoresResponse> listStores() throws IOException, UdbsxException {
         return listStores(new ListStoresRequest.Builder().build());
     }
 
@@ -506,7 +506,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Search for features in a feature store.
      */
-    public CompletableFuture<SearchFeaturesResponse> searchFeatures(SearchFeaturesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SearchFeaturesResponse> searchFeatures(SearchFeaturesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SearchFeaturesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -517,14 +517,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<SearchFeaturesResponse> searchFeatures(
         Function<SearchFeaturesRequest.Builder, ObjectBuilder<SearchFeaturesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return searchFeatures(fn.apply(new SearchFeaturesRequest.Builder()).build());
     }
 
     /**
      * Search for features in a feature store.
      */
-    public final CompletableFuture<SearchFeaturesResponse> searchFeatures() throws IOException, OpenSearchException {
+    public final CompletableFuture<SearchFeaturesResponse> searchFeatures() throws IOException, UdbsxException {
         return searchFeatures(new SearchFeaturesRequest.Builder().build());
     }
 
@@ -534,7 +534,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Search for feature sets in a feature store.
      */
     public CompletableFuture<SearchFeaturesetsResponse> searchFeaturesets(SearchFeaturesetsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, SearchFeaturesetsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -545,14 +545,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<SearchFeaturesetsResponse> searchFeaturesets(
         Function<SearchFeaturesetsRequest.Builder, ObjectBuilder<SearchFeaturesetsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return searchFeaturesets(fn.apply(new SearchFeaturesetsRequest.Builder()).build());
     }
 
     /**
      * Search for feature sets in a feature store.
      */
-    public final CompletableFuture<SearchFeaturesetsResponse> searchFeaturesets() throws IOException, OpenSearchException {
+    public final CompletableFuture<SearchFeaturesetsResponse> searchFeaturesets() throws IOException, UdbsxException {
         return searchFeaturesets(new SearchFeaturesetsRequest.Builder().build());
     }
 
@@ -561,7 +561,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Search for models in a feature store.
      */
-    public CompletableFuture<SearchModelsResponse> searchModels(SearchModelsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SearchModelsResponse> searchModels(SearchModelsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SearchModelsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -572,14 +572,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<SearchModelsResponse> searchModels(
         Function<SearchModelsRequest.Builder, ObjectBuilder<SearchModelsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return searchModels(fn.apply(new SearchModelsRequest.Builder()).build());
     }
 
     /**
      * Search for models in a feature store.
      */
-    public final CompletableFuture<SearchModelsResponse> searchModels() throws IOException, OpenSearchException {
+    public final CompletableFuture<SearchModelsResponse> searchModels() throws IOException, UdbsxException {
         return searchModels(new SearchModelsRequest.Builder().build());
     }
 
@@ -588,7 +588,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Provides information about the current status of the LTR plugin.
      */
-    public CompletableFuture<LtrStatsResponse> stats(LtrStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<LtrStatsResponse> stats(LtrStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, LtrStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -598,14 +598,14 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link LtrStatsRequest}
      */
     public final CompletableFuture<LtrStatsResponse> stats(Function<LtrStatsRequest.Builder, ObjectBuilder<LtrStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return stats(fn.apply(new LtrStatsRequest.Builder()).build());
     }
 
     /**
      * Provides information about the current status of the LTR plugin.
      */
-    public final CompletableFuture<LtrStatsResponse> stats() throws IOException, OpenSearchException {
+    public final CompletableFuture<LtrStatsResponse> stats() throws IOException, UdbsxException {
         return stats(new LtrStatsRequest.Builder().build());
     }
 
@@ -614,7 +614,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Update a feature in the default feature store.
      */
-    public CompletableFuture<UpdateFeatureResponse> updateFeature(UpdateFeatureRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<UpdateFeatureResponse> updateFeature(UpdateFeatureRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, UpdateFeatureRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -625,7 +625,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<UpdateFeatureResponse> updateFeature(
         Function<UpdateFeatureRequest.Builder, ObjectBuilder<UpdateFeatureRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateFeature(fn.apply(new UpdateFeatureRequest.Builder()).build());
     }
 
@@ -635,7 +635,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * Update a feature set in the default feature store.
      */
     public CompletableFuture<UpdateFeaturesetResponse> updateFeatureset(UpdateFeaturesetRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, UpdateFeaturesetRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -646,7 +646,7 @@ public class OpenSearchLtrAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<UpdateFeaturesetResponse> updateFeatureset(
         Function<UpdateFeaturesetRequest.Builder, ObjectBuilder<UpdateFeaturesetRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateFeatureset(fn.apply(new UpdateFeaturesetRequest.Builder()).build());
     }
 }

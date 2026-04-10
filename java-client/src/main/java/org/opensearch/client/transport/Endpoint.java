@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
 import org.opensearch.client.json.JsonpDeserializer;
 import org.opensearch.client.json.NdJsonpSerializable;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch._types.UdbsxException;
 
 /**
  * An endpoint links requests and responses to HTTP protocol encoding. It also defines the error response
@@ -99,6 +99,6 @@ public interface Endpoint<RequestT, ResponseT, ErrorT> {
      * @return exception instance
      */
     default <T extends RuntimeException> T exceptionConverter(int statusCode, @Nullable ErrorT error) {
-        throw new OpenSearchException((ErrorResponse) error);
+        throw new UdbsxException((ErrorResponse) error);
     }
 }

@@ -40,8 +40,8 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.NodeStatistics;
 import org.opensearch.client.opensearch._types.SortOrder;
 import org.opensearch.client.opensearch._types.aggregations.Aggregation;
@@ -51,15 +51,15 @@ import org.opensearch.client.opensearch.core.SearchResponse;
 import org.opensearch.client.opensearch.indices.Alias;
 import org.opensearch.client.opensearch.indices.CreateIndexRequest;
 import org.opensearch.client.opensearch.indices.CreateIndexResponse;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportException;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ApiTypeHelper;
 
 public class ApiConventionsTest extends Assert {
 
     private static class SomeApplicationData {}
 
-    private OpenSearchTransport transport = new FailingTransport();
+    private UdbsxTransport transport = new FailingTransport();
     Logger logger = LogManager.getLogManager().getLogger(ApiConventionsTest.class.getName());
 
     @Test(expected = TransportException.class)
@@ -67,15 +67,15 @@ public class ApiConventionsTest extends Assert {
 
         //tag::blocking-and-async
         // Synchronous blocking client
-        OpenSearchClient client = new OpenSearchClient(transport);
+        UdbsxClient client = new UdbsxClient(transport);
 
         if (client.exists(b -> b.index("products").id("foo")).value()) {
             logger.info("product exists");
         }
 
         // Asynchronous non-blocking client
-        OpenSearchAsyncClient asyncClient =
-            new OpenSearchAsyncClient(transport);
+        UdbsxAsyncClient asyncClient =
+            new UdbsxAsyncClient(transport);
 
         asyncClient
             .exists(b -> b.index("products").id("foo"))
@@ -90,7 +90,7 @@ public class ApiConventionsTest extends Assert {
 
     @Test(expected = TransportException.class)
     public void builders() throws Exception {
-        OpenSearchClient client = new OpenSearchClient(transport);
+        UdbsxClient client = new UdbsxClient(transport);
 
         //tag::builders
         CreateIndexResponse createResponse = client.indices().create(
@@ -106,7 +106,7 @@ public class ApiConventionsTest extends Assert {
 
     @Test(expected = TransportException.class)
     public void builderLambdas() throws Exception {
-        OpenSearchClient client = new OpenSearchClient(transport);
+        UdbsxClient client = new UdbsxClient(transport);
 
         //tag::builder-lambdas
         CreateIndexResponse createResponse = client.indices()
@@ -121,7 +121,7 @@ public class ApiConventionsTest extends Assert {
 
     @Test(expected = TransportException.class)
     public void builderLambdasShort() throws Exception {
-        OpenSearchClient client = new OpenSearchClient(transport);
+        UdbsxClient client = new UdbsxClient(transport);
 
         //tag::builder-lambdas-short
         CreateIndexResponse createResponse = client.indices()
@@ -136,7 +136,7 @@ public class ApiConventionsTest extends Assert {
 
     @Test(expected = TransportException.class)
     public void builderIntervals() throws Exception {
-        OpenSearchClient client = new OpenSearchClient(transport);
+        UdbsxClient client = new UdbsxClient(transport);
 
         //tag::builder-intervals
         SearchResponse<SomeApplicationData> results = client

@@ -37,10 +37,10 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
@@ -48,11 +48,11 @@ import org.opensearch.client.util.ObjectBuilder;
  */
 public class OpenSearchIndicesAsyncClient extends OpenSearchIndicesAsyncClientBase<OpenSearchIndicesAsyncClient> {
 
-    public OpenSearchIndicesAsyncClient(OpenSearchTransport transport) {
+    public OpenSearchIndicesAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchIndicesAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchIndicesAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,8 +69,7 @@ public class OpenSearchIndicesAsyncClient extends OpenSearchIndicesAsyncClientBa
      *
      */
 
-    public CompletableFuture<GetFieldMappingResponse> getFieldMapping(GetFieldMappingRequest request) throws IOException,
-        OpenSearchException {
+    public CompletableFuture<GetFieldMappingResponse> getFieldMapping(GetFieldMappingRequest request) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetFieldMappingRequest, GetFieldMappingResponse, ErrorResponse> endpoint = (JsonEndpoint<
             GetFieldMappingRequest,
@@ -91,7 +90,7 @@ public class OpenSearchIndicesAsyncClient extends OpenSearchIndicesAsyncClientBa
 
     public final CompletableFuture<GetFieldMappingResponse> getFieldMapping(
         Function<GetFieldMappingRequest.Builder, ObjectBuilder<GetFieldMappingRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getFieldMapping(fn.apply(new GetFieldMappingRequest.Builder()).build());
     }
 }

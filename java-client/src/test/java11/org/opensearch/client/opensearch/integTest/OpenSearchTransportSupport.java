@@ -11,8 +11,8 @@ package org.opensearch.client.opensearch.integTest;
 import java.io.IOException;
 import java.util.Optional;
 import org.apache.hc.core5.http.HttpHost;
-import org.opensearch.client.opensearch.OpenSearchClient;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch.UdbsxClient;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.common.settings.Settings;
 
 public interface OpenSearchTransportSupport {
@@ -20,9 +20,9 @@ public interface OpenSearchTransportSupport {
         return Optional.ofNullable(System.getProperty("https")).map("true"::equalsIgnoreCase).orElse(false);
     }
 
-    default OpenSearchClient buildJavaClient(Settings settings, HttpHost[] hosts) throws IOException {
-        return new OpenSearchClient(buildTransport(settings, hosts));
+    default UdbsxClient buildJavaClient(Settings settings, HttpHost[] hosts) throws IOException {
+        return new UdbsxClient(buildTransport(settings, hosts));
     }
 
-    OpenSearchTransport buildTransport(Settings settings, HttpHost[] hosts) throws IOException;
+    UdbsxTransport buildTransport(Settings settings, HttpHost[] hosts) throws IOException;
 }

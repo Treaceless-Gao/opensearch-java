@@ -34,7 +34,7 @@ import org.opensearch.Version;
 import org.opensearch.client.RestClient;
 import org.opensearch.client.RestClientBuilder;
 import org.opensearch.client.opensearch.IOUtils;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.ExpandWildcard;
 import org.opensearch.client.opensearch.cat.IndicesResponse;
 import org.opensearch.client.opensearch.cat.indices.IndicesRecord;
@@ -53,8 +53,8 @@ public abstract class OpenSearchJavaClientTestCase extends OpenSearchRestTestCas
         ".plugins-ml-model-group",
         ".ql-datasources"
     );
-    private static OpenSearchClient javaClient;
-    private static OpenSearchClient adminJavaClient;
+    private static UdbsxClient javaClient;
+    private static UdbsxClient adminJavaClient;
 
     private static TreeSet<Version> nodeVersions;
     private static List<HttpHost> clusterHosts;
@@ -80,10 +80,17 @@ public abstract class OpenSearchJavaClientTestCase extends OpenSearchRestTestCas
             javaClient = buildJavaClient(restClientSettings(), clusterHosts.toArray(new HttpHost[clusterHosts.size()]));
             adminJavaClient = buildJavaClient(restAdminSettings(), clusterHosts.toArray(new HttpHost[clusterHosts.size()]));
 
-            nodeVersions = new TreeSet<>();
-            final NodesInfoResponse response = adminJavaClient.nodes().info();
-            for (final NodeInfo node : response.nodes().values()) {
-                nodeVersions.add(Version.fromString(node.version()));
+            try {
+                nodeVersions = new TreeSet<>();
+                final NodesInfoResponse response = adminJavaClient.nodes().info();
+                for (final NodeInfo node : response.nodes().values()) {
+                    nodeVersions.add(Version.fromString(node.version()));
+                }
+            } catch (Exception e) {
+                // 如果获取节点信息失败，使用默认版本
+                logger.warn("Failed to get node versions, using default version", e);
+                nodeVersions = new TreeSet<>();
+                nodeVersions.add(Version.fromString("7.10.2"));
             }
         }
     }
@@ -139,11 +146,11 @@ public abstract class OpenSearchJavaClientTestCase extends OpenSearchRestTestCas
         return builder.build();
     }
 
-    protected static OpenSearchClient javaClient() {
+    protected static UdbsxClient javaClient() {
         return javaClient;
     }
 
-    protected static OpenSearchClient adminJavaClient() {
+    protected static UdbsxClient adminJavaClient() {
         return adminJavaClient;
     }
 

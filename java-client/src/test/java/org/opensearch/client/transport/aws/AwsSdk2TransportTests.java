@@ -55,7 +55,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.generic.Requests;
 import org.opensearch.client.transport.TransportException;
 import org.opensearch.client.transport.util.FunnellingHttpsProxy;
@@ -231,7 +231,7 @@ public class AwsSdk2TransportTests {
         receivedRequests.clear();
     }
 
-    private OpenSearchClient getTestClient() throws URISyntaxException {
+    private UdbsxClient getTestClient() throws URISyntaxException {
         AwsSdk2TransportOptions options = AwsSdk2TransportOptions.builder()
             .setCredentials(() -> AwsBasicCredentials.builder().accessKeyId("test-access-key").secretAccessKey("test-secret-key").build())
             .setSigningClock(Clock.fixed(Instant.ofEpochSecond(1673626117), ZoneId.of("UTC"))) // 2023-01-13 16:08:37 +0000
@@ -296,7 +296,7 @@ public class AwsSdk2TransportTests {
         } else {
             transport = new AwsSdk2Transport(sdkHttpClient, serviceHostName, serviceName, TEST_REGION, options);
         }
-        return new OpenSearchClient(transport);
+        return new UdbsxClient(transport);
     }
 
     @Test
@@ -324,7 +324,7 @@ public class AwsSdk2TransportTests {
     @Test
     public void testSigV4ClearScroll() throws Exception {
         assertSigV4Request(
-            OpenSearchClient::clearScroll,
+            UdbsxClient::clearScroll,
             "DELETE",
             "/_search/scroll",
             2,
@@ -410,7 +410,7 @@ public class AwsSdk2TransportTests {
         String contentSha256,
         String expectedSignature
     ) throws Exception {
-        OpenSearchClient client = getTestClient();
+        UdbsxClient client = getTestClient();
 
         if (sdkHttpClientType != SdkHttpClientType.APACHE
             || contentLength == 0
@@ -497,6 +497,6 @@ public class AwsSdk2TransportTests {
 
     @FunctionalInterface
     private interface OpenSearchClientAction {
-        void invoke(OpenSearchClient client) throws Exception;
+        void invoke(UdbsxClient client) throws Exception;
     }
 }

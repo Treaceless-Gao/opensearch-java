@@ -37,8 +37,8 @@ import org.junit.Test;
 import org.opensearch.client.RestClient;
 import org.opensearch.client.RestClientBuilder;
 import org.opensearch.client.json.jackson.JacksonJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchClient;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch.UdbsxClient;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.rest_client.RestClientTransport;
 
 public class MigrateHlrcTest {
@@ -64,12 +64,12 @@ public class MigrateHlrcTest {
         RestHighLevelClient hlrc = new RestHighLevelClient(httpClientBuilder);
 
         // Create the new Java Client with the same low level client
-        OpenSearchTransport transport = new RestClientTransport(
+        UdbsxTransport transport = new RestClientTransport(
             hlrc.getLowLevelClient(),
             new JacksonJsonpMapper()
         );
 
-        OpenSearchClient esClient = new OpenSearchClient(transport);
+        UdbsxClient esClient = new UdbsxClient(transport);
 
         // hlrc and esClient share the same httpClient
         //end::migrate

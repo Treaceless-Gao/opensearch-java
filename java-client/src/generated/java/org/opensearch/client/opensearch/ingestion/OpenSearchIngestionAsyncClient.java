@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ingestion namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchIngestionAsyncClient> {
-    public OpenSearchIngestionAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchIngestionAsyncClient extends ApiClient<UdbsxTransport, OpenSearchIngestionAsyncClient> {
+    public OpenSearchIngestionAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchIngestionAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchIngestionAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -70,7 +70,7 @@ public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTranspor
     /**
      * Use this API to retrieve the ingestion state for a given index.
      */
-    public CompletableFuture<GetStateResponse> getState(GetStateRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetStateResponse> getState(GetStateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetStateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -80,7 +80,7 @@ public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTranspor
      * @param fn a function that initializes a builder to create the {@link GetStateRequest}
      */
     public final CompletableFuture<GetStateResponse> getState(Function<GetStateRequest.Builder, ObjectBuilder<GetStateRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getState(fn.apply(new GetStateRequest.Builder()).build());
     }
 
@@ -89,7 +89,7 @@ public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTranspor
     /**
      * Use this API to pause ingestion for a given index.
      */
-    public CompletableFuture<PauseResponse> pause(PauseRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PauseResponse> pause(PauseRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PauseRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -99,7 +99,7 @@ public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTranspor
      * @param fn a function that initializes a builder to create the {@link PauseRequest}
      */
     public final CompletableFuture<PauseResponse> pause(Function<PauseRequest.Builder, ObjectBuilder<PauseRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return pause(fn.apply(new PauseRequest.Builder()).build());
     }
 
@@ -108,7 +108,7 @@ public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTranspor
     /**
      * Use this API to resume ingestion for the given index.
      */
-    public CompletableFuture<ResumeResponse> resume(ResumeRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ResumeResponse> resume(ResumeRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ResumeRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -118,7 +118,7 @@ public class OpenSearchIngestionAsyncClient extends ApiClient<OpenSearchTranspor
      * @param fn a function that initializes a builder to create the {@link ResumeRequest}
      */
     public final CompletableFuture<ResumeResponse> resume(Function<ResumeRequest.Builder, ObjectBuilder<ResumeRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return resume(fn.apply(new ResumeRequest.Builder()).build());
     }
 }

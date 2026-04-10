@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the snapshot namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchSnapshotAsyncClient> {
-    public OpenSearchSnapshotAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchSnapshotAsyncClient extends ApiClient<UdbsxTransport, OpenSearchSnapshotAsyncClient> {
+    public OpenSearchSnapshotAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchSnapshotAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchSnapshotAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -71,7 +71,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      * Removes any stale data from a snapshot repository.
      */
     public CompletableFuture<CleanupRepositoryResponse> cleanupRepository(CleanupRepositoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CleanupRepositoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -82,7 +82,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<CleanupRepositoryResponse> cleanupRepository(
         Function<CleanupRepositoryRequest.Builder, ObjectBuilder<CleanupRepositoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return cleanupRepository(fn.apply(new CleanupRepositoryRequest.Builder()).build());
     }
 
@@ -91,7 +91,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Creates a clone of all or part of a snapshot in the same repository as the original snapshot.
      */
-    public CompletableFuture<CloneSnapshotResponse> clone(CloneSnapshotRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CloneSnapshotResponse> clone(CloneSnapshotRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CloneSnapshotRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -102,7 +102,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<CloneSnapshotResponse> clone(
         Function<CloneSnapshotRequest.Builder, ObjectBuilder<CloneSnapshotRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return clone(fn.apply(new CloneSnapshotRequest.Builder()).build());
     }
 
@@ -111,7 +111,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Creates a snapshot within an existing repository.
      */
-    public CompletableFuture<CreateSnapshotResponse> create(CreateSnapshotRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CreateSnapshotResponse> create(CreateSnapshotRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CreateSnapshotRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -122,7 +122,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<CreateSnapshotResponse> create(
         Function<CreateSnapshotRequest.Builder, ObjectBuilder<CreateSnapshotRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return create(fn.apply(new CreateSnapshotRequest.Builder()).build());
     }
 
@@ -132,7 +132,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      * Creates a snapshot repository.
      */
     public CompletableFuture<CreateRepositoryResponse> createRepository(CreateRepositoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, CreateRepositoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -143,7 +143,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<CreateRepositoryResponse> createRepository(
         Function<CreateRepositoryRequest.Builder, ObjectBuilder<CreateRepositoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createRepository(fn.apply(new CreateRepositoryRequest.Builder()).build());
     }
 
@@ -152,7 +152,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Deletes a snapshot.
      */
-    public CompletableFuture<DeleteSnapshotResponse> delete(DeleteSnapshotRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteSnapshotResponse> delete(DeleteSnapshotRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteSnapshotRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -163,7 +163,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<DeleteSnapshotResponse> delete(
         Function<DeleteSnapshotRequest.Builder, ObjectBuilder<DeleteSnapshotRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return delete(fn.apply(new DeleteSnapshotRequest.Builder()).build());
     }
 
@@ -173,7 +173,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      * Deletes a snapshot repository.
      */
     public CompletableFuture<DeleteRepositoryResponse> deleteRepository(DeleteRepositoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, DeleteRepositoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -184,7 +184,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<DeleteRepositoryResponse> deleteRepository(
         Function<DeleteRepositoryRequest.Builder, ObjectBuilder<DeleteRepositoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteRepository(fn.apply(new DeleteRepositoryRequest.Builder()).build());
     }
 
@@ -193,7 +193,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Returns information about a snapshot.
      */
-    public CompletableFuture<GetSnapshotResponse> get(GetSnapshotRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetSnapshotResponse> get(GetSnapshotRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetSnapshotRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -203,7 +203,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      * @param fn a function that initializes a builder to create the {@link GetSnapshotRequest}
      */
     public final CompletableFuture<GetSnapshotResponse> get(Function<GetSnapshotRequest.Builder, ObjectBuilder<GetSnapshotRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return get(fn.apply(new GetSnapshotRequest.Builder()).build());
     }
 
@@ -212,7 +212,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Returns information about a snapshot repository.
      */
-    public CompletableFuture<GetRepositoryResponse> getRepository(GetRepositoryRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetRepositoryResponse> getRepository(GetRepositoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetRepositoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -223,14 +223,14 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<GetRepositoryResponse> getRepository(
         Function<GetRepositoryRequest.Builder, ObjectBuilder<GetRepositoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getRepository(fn.apply(new GetRepositoryRequest.Builder()).build());
     }
 
     /**
      * Returns information about a snapshot repository.
      */
-    public final CompletableFuture<GetRepositoryResponse> getRepository() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetRepositoryResponse> getRepository() throws IOException, UdbsxException {
         return getRepository(new GetRepositoryRequest.Builder().build());
     }
 
@@ -239,7 +239,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Restores a snapshot.
      */
-    public CompletableFuture<RestoreSnapshotResponse> restore(RestoreSnapshotRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RestoreSnapshotResponse> restore(RestoreSnapshotRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RestoreSnapshotRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -250,7 +250,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<RestoreSnapshotResponse> restore(
         Function<RestoreSnapshotRequest.Builder, ObjectBuilder<RestoreSnapshotRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return restore(fn.apply(new RestoreSnapshotRequest.Builder()).build());
     }
 
@@ -259,7 +259,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
     /**
      * Returns information about the status of a snapshot.
      */
-    public CompletableFuture<SnapshotStatusResponse> status(SnapshotStatusRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SnapshotStatusResponse> status(SnapshotStatusRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SnapshotStatusRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -270,14 +270,14 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<SnapshotStatusResponse> status(
         Function<SnapshotStatusRequest.Builder, ObjectBuilder<SnapshotStatusRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return status(fn.apply(new SnapshotStatusRequest.Builder()).build());
     }
 
     /**
      * Returns information about the status of a snapshot.
      */
-    public final CompletableFuture<SnapshotStatusResponse> status() throws IOException, OpenSearchException {
+    public final CompletableFuture<SnapshotStatusResponse> status() throws IOException, UdbsxException {
         return status(new SnapshotStatusRequest.Builder().build());
     }
 
@@ -287,7 +287,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      * Verifies a repository.
      */
     public CompletableFuture<VerifyRepositoryResponse> verifyRepository(VerifyRepositoryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, VerifyRepositoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -298,7 +298,7 @@ public class OpenSearchSnapshotAsyncClient extends ApiClient<OpenSearchTransport
      */
     public final CompletableFuture<VerifyRepositoryResponse> verifyRepository(
         Function<VerifyRepositoryRequest.Builder, ObjectBuilder<VerifyRepositoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return verifyRepository(fn.apply(new VerifyRepositoryRequest.Builder()).build());
     }
 }

@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch.OpenSearchClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
+import org.opensearch.client.opensearch.UdbsxClient;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch.core.IndexResponse;
 import org.opensearch.client.opensearch.core.SearchResponse;
 import org.opensearch.client.opensearch.indices.CreateIndexRequest;
@@ -45,7 +45,7 @@ public class AwsSdk2SearchIT extends AwsSdk2TransportTestCase {
 
     void testClient(boolean async) throws Exception {
         resetTestIndex(async);
-        final OpenSearchClient client = getClient(async, null, null);
+        final UdbsxClient client = getClient(async, null, null);
 
         SimplePojo doc1 = new SimplePojo("Document 1", "The text of document 1");
         addDoc(client, "id1", doc1);
@@ -74,7 +74,7 @@ public class AwsSdk2SearchIT extends AwsSdk2TransportTestCase {
 
     void testClientAsync(boolean async) throws Exception {
         resetTestIndex(async);
-        final OpenSearchAsyncClient client = getAsyncClient(async, null, null);
+        final UdbsxAsyncClient client = getAsyncClient(async, null, null);
 
         SimplePojo doc1 = new SimplePojo("Document 1", "The text of document 1");
         CompletableFuture<IndexResponse> add1 = addDoc(client, "id1", doc1);
@@ -111,7 +111,7 @@ public class AwsSdk2SearchIT extends AwsSdk2TransportTestCase {
         // attempt to create the same index a second time
         OpenSearchIndicesClient client = getIndexesClient(false, null, null);
         final CreateIndexRequest.Builder req = new CreateIndexRequest.Builder().index(TEST_INDEX);
-        Exception exception = Assert.assertThrows(OpenSearchException.class, () -> { client.create(req.build()); });
+        Exception exception = Assert.assertThrows(UdbsxException.class, () -> { client.create(req.build()); });
         // error message contains the actual error, not a generic [http_exception]
         Assert.assertTrue(exception.getMessage().contains("[resource_already_exists_exception]"));
     }

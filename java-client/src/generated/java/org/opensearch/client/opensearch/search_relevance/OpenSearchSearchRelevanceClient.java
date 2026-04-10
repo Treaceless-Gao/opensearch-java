@@ -42,10 +42,10 @@ import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.EndpointWithResponseMapperAttr;
 import org.opensearch.client.util.ObjectBuilder;
 
@@ -53,12 +53,12 @@ import org.opensearch.client.util.ObjectBuilder;
  * Client for the search_relevance namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTransport, OpenSearchSearchRelevanceClient> {
-    public OpenSearchSearchRelevanceClient(OpenSearchTransport transport) {
+public class OpenSearchSearchRelevanceClient extends ApiClient<UdbsxTransport, OpenSearchSearchRelevanceClient> {
+    public OpenSearchSearchRelevanceClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchSearchRelevanceClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchSearchRelevanceClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -72,7 +72,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Deletes a specified experiment.
      */
-    public DeleteExperimentsResponse deleteExperiments(DeleteExperimentsRequest request) throws IOException, OpenSearchException {
+    public DeleteExperimentsResponse deleteExperiments(DeleteExperimentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteExperimentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -83,7 +83,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      */
     public final DeleteExperimentsResponse deleteExperiments(
         Function<DeleteExperimentsRequest.Builder, ObjectBuilder<DeleteExperimentsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteExperiments(fn.apply(new DeleteExperimentsRequest.Builder()).build());
     }
 
@@ -92,7 +92,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Deletes a specified judgment.
      */
-    public DeleteJudgmentsResponse deleteJudgments(DeleteJudgmentsRequest request) throws IOException, OpenSearchException {
+    public DeleteJudgmentsResponse deleteJudgments(DeleteJudgmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteJudgmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -102,7 +102,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link DeleteJudgmentsRequest}
      */
     public final DeleteJudgmentsResponse deleteJudgments(Function<DeleteJudgmentsRequest.Builder, ObjectBuilder<DeleteJudgmentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteJudgments(fn.apply(new DeleteJudgmentsRequest.Builder()).build());
     }
 
@@ -111,7 +111,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Deletes a query set.
      */
-    public DeleteQuerySetsResponse deleteQuerySets(DeleteQuerySetsRequest request) throws IOException, OpenSearchException {
+    public DeleteQuerySetsResponse deleteQuerySets(DeleteQuerySetsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteQuerySetsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -121,7 +121,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link DeleteQuerySetsRequest}
      */
     public final DeleteQuerySetsResponse deleteQuerySets(Function<DeleteQuerySetsRequest.Builder, ObjectBuilder<DeleteQuerySetsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteQuerySets(fn.apply(new DeleteQuerySetsRequest.Builder()).build());
     }
 
@@ -131,7 +131,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Deletes a specified scheduled experiment.
      */
     public DeleteScheduledExperimentsResponse deleteScheduledExperiments(DeleteScheduledExperimentsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequest(request, DeleteScheduledExperimentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -142,7 +142,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      */
     public final DeleteScheduledExperimentsResponse deleteScheduledExperiments(
         Function<DeleteScheduledExperimentsRequest.Builder, ObjectBuilder<DeleteScheduledExperimentsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteScheduledExperiments(fn.apply(new DeleteScheduledExperimentsRequest.Builder()).build());
     }
 
@@ -152,7 +152,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Deletes a specified search configuration.
      */
     public DeleteSearchConfigurationsResponse deleteSearchConfigurations(DeleteSearchConfigurationsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequest(request, DeleteSearchConfigurationsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -163,7 +163,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      */
     public final DeleteSearchConfigurationsResponse deleteSearchConfigurations(
         Function<DeleteSearchConfigurationsRequest.Builder, ObjectBuilder<DeleteSearchConfigurationsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteSearchConfigurations(fn.apply(new DeleteSearchConfigurationsRequest.Builder()).build());
     }
 
@@ -173,7 +173,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Gets experiments.
      */
     public <TDocument> GetExperimentsResponse<TDocument> getExperiments(GetExperimentsRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetExperimentsRequest, GetExperimentsResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetExperimentsRequest,
@@ -196,7 +196,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public final <TDocument> GetExperimentsResponse<TDocument> getExperiments(
         Function<GetExperimentsRequest.Builder, ObjectBuilder<GetExperimentsRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getExperiments(fn.apply(new GetExperimentsRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -206,7 +206,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Gets judgments.
      */
     public <TDocument> GetJudgmentsResponse<TDocument> getJudgments(GetJudgmentsRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetJudgmentsRequest, GetJudgmentsResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetJudgmentsRequest,
@@ -229,7 +229,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public final <TDocument> GetJudgmentsResponse<TDocument> getJudgments(
         Function<GetJudgmentsRequest.Builder, ObjectBuilder<GetJudgmentsRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getJudgments(fn.apply(new GetJudgmentsRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -238,7 +238,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Gets stats by node.
      */
-    public GetNodeStatsResponse getNodeStats(GetNodeStatsRequest request) throws IOException, OpenSearchException {
+    public GetNodeStatsResponse getNodeStats(GetNodeStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetNodeStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -248,7 +248,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link GetNodeStatsRequest}
      */
     public final GetNodeStatsResponse getNodeStats(Function<GetNodeStatsRequest.Builder, ObjectBuilder<GetNodeStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getNodeStats(fn.apply(new GetNodeStatsRequest.Builder()).build());
     }
 
@@ -258,7 +258,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Lists the current query sets available.
      */
     public <TDocument> GetQuerySetsResponse<TDocument> getQuerySets(GetQuerySetsRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetQuerySetsRequest, GetQuerySetsResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetQuerySetsRequest,
@@ -281,7 +281,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public final <TDocument> GetQuerySetsResponse<TDocument> getQuerySets(
         Function<GetQuerySetsRequest.Builder, ObjectBuilder<GetQuerySetsRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getQuerySets(fn.apply(new GetQuerySetsRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -293,7 +293,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public <TDocument> GetScheduledExperimentsResponse<TDocument> getScheduledExperiments(
         GetScheduledExperimentsRequest request,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetScheduledExperimentsRequest, GetScheduledExperimentsResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetScheduledExperimentsRequest,
@@ -316,7 +316,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public final <TDocument> GetScheduledExperimentsResponse<TDocument> getScheduledExperiments(
         Function<GetScheduledExperimentsRequest.Builder, ObjectBuilder<GetScheduledExperimentsRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getScheduledExperiments(fn.apply(new GetScheduledExperimentsRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -328,7 +328,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public <TDocument> GetSearchConfigurationsResponse<TDocument> getSearchConfigurations(
         GetSearchConfigurationsRequest request,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetSearchConfigurationsRequest, GetSearchConfigurationsResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetSearchConfigurationsRequest,
@@ -351,7 +351,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     public final <TDocument> GetSearchConfigurationsResponse<TDocument> getSearchConfigurations(
         Function<GetSearchConfigurationsRequest.Builder, ObjectBuilder<GetSearchConfigurationsRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getSearchConfigurations(fn.apply(new GetSearchConfigurationsRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -360,7 +360,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Gets stats.
      */
-    public GetStatsResponse getStats(GetStatsRequest request) throws IOException, OpenSearchException {
+    public GetStatsResponse getStats(GetStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -370,14 +370,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link GetStatsRequest}
      */
     public final GetStatsResponse getStats(Function<GetStatsRequest.Builder, ObjectBuilder<GetStatsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getStats(fn.apply(new GetStatsRequest.Builder()).build());
     }
 
     /**
      * Gets stats.
      */
-    public final GetStatsResponse getStats() throws IOException, OpenSearchException {
+    public final GetStatsResponse getStats() throws IOException, UdbsxException {
         return getStats(new GetStatsRequest.Builder().build());
     }
 
@@ -386,7 +386,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Creates a new query set by sampling queries from the user behavior data.
      */
-    public PostQuerySetsResponse postQuerySets(PostQuerySetsRequest request) throws IOException, OpenSearchException {
+    public PostQuerySetsResponse postQuerySets(PostQuerySetsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PostQuerySetsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -396,14 +396,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link PostQuerySetsRequest}
      */
     public final PostQuerySetsResponse postQuerySets(Function<PostQuerySetsRequest.Builder, ObjectBuilder<PostQuerySetsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return postQuerySets(fn.apply(new PostQuerySetsRequest.Builder()).build());
     }
 
     /**
      * Creates a new query set by sampling queries from the user behavior data.
      */
-    public final PostQuerySetsResponse postQuerySets() throws IOException, OpenSearchException {
+    public final PostQuerySetsResponse postQuerySets() throws IOException, UdbsxException {
         return postQuerySets(new PostQuerySetsRequest.Builder().build());
     }
 
@@ -413,7 +413,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Creates a scheduled experiment.
      */
     public PostScheduledExperimentsResponse postScheduledExperiments(PostScheduledExperimentsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequest(request, PostScheduledExperimentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -424,14 +424,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      */
     public final PostScheduledExperimentsResponse postScheduledExperiments(
         Function<PostScheduledExperimentsRequest.Builder, ObjectBuilder<PostScheduledExperimentsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return postScheduledExperiments(fn.apply(new PostScheduledExperimentsRequest.Builder()).build());
     }
 
     /**
      * Creates a scheduled experiment.
      */
-    public final PostScheduledExperimentsResponse postScheduledExperiments() throws IOException, OpenSearchException {
+    public final PostScheduledExperimentsResponse postScheduledExperiments() throws IOException, UdbsxException {
         return postScheduledExperiments(new PostScheduledExperimentsRequest.Builder().build());
     }
 
@@ -440,7 +440,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Creates an experiment.
      */
-    public PutExperimentsResponse putExperiments(PutExperimentsRequest request) throws IOException, OpenSearchException {
+    public PutExperimentsResponse putExperiments(PutExperimentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutExperimentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -450,14 +450,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link PutExperimentsRequest}
      */
     public final PutExperimentsResponse putExperiments(Function<PutExperimentsRequest.Builder, ObjectBuilder<PutExperimentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return putExperiments(fn.apply(new PutExperimentsRequest.Builder()).build());
     }
 
     /**
      * Creates an experiment.
      */
-    public final PutExperimentsResponse putExperiments() throws IOException, OpenSearchException {
+    public final PutExperimentsResponse putExperiments() throws IOException, UdbsxException {
         return putExperiments(new PutExperimentsRequest.Builder().build());
     }
 
@@ -466,7 +466,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Creates a judgment.
      */
-    public PutJudgmentsResponse putJudgments(PutJudgmentsRequest request) throws IOException, OpenSearchException {
+    public PutJudgmentsResponse putJudgments(PutJudgmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutJudgmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -476,14 +476,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link PutJudgmentsRequest}
      */
     public final PutJudgmentsResponse putJudgments(Function<PutJudgmentsRequest.Builder, ObjectBuilder<PutJudgmentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return putJudgments(fn.apply(new PutJudgmentsRequest.Builder()).build());
     }
 
     /**
      * Creates a judgment.
      */
-    public final PutJudgmentsResponse putJudgments() throws IOException, OpenSearchException {
+    public final PutJudgmentsResponse putJudgments() throws IOException, UdbsxException {
         return putJudgments(new PutJudgmentsRequest.Builder().build());
     }
 
@@ -492,7 +492,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
     /**
      * Creates a new query set by uploading manually.
      */
-    public PutQuerySetsResponse putQuerySets(PutQuerySetsRequest request) throws IOException, OpenSearchException {
+    public PutQuerySetsResponse putQuerySets(PutQuerySetsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutQuerySetsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -502,14 +502,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * @param fn a function that initializes a builder to create the {@link PutQuerySetsRequest}
      */
     public final PutQuerySetsResponse putQuerySets(Function<PutQuerySetsRequest.Builder, ObjectBuilder<PutQuerySetsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return putQuerySets(fn.apply(new PutQuerySetsRequest.Builder()).build());
     }
 
     /**
      * Creates a new query set by uploading manually.
      */
-    public final PutQuerySetsResponse putQuerySets() throws IOException, OpenSearchException {
+    public final PutQuerySetsResponse putQuerySets() throws IOException, UdbsxException {
         return putQuerySets(new PutQuerySetsRequest.Builder().build());
     }
 
@@ -519,7 +519,7 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      * Creates a search configuration.
      */
     public PutSearchConfigurationsResponse putSearchConfigurations(PutSearchConfigurationsRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequest(request, PutSearchConfigurationsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -530,14 +530,14 @@ public class OpenSearchSearchRelevanceClient extends ApiClient<OpenSearchTranspo
      */
     public final PutSearchConfigurationsResponse putSearchConfigurations(
         Function<PutSearchConfigurationsRequest.Builder, ObjectBuilder<PutSearchConfigurationsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putSearchConfigurations(fn.apply(new PutSearchConfigurationsRequest.Builder()).build());
     }
 
     /**
      * Creates a search configuration.
      */
-    public final PutSearchConfigurationsResponse putSearchConfigurations() throws IOException, OpenSearchException {
+    public final PutSearchConfigurationsResponse putSearchConfigurations() throws IOException, UdbsxException {
         return putSearchConfigurations(new PutSearchConfigurationsRequest.Builder().build());
     }
 }

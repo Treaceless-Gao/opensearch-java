@@ -65,9 +65,9 @@ import org.opensearch.client.transport.Endpoint;
 import org.opensearch.client.transport.GenericEndpoint;
 import org.opensearch.client.transport.GenericSerializable;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanEndpoint;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.util.ApiTypeHelper;
@@ -78,7 +78,7 @@ import org.opensearch.client.util.MissingRequiredPropertyException;
  * use {@link org.opensearch.client.transport.httpclient5.ApacheHttpClient5Transport} instead.
  */
 @Deprecated
-public class RestClientTransport implements OpenSearchTransport {
+public class RestClientTransport implements UdbsxTransport {
 
     static final ContentType JsonContentType = ContentType.APPLICATION_JSON;
 

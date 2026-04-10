@@ -41,9 +41,9 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.util.ObjectBuilder;
 
@@ -51,10 +51,8 @@ import org.opensearch.client.util.ObjectBuilder;
  * Client for the indices namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndicesClientBase<Self>> extends ApiClient<
-    OpenSearchTransport,
-    Self> {
-    public OpenSearchIndicesClientBase(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndicesClientBase<Self>> extends ApiClient<UdbsxTransport, Self> {
+    public OpenSearchIndicesClientBase(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -63,7 +61,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Adds a block to an index.
      */
-    public AddBlockResponse addBlock(AddBlockRequest request) throws IOException, OpenSearchException {
+    public AddBlockResponse addBlock(AddBlockRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AddBlockRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -73,7 +71,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link AddBlockRequest}
      */
     public final AddBlockResponse addBlock(Function<AddBlockRequest.Builder, ObjectBuilder<AddBlockRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return addBlock(fn.apply(new AddBlockRequest.Builder()).build());
     }
 
@@ -82,7 +80,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Performs the analysis process on a text and return the tokens breakdown of the text.
      */
-    public AnalyzeResponse analyze(AnalyzeRequest request) throws IOException, OpenSearchException {
+    public AnalyzeResponse analyze(AnalyzeRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AnalyzeRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -92,14 +90,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link AnalyzeRequest}
      */
     public final AnalyzeResponse analyze(Function<AnalyzeRequest.Builder, ObjectBuilder<AnalyzeRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return analyze(fn.apply(new AnalyzeRequest.Builder()).build());
     }
 
     /**
      * Performs the analysis process on a text and return the tokens breakdown of the text.
      */
-    public final AnalyzeResponse analyze() throws IOException, OpenSearchException {
+    public final AnalyzeResponse analyze() throws IOException, UdbsxException {
         return analyze(new AnalyzeRequest.Builder().build());
     }
 
@@ -108,7 +106,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Clears all or specific caches for one or more indexes.
      */
-    public ClearCacheResponse clearCache(ClearCacheRequest request) throws IOException, OpenSearchException {
+    public ClearCacheResponse clearCache(ClearCacheRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ClearCacheRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -118,14 +116,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ClearCacheRequest}
      */
     public final ClearCacheResponse clearCache(Function<ClearCacheRequest.Builder, ObjectBuilder<ClearCacheRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return clearCache(fn.apply(new ClearCacheRequest.Builder()).build());
     }
 
     /**
      * Clears all or specific caches for one or more indexes.
      */
-    public final ClearCacheResponse clearCache() throws IOException, OpenSearchException {
+    public final ClearCacheResponse clearCache() throws IOException, UdbsxException {
         return clearCache(new ClearCacheRequest.Builder().build());
     }
 
@@ -134,7 +132,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Clones an index.
      */
-    public CloneIndexResponse clone(CloneIndexRequest request) throws IOException, OpenSearchException {
+    public CloneIndexResponse clone(CloneIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CloneIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -144,7 +142,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link CloneIndexRequest}
      */
     public final CloneIndexResponse clone(Function<CloneIndexRequest.Builder, ObjectBuilder<CloneIndexRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return clone(fn.apply(new CloneIndexRequest.Builder()).build());
     }
 
@@ -153,7 +151,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Closes an index.
      */
-    public CloseIndexResponse close(CloseIndexRequest request) throws IOException, OpenSearchException {
+    public CloseIndexResponse close(CloseIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CloseIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -163,7 +161,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link CloseIndexRequest}
      */
     public final CloseIndexResponse close(Function<CloseIndexRequest.Builder, ObjectBuilder<CloseIndexRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return close(fn.apply(new CloseIndexRequest.Builder()).build());
     }
 
@@ -172,7 +170,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Creates an index with optional settings and mappings.
      */
-    public CreateIndexResponse create(CreateIndexRequest request) throws IOException, OpenSearchException {
+    public CreateIndexResponse create(CreateIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -182,7 +180,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link CreateIndexRequest}
      */
     public final CreateIndexResponse create(Function<CreateIndexRequest.Builder, ObjectBuilder<CreateIndexRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return create(fn.apply(new CreateIndexRequest.Builder()).build());
     }
 
@@ -191,7 +189,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Creates or updates a data stream.
      */
-    public CreateDataStreamResponse createDataStream(CreateDataStreamRequest request) throws IOException, OpenSearchException {
+    public CreateDataStreamResponse createDataStream(CreateDataStreamRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateDataStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -202,7 +200,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final CreateDataStreamResponse createDataStream(
         Function<CreateDataStreamRequest.Builder, ObjectBuilder<CreateDataStreamRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createDataStream(fn.apply(new CreateDataStreamRequest.Builder()).build());
     }
 
@@ -211,7 +209,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Provides statistics on operations happening in a data stream.
      */
-    public DataStreamsStatsResponse dataStreamsStats(DataStreamsStatsRequest request) throws IOException, OpenSearchException {
+    public DataStreamsStatsResponse dataStreamsStats(DataStreamsStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DataStreamsStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -222,14 +220,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final DataStreamsStatsResponse dataStreamsStats(
         Function<DataStreamsStatsRequest.Builder, ObjectBuilder<DataStreamsStatsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return dataStreamsStats(fn.apply(new DataStreamsStatsRequest.Builder()).build());
     }
 
     /**
      * Provides statistics on operations happening in a data stream.
      */
-    public final DataStreamsStatsResponse dataStreamsStats() throws IOException, OpenSearchException {
+    public final DataStreamsStatsResponse dataStreamsStats() throws IOException, UdbsxException {
         return dataStreamsStats(new DataStreamsStatsRequest.Builder().build());
     }
 
@@ -238,7 +236,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Deletes an index.
      */
-    public DeleteIndexResponse delete(DeleteIndexRequest request) throws IOException, OpenSearchException {
+    public DeleteIndexResponse delete(DeleteIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -248,7 +246,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link DeleteIndexRequest}
      */
     public final DeleteIndexResponse delete(Function<DeleteIndexRequest.Builder, ObjectBuilder<DeleteIndexRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return delete(fn.apply(new DeleteIndexRequest.Builder()).build());
     }
 
@@ -257,7 +255,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Deletes an alias.
      */
-    public DeleteAliasResponse deleteAlias(DeleteAliasRequest request) throws IOException, OpenSearchException {
+    public DeleteAliasResponse deleteAlias(DeleteAliasRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteAliasRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -267,7 +265,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link DeleteAliasRequest}
      */
     public final DeleteAliasResponse deleteAlias(Function<DeleteAliasRequest.Builder, ObjectBuilder<DeleteAliasRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteAlias(fn.apply(new DeleteAliasRequest.Builder()).build());
     }
 
@@ -276,7 +274,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Deletes a data stream.
      */
-    public DeleteDataStreamResponse deleteDataStream(DeleteDataStreamRequest request) throws IOException, OpenSearchException {
+    public DeleteDataStreamResponse deleteDataStream(DeleteDataStreamRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteDataStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -287,7 +285,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final DeleteDataStreamResponse deleteDataStream(
         Function<DeleteDataStreamRequest.Builder, ObjectBuilder<DeleteDataStreamRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteDataStream(fn.apply(new DeleteDataStreamRequest.Builder()).build());
     }
 
@@ -296,7 +294,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Deletes an index template.
      */
-    public DeleteIndexTemplateResponse deleteIndexTemplate(DeleteIndexTemplateRequest request) throws IOException, OpenSearchException {
+    public DeleteIndexTemplateResponse deleteIndexTemplate(DeleteIndexTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteIndexTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -307,7 +305,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final DeleteIndexTemplateResponse deleteIndexTemplate(
         Function<DeleteIndexTemplateRequest.Builder, ObjectBuilder<DeleteIndexTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteIndexTemplate(fn.apply(new DeleteIndexTemplateRequest.Builder()).build());
     }
 
@@ -316,7 +314,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Deletes an index template.
      */
-    public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) throws IOException, OpenSearchException {
+    public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -326,7 +324,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link DeleteTemplateRequest}
      */
     public final DeleteTemplateResponse deleteTemplate(Function<DeleteTemplateRequest.Builder, ObjectBuilder<DeleteTemplateRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteTemplate(fn.apply(new DeleteTemplateRequest.Builder()).build());
     }
 
@@ -335,7 +333,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about whether a particular index exists.
      */
-    public BooleanResponse exists(ExistsRequest request) throws IOException, OpenSearchException {
+    public BooleanResponse exists(ExistsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExistsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -345,7 +343,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ExistsRequest}
      */
     public final BooleanResponse exists(Function<ExistsRequest.Builder, ObjectBuilder<ExistsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return exists(fn.apply(new ExistsRequest.Builder()).build());
     }
 
@@ -354,7 +352,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about whether a particular alias exists.
      */
-    public BooleanResponse existsAlias(ExistsAliasRequest request) throws IOException, OpenSearchException {
+    public BooleanResponse existsAlias(ExistsAliasRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExistsAliasRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -364,7 +362,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ExistsAliasRequest}
      */
     public final BooleanResponse existsAlias(Function<ExistsAliasRequest.Builder, ObjectBuilder<ExistsAliasRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return existsAlias(fn.apply(new ExistsAliasRequest.Builder()).build());
     }
 
@@ -373,7 +371,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about whether a particular index template exists.
      */
-    public BooleanResponse existsIndexTemplate(ExistsIndexTemplateRequest request) throws IOException, OpenSearchException {
+    public BooleanResponse existsIndexTemplate(ExistsIndexTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExistsIndexTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -384,7 +382,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final BooleanResponse existsIndexTemplate(
         Function<ExistsIndexTemplateRequest.Builder, ObjectBuilder<ExistsIndexTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return existsIndexTemplate(fn.apply(new ExistsIndexTemplateRequest.Builder()).build());
     }
 
@@ -393,7 +391,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about whether a particular index template exists.
      */
-    public BooleanResponse existsTemplate(ExistsTemplateRequest request) throws IOException, OpenSearchException {
+    public BooleanResponse existsTemplate(ExistsTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExistsTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -403,7 +401,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ExistsTemplateRequest}
      */
     public final BooleanResponse existsTemplate(Function<ExistsTemplateRequest.Builder, ObjectBuilder<ExistsTemplateRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return existsTemplate(fn.apply(new ExistsTemplateRequest.Builder()).build());
     }
 
@@ -412,7 +410,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Performs the flush operation on one or more indexes.
      */
-    public FlushResponse flush(FlushRequest request) throws IOException, OpenSearchException {
+    public FlushResponse flush(FlushRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, FlushRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -421,15 +419,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      *
      * @param fn a function that initializes a builder to create the {@link FlushRequest}
      */
-    public final FlushResponse flush(Function<FlushRequest.Builder, ObjectBuilder<FlushRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final FlushResponse flush(Function<FlushRequest.Builder, ObjectBuilder<FlushRequest>> fn) throws IOException, UdbsxException {
         return flush(fn.apply(new FlushRequest.Builder()).build());
     }
 
     /**
      * Performs the flush operation on one or more indexes.
      */
-    public final FlushResponse flush() throws IOException, OpenSearchException {
+    public final FlushResponse flush() throws IOException, UdbsxException {
         return flush(new FlushRequest.Builder().build());
     }
 
@@ -438,7 +435,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Performs the force merge operation on one or more indexes.
      */
-    public ForcemergeResponse forcemerge(ForcemergeRequest request) throws IOException, OpenSearchException {
+    public ForcemergeResponse forcemerge(ForcemergeRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ForcemergeRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -448,14 +445,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ForcemergeRequest}
      */
     public final ForcemergeResponse forcemerge(Function<ForcemergeRequest.Builder, ObjectBuilder<ForcemergeRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return forcemerge(fn.apply(new ForcemergeRequest.Builder()).build());
     }
 
     /**
      * Performs the force merge operation on one or more indexes.
      */
-    public final ForcemergeResponse forcemerge() throws IOException, OpenSearchException {
+    public final ForcemergeResponse forcemerge() throws IOException, UdbsxException {
         return forcemerge(new ForcemergeRequest.Builder().build());
     }
 
@@ -464,7 +461,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about one or more indexes.
      */
-    public GetIndexResponse get(GetIndexRequest request) throws IOException, OpenSearchException {
+    public GetIndexResponse get(GetIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -474,7 +471,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link GetIndexRequest}
      */
     public final GetIndexResponse get(Function<GetIndexRequest.Builder, ObjectBuilder<GetIndexRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return get(fn.apply(new GetIndexRequest.Builder()).build());
     }
 
@@ -483,7 +480,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns an alias.
      */
-    public GetAliasResponse getAlias(GetAliasRequest request) throws IOException, OpenSearchException {
+    public GetAliasResponse getAlias(GetAliasRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetAliasRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -493,14 +490,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link GetAliasRequest}
      */
     public final GetAliasResponse getAlias(Function<GetAliasRequest.Builder, ObjectBuilder<GetAliasRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getAlias(fn.apply(new GetAliasRequest.Builder()).build());
     }
 
     /**
      * Returns an alias.
      */
-    public final GetAliasResponse getAlias() throws IOException, OpenSearchException {
+    public final GetAliasResponse getAlias() throws IOException, UdbsxException {
         return getAlias(new GetAliasRequest.Builder().build());
     }
 
@@ -509,7 +506,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns data streams.
      */
-    public GetDataStreamResponse getDataStream(GetDataStreamRequest request) throws IOException, OpenSearchException {
+    public GetDataStreamResponse getDataStream(GetDataStreamRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetDataStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -519,14 +516,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link GetDataStreamRequest}
      */
     public final GetDataStreamResponse getDataStream(Function<GetDataStreamRequest.Builder, ObjectBuilder<GetDataStreamRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getDataStream(fn.apply(new GetDataStreamRequest.Builder()).build());
     }
 
     /**
      * Returns data streams.
      */
-    public final GetDataStreamResponse getDataStream() throws IOException, OpenSearchException {
+    public final GetDataStreamResponse getDataStream() throws IOException, UdbsxException {
         return getDataStream(new GetDataStreamRequest.Builder().build());
     }
 
@@ -535,7 +532,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns an index template.
      */
-    public GetIndexTemplateResponse getIndexTemplate(GetIndexTemplateRequest request) throws IOException, OpenSearchException {
+    public GetIndexTemplateResponse getIndexTemplate(GetIndexTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetIndexTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -546,14 +543,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final GetIndexTemplateResponse getIndexTemplate(
         Function<GetIndexTemplateRequest.Builder, ObjectBuilder<GetIndexTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getIndexTemplate(fn.apply(new GetIndexTemplateRequest.Builder()).build());
     }
 
     /**
      * Returns an index template.
      */
-    public final GetIndexTemplateResponse getIndexTemplate() throws IOException, OpenSearchException {
+    public final GetIndexTemplateResponse getIndexTemplate() throws IOException, UdbsxException {
         return getIndexTemplate(new GetIndexTemplateRequest.Builder().build());
     }
 
@@ -562,7 +559,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns mappings for one or more indexes.
      */
-    public GetMappingResponse getMapping(GetMappingRequest request) throws IOException, OpenSearchException {
+    public GetMappingResponse getMapping(GetMappingRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetMappingRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -572,14 +569,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link GetMappingRequest}
      */
     public final GetMappingResponse getMapping(Function<GetMappingRequest.Builder, ObjectBuilder<GetMappingRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getMapping(fn.apply(new GetMappingRequest.Builder()).build());
     }
 
     /**
      * Returns mappings for one or more indexes.
      */
-    public final GetMappingResponse getMapping() throws IOException, OpenSearchException {
+    public final GetMappingResponse getMapping() throws IOException, UdbsxException {
         return getMapping(new GetMappingRequest.Builder().build());
     }
 
@@ -588,7 +585,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns settings for one or more indexes.
      */
-    public GetIndicesSettingsResponse getSettings(GetIndicesSettingsRequest request) throws IOException, OpenSearchException {
+    public GetIndicesSettingsResponse getSettings(GetIndicesSettingsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetIndicesSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -599,14 +596,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final GetIndicesSettingsResponse getSettings(
         Function<GetIndicesSettingsRequest.Builder, ObjectBuilder<GetIndicesSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getSettings(fn.apply(new GetIndicesSettingsRequest.Builder()).build());
     }
 
     /**
      * Returns settings for one or more indexes.
      */
-    public final GetIndicesSettingsResponse getSettings() throws IOException, OpenSearchException {
+    public final GetIndicesSettingsResponse getSettings() throws IOException, UdbsxException {
         return getSettings(new GetIndicesSettingsRequest.Builder().build());
     }
 
@@ -615,7 +612,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns an index template.
      */
-    public GetTemplateResponse getTemplate(GetTemplateRequest request) throws IOException, OpenSearchException {
+    public GetTemplateResponse getTemplate(GetTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -625,14 +622,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link GetTemplateRequest}
      */
     public final GetTemplateResponse getTemplate(Function<GetTemplateRequest.Builder, ObjectBuilder<GetTemplateRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getTemplate(fn.apply(new GetTemplateRequest.Builder()).build());
     }
 
     /**
      * Returns an index template.
      */
-    public final GetTemplateResponse getTemplate() throws IOException, OpenSearchException {
+    public final GetTemplateResponse getTemplate() throws IOException, UdbsxException {
         return getTemplate(new GetTemplateRequest.Builder().build());
     }
 
@@ -641,7 +638,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Opens an index.
      */
-    public OpenResponse open(OpenRequest request) throws IOException, OpenSearchException {
+    public OpenResponse open(OpenRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, OpenRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -650,7 +647,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      *
      * @param fn a function that initializes a builder to create the {@link OpenRequest}
      */
-    public final OpenResponse open(Function<OpenRequest.Builder, ObjectBuilder<OpenRequest>> fn) throws IOException, OpenSearchException {
+    public final OpenResponse open(Function<OpenRequest.Builder, ObjectBuilder<OpenRequest>> fn) throws IOException, UdbsxException {
         return open(fn.apply(new OpenRequest.Builder()).build());
     }
 
@@ -659,7 +656,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Creates or updates an alias.
      */
-    public PutAliasResponse putAlias(PutAliasRequest request) throws IOException, OpenSearchException {
+    public PutAliasResponse putAlias(PutAliasRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutAliasRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -669,14 +666,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link PutAliasRequest}
      */
     public final PutAliasResponse putAlias(Function<PutAliasRequest.Builder, ObjectBuilder<PutAliasRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return putAlias(fn.apply(new PutAliasRequest.Builder()).build());
     }
 
     /**
      * Creates or updates an alias.
      */
-    public final PutAliasResponse putAlias() throws IOException, OpenSearchException {
+    public final PutAliasResponse putAlias() throws IOException, UdbsxException {
         return putAlias(new PutAliasRequest.Builder().build());
     }
 
@@ -685,7 +682,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Creates or updates an index template.
      */
-    public PutIndexTemplateResponse putIndexTemplate(PutIndexTemplateRequest request) throws IOException, OpenSearchException {
+    public PutIndexTemplateResponse putIndexTemplate(PutIndexTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutIndexTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -696,7 +693,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final PutIndexTemplateResponse putIndexTemplate(
         Function<PutIndexTemplateRequest.Builder, ObjectBuilder<PutIndexTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putIndexTemplate(fn.apply(new PutIndexTemplateRequest.Builder()).build());
     }
 
@@ -705,7 +702,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Updates the index mappings.
      */
-    public PutMappingResponse putMapping(PutMappingRequest request) throws IOException, OpenSearchException {
+    public PutMappingResponse putMapping(PutMappingRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutMappingRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -715,7 +712,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link PutMappingRequest}
      */
     public final PutMappingResponse putMapping(Function<PutMappingRequest.Builder, ObjectBuilder<PutMappingRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return putMapping(fn.apply(new PutMappingRequest.Builder()).build());
     }
 
@@ -724,7 +721,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Updates the index settings.
      */
-    public PutIndicesSettingsResponse putSettings(PutIndicesSettingsRequest request) throws IOException, OpenSearchException {
+    public PutIndicesSettingsResponse putSettings(PutIndicesSettingsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutIndicesSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -735,7 +732,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final PutIndicesSettingsResponse putSettings(
         Function<PutIndicesSettingsRequest.Builder, ObjectBuilder<PutIndicesSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putSettings(fn.apply(new PutIndicesSettingsRequest.Builder()).build());
     }
 
@@ -744,7 +741,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Creates or updates an index template.
      */
-    public PutTemplateResponse putTemplate(PutTemplateRequest request) throws IOException, OpenSearchException {
+    public PutTemplateResponse putTemplate(PutTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -754,7 +751,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link PutTemplateRequest}
      */
     public final PutTemplateResponse putTemplate(Function<PutTemplateRequest.Builder, ObjectBuilder<PutTemplateRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return putTemplate(fn.apply(new PutTemplateRequest.Builder()).build());
     }
 
@@ -763,7 +760,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about ongoing index shard recoveries.
      */
-    public RecoveryResponse recovery(RecoveryRequest request) throws IOException, OpenSearchException {
+    public RecoveryResponse recovery(RecoveryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RecoveryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -773,14 +770,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link RecoveryRequest}
      */
     public final RecoveryResponse recovery(Function<RecoveryRequest.Builder, ObjectBuilder<RecoveryRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return recovery(fn.apply(new RecoveryRequest.Builder()).build());
     }
 
     /**
      * Returns information about ongoing index shard recoveries.
      */
-    public final RecoveryResponse recovery() throws IOException, OpenSearchException {
+    public final RecoveryResponse recovery() throws IOException, UdbsxException {
         return recovery(new RecoveryRequest.Builder().build());
     }
 
@@ -789,7 +786,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Performs the refresh operation in one or more indexes.
      */
-    public RefreshResponse refresh(RefreshRequest request) throws IOException, OpenSearchException {
+    public RefreshResponse refresh(RefreshRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RefreshRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -799,14 +796,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link RefreshRequest}
      */
     public final RefreshResponse refresh(Function<RefreshRequest.Builder, ObjectBuilder<RefreshRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return refresh(fn.apply(new RefreshRequest.Builder()).build());
     }
 
     /**
      * Performs the refresh operation in one or more indexes.
      */
-    public final RefreshResponse refresh() throws IOException, OpenSearchException {
+    public final RefreshResponse refresh() throws IOException, UdbsxException {
         return refresh(new RefreshRequest.Builder().build());
     }
 
@@ -815,7 +812,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Returns information about any matching indexes, aliases, and data streams.
      */
-    public ResolveIndexResponse resolveIndex(ResolveIndexRequest request) throws IOException, OpenSearchException {
+    public ResolveIndexResponse resolveIndex(ResolveIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ResolveIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -825,7 +822,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ResolveIndexRequest}
      */
     public final ResolveIndexResponse resolveIndex(Function<ResolveIndexRequest.Builder, ObjectBuilder<ResolveIndexRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return resolveIndex(fn.apply(new ResolveIndexRequest.Builder()).build());
     }
 
@@ -834,7 +831,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Updates an alias to point to a new index when the existing index is considered to be too large or too old.
      */
-    public RolloverResponse rollover(RolloverRequest request) throws IOException, OpenSearchException {
+    public RolloverResponse rollover(RolloverRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RolloverRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -844,7 +841,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link RolloverRequest}
      */
     public final RolloverResponse rollover(Function<RolloverRequest.Builder, ObjectBuilder<RolloverRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return rollover(fn.apply(new RolloverRequest.Builder()).build());
     }
 
@@ -853,7 +850,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Provides low-level information about segments in a Lucene index.
      */
-    public SegmentsResponse segments(SegmentsRequest request) throws IOException, OpenSearchException {
+    public SegmentsResponse segments(SegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -863,14 +860,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link SegmentsRequest}
      */
     public final SegmentsResponse segments(Function<SegmentsRequest.Builder, ObjectBuilder<SegmentsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return segments(fn.apply(new SegmentsRequest.Builder()).build());
     }
 
     /**
      * Provides low-level information about segments in a Lucene index.
      */
-    public final SegmentsResponse segments() throws IOException, OpenSearchException {
+    public final SegmentsResponse segments() throws IOException, UdbsxException {
         return segments(new SegmentsRequest.Builder().build());
     }
 
@@ -879,7 +876,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Provides store information for shard copies of indexes.
      */
-    public ShardStoresResponse shardStores(ShardStoresRequest request) throws IOException, OpenSearchException {
+    public ShardStoresResponse shardStores(ShardStoresRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ShardStoresRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -889,14 +886,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ShardStoresRequest}
      */
     public final ShardStoresResponse shardStores(Function<ShardStoresRequest.Builder, ObjectBuilder<ShardStoresRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return shardStores(fn.apply(new ShardStoresRequest.Builder()).build());
     }
 
     /**
      * Provides store information for shard copies of indexes.
      */
-    public final ShardStoresResponse shardStores() throws IOException, OpenSearchException {
+    public final ShardStoresResponse shardStores() throws IOException, UdbsxException {
         return shardStores(new ShardStoresRequest.Builder().build());
     }
 
@@ -905,7 +902,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Allow to shrink an existing index into a new index with fewer primary shards.
      */
-    public ShrinkResponse shrink(ShrinkRequest request) throws IOException, OpenSearchException {
+    public ShrinkResponse shrink(ShrinkRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ShrinkRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -915,7 +912,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ShrinkRequest}
      */
     public final ShrinkResponse shrink(Function<ShrinkRequest.Builder, ObjectBuilder<ShrinkRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return shrink(fn.apply(new ShrinkRequest.Builder()).build());
     }
 
@@ -924,8 +921,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Simulate matching the given index name against the index templates in the system.
      */
-    public SimulateIndexTemplateResponse simulateIndexTemplate(SimulateIndexTemplateRequest request) throws IOException,
-        OpenSearchException {
+    public SimulateIndexTemplateResponse simulateIndexTemplate(SimulateIndexTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SimulateIndexTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -936,7 +932,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final SimulateIndexTemplateResponse simulateIndexTemplate(
         Function<SimulateIndexTemplateRequest.Builder, ObjectBuilder<SimulateIndexTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return simulateIndexTemplate(fn.apply(new SimulateIndexTemplateRequest.Builder()).build());
     }
 
@@ -945,7 +941,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Simulate resolving the given template name or body.
      */
-    public SimulateTemplateResponse simulateTemplate(SimulateTemplateRequest request) throws IOException, OpenSearchException {
+    public SimulateTemplateResponse simulateTemplate(SimulateTemplateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SimulateTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -956,7 +952,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      */
     public final SimulateTemplateResponse simulateTemplate(
         Function<SimulateTemplateRequest.Builder, ObjectBuilder<SimulateTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return simulateTemplate(fn.apply(new SimulateTemplateRequest.Builder()).build());
     }
 
@@ -965,7 +961,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Allows you to split an existing index into a new index with more primary shards.
      */
-    public SplitResponse split(SplitRequest request) throws IOException, OpenSearchException {
+    public SplitResponse split(SplitRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SplitRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -974,8 +970,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      *
      * @param fn a function that initializes a builder to create the {@link SplitRequest}
      */
-    public final SplitResponse split(Function<SplitRequest.Builder, ObjectBuilder<SplitRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final SplitResponse split(Function<SplitRequest.Builder, ObjectBuilder<SplitRequest>> fn) throws IOException, UdbsxException {
         return split(fn.apply(new SplitRequest.Builder()).build());
     }
 
@@ -984,7 +979,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Provides statistics on operations happening in an index.
      */
-    public IndicesStatsResponse stats(IndicesStatsRequest request) throws IOException, OpenSearchException {
+    public IndicesStatsResponse stats(IndicesStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, IndicesStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -994,14 +989,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link IndicesStatsRequest}
      */
     public final IndicesStatsResponse stats(Function<IndicesStatsRequest.Builder, ObjectBuilder<IndicesStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return stats(fn.apply(new IndicesStatsRequest.Builder()).build());
     }
 
     /**
      * Provides statistics on operations happening in an index.
      */
-    public final IndicesStatsResponse stats() throws IOException, OpenSearchException {
+    public final IndicesStatsResponse stats() throws IOException, UdbsxException {
         return stats(new IndicesStatsRequest.Builder().build());
     }
 
@@ -1010,7 +1005,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Updates index aliases.
      */
-    public UpdateAliasesResponse updateAliases(UpdateAliasesRequest request) throws IOException, OpenSearchException {
+    public UpdateAliasesResponse updateAliases(UpdateAliasesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateAliasesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1020,14 +1015,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link UpdateAliasesRequest}
      */
     public final UpdateAliasesResponse updateAliases(Function<UpdateAliasesRequest.Builder, ObjectBuilder<UpdateAliasesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return updateAliases(fn.apply(new UpdateAliasesRequest.Builder()).build());
     }
 
     /**
      * Updates index aliases.
      */
-    public final UpdateAliasesResponse updateAliases() throws IOException, OpenSearchException {
+    public final UpdateAliasesResponse updateAliases() throws IOException, UdbsxException {
         return updateAliases(new UpdateAliasesRequest.Builder().build());
     }
 
@@ -1036,7 +1031,7 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
     /**
      * Allows a user to validate a potentially expensive query without executing it.
      */
-    public ValidateQueryResponse validateQuery(ValidateQueryRequest request) throws IOException, OpenSearchException {
+    public ValidateQueryResponse validateQuery(ValidateQueryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ValidateQueryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1046,14 +1041,14 @@ public abstract class OpenSearchIndicesClientBase<Self extends OpenSearchIndices
      * @param fn a function that initializes a builder to create the {@link ValidateQueryRequest}
      */
     public final ValidateQueryResponse validateQuery(Function<ValidateQueryRequest.Builder, ObjectBuilder<ValidateQueryRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return validateQuery(fn.apply(new ValidateQueryRequest.Builder()).build());
     }
 
     /**
      * Allows a user to validate a potentially expensive query without executing it.
      */
-    public final ValidateQueryResponse validateQuery() throws IOException, OpenSearchException {
+    public final ValidateQueryResponse validateQuery() throws IOException, UdbsxException {
         return validateQuery(new ValidateQueryRequest.Builder().build());
     }
 }

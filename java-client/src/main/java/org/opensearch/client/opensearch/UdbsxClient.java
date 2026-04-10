@@ -33,11 +33,10 @@
 package org.opensearch.client.opensearch;
 
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import javax.annotation.Nullable;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch.core.BulkRequest;
 import org.opensearch.client.opensearch.core.BulkResponse;
 import org.opensearch.client.opensearch.core.CreateRequest;
@@ -54,27 +53,33 @@ import org.opensearch.client.opensearch.core.TermvectorsRequest;
 import org.opensearch.client.opensearch.core.TermvectorsResponse;
 import org.opensearch.client.opensearch.core.UpdateRequest;
 import org.opensearch.client.opensearch.core.UpdateResponse;
+import org.opensearch.client.opensearch.generic.UdbsxGenericClient;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.EndpointWithResponseMapperAttr;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the namespace.
  */
-public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchAsyncClient> {
-    public OpenSearchAsyncClient(OpenSearchTransport transport) {
+public class UdbsxClient extends UdbsxClientBase<UdbsxClient> {
+    public UdbsxClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public UdbsxClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
     @Override
-    public OpenSearchAsyncClient withTransportOptions(@Nullable TransportOptions transportOptions) {
-        return new OpenSearchAsyncClient(this.transport, transportOptions);
+    public UdbsxClient withTransportOptions(@Nullable TransportOptions transportOptions) {
+        return new UdbsxClient(this.transport, transportOptions);
+    }
+
+    // ----- Child clients
+    public UdbsxGenericClient generic() {
+        return new UdbsxGenericClient(this.transport, this.transportOptions);
     }
 
     // ----- Endpoint: bulk
@@ -86,14 +91,14 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public CompletableFuture<BulkResponse> bulk(BulkRequest request) throws IOException, OpenSearchException {
+    public BulkResponse bulk(BulkRequest request) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<BulkRequest, BulkResponse, ErrorResponse> endpoint = (JsonEndpoint<
             BulkRequest,
             BulkResponse,
             ErrorResponse>) BulkRequest._ENDPOINT;
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -106,8 +111,7 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final CompletableFuture<BulkResponse> bulk(Function<BulkRequest.Builder, ObjectBuilder<BulkRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final BulkResponse bulk(Function<BulkRequest.Builder, ObjectBuilder<BulkRequest>> fn) throws IOException, UdbsxException {
         return bulk(fn.apply(new BulkRequest.Builder()).build());
     }
 
@@ -118,8 +122,8 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public CompletableFuture<BulkResponse> bulk() throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(new BulkRequest.Builder().build(), BulkRequest._ENDPOINT, this.transportOptions);
+    public BulkResponse bulk() throws IOException, UdbsxException {
+        return this.transport.performRequest(new BulkRequest.Builder().build(), BulkRequest._ENDPOINT, this.transportOptions);
     }
 
     // ----- Endpoint: create
@@ -133,14 +137,14 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument> CompletableFuture<CreateResponse> create(CreateRequest<TDocument> request) throws IOException, OpenSearchException {
+    public <TDocument> CreateResponse create(CreateRequest<TDocument> request) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<CreateRequest<?>, CreateResponse, ErrorResponse> endpoint = (JsonEndpoint<
             CreateRequest<?>,
             CreateResponse,
             ErrorResponse>) CreateRequest._ENDPOINT;
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -155,9 +159,8 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument> CompletableFuture<CreateResponse> create(
-        Function<CreateRequest.Builder<TDocument>, ObjectBuilder<CreateRequest<TDocument>>> fn
-    ) throws IOException, OpenSearchException {
+    public final <TDocument> CreateResponse create(Function<CreateRequest.Builder<TDocument>, ObjectBuilder<CreateRequest<TDocument>>> fn)
+        throws IOException, UdbsxException {
         return create(fn.apply(new CreateRequest.Builder<TDocument>()).build());
     }
 
@@ -169,14 +172,14 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument> CompletableFuture<IndexResponse> index(IndexRequest<TDocument> request) throws IOException, OpenSearchException {
+    public <TDocument> IndexResponse index(IndexRequest<TDocument> request) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<IndexRequest<?>, IndexResponse, ErrorResponse> endpoint = (JsonEndpoint<
             IndexRequest<?>,
             IndexResponse,
             ErrorResponse>) IndexRequest._ENDPOINT;
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -188,9 +191,8 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument> CompletableFuture<IndexResponse> index(
-        Function<IndexRequest.Builder<TDocument>, ObjectBuilder<IndexRequest<TDocument>>> fn
-    ) throws IOException, OpenSearchException {
+    public final <TDocument> IndexResponse index(Function<IndexRequest.Builder<TDocument>, ObjectBuilder<IndexRequest<TDocument>>> fn)
+        throws IOException, UdbsxException {
         return index(fn.apply(new IndexRequest.Builder<TDocument>()).build());
     }
 
@@ -202,8 +204,8 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument> CompletableFuture<MgetResponse<TDocument>> mget(MgetRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> MgetResponse<TDocument> mget(MgetRequest request, Class<TDocument> tDocumentClass) throws IOException,
+        UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<MgetRequest, MgetResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             MgetRequest,
@@ -215,7 +217,7 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -227,10 +229,10 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument> CompletableFuture<MgetResponse<TDocument>> mget(
+    public final <TDocument> MgetResponse<TDocument> mget(
         Function<MgetRequest.Builder, ObjectBuilder<MgetRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return mget(fn.apply(new MgetRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -242,8 +244,8 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument> CompletableFuture<MsearchResponse<TDocument>> msearch(MsearchRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> MsearchResponse<TDocument> msearch(MsearchRequest request, Class<TDocument> tDocumentClass) throws IOException,
+        UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<MsearchRequest, MsearchResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             MsearchRequest,
@@ -255,7 +257,7 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -267,10 +269,10 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument> CompletableFuture<MsearchResponse<TDocument>> msearch(
+    public final <TDocument> MsearchResponse<TDocument> msearch(
         Function<MsearchRequest.Builder, ObjectBuilder<MsearchRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return msearch(fn.apply(new MsearchRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -282,10 +284,8 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument> CompletableFuture<MsearchTemplateResponse<TDocument>> msearchTemplate(
-        MsearchTemplateRequest request,
-        Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    public <TDocument> MsearchTemplateResponse<TDocument> msearchTemplate(MsearchTemplateRequest request, Class<TDocument> tDocumentClass)
+        throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<MsearchTemplateRequest, MsearchTemplateResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             MsearchTemplateRequest,
@@ -297,7 +297,7 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -309,10 +309,10 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument> CompletableFuture<MsearchTemplateResponse<TDocument>> msearchTemplate(
+    public final <TDocument> MsearchTemplateResponse<TDocument> msearchTemplate(
         Function<MsearchTemplateRequest.Builder, ObjectBuilder<MsearchTemplateRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return msearchTemplate(fn.apply(new MsearchTemplateRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -325,15 +325,14 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument> CompletableFuture<TermvectorsResponse> termvectors(TermvectorsRequest<TDocument> request) throws IOException,
-        OpenSearchException {
+    public <TDocument> TermvectorsResponse termvectors(TermvectorsRequest<TDocument> request) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<TermvectorsRequest<?>, TermvectorsResponse, ErrorResponse> endpoint = (JsonEndpoint<
             TermvectorsRequest<?>,
             TermvectorsResponse,
             ErrorResponse>) TermvectorsRequest._ENDPOINT;
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -346,9 +345,9 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument> CompletableFuture<TermvectorsResponse> termvectors(
+    public final <TDocument> TermvectorsResponse termvectors(
         Function<TermvectorsRequest.Builder<TDocument>, ObjectBuilder<TermvectorsRequest<TDocument>>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return termvectors(fn.apply(new TermvectorsRequest.Builder<TDocument>()).build());
     }
 
@@ -360,10 +359,10 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public <TDocument, TPartialDocument> CompletableFuture<UpdateResponse<TDocument>> update(
+    public <TDocument, TPartialDocument> UpdateResponse<TDocument> update(
         UpdateRequest<TDocument, TPartialDocument> request,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<UpdateRequest<?, ?>, UpdateResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             UpdateRequest<?, ?>,
@@ -375,7 +374,7 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -387,10 +386,11 @@ public class OpenSearchAsyncClient extends OpenSearchAsyncClientBase<OpenSearchA
      *
      */
 
-    public final <TDocument, TPartialDocument> CompletableFuture<UpdateResponse<TDocument>> update(
+    public final <TDocument, TPartialDocument> UpdateResponse<TDocument> update(
+
         Function<UpdateRequest.Builder<TDocument, TPartialDocument>, ObjectBuilder<UpdateRequest<TDocument, TPartialDocument>>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return update(fn.apply(new UpdateRequest.Builder<TDocument, TPartialDocument>()).build(), tDocumentClass);
     }
 }

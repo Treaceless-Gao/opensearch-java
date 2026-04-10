@@ -51,15 +51,15 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.opensearch.client.json.JsonpMapper;
 import org.opensearch.client.json.jackson.JacksonJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
 import org.opensearch.client.opensearch.core.BulkRequest;
 import org.opensearch.client.opensearch.core.BulkResponse;
 import org.opensearch.client.opensearch.core.bulk.BulkOperation;
 import org.opensearch.client.opensearch.core.bulk.BulkResponseItem;
 import org.opensearch.client.opensearch.core.bulk.OperationType;
 import org.opensearch.client.transport.Endpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 
 public class BulkIngesterTest extends Assert {
 
@@ -142,7 +142,7 @@ public class BulkIngesterTest extends Assert {
 
         CountingListener listener = new CountingListener();
         TestTransport transport = new TestTransport();
-        OpenSearchAsyncClient client = new OpenSearchAsyncClient(transport);
+        UdbsxAsyncClient client = new UdbsxAsyncClient(transport);
         ScheduledExecutorService scheduler;
         if (externalScheduler) {
             scheduler = Executors.newSingleThreadScheduledExecutor(r -> {
@@ -207,7 +207,7 @@ public class BulkIngesterTest extends Assert {
         long operationSize = IngesterOperation.of(new RetryableBulkOperation<>(operation, null, null), transport.jsonpMapper()).size();
 
         BulkIngester<?> ingester = BulkIngester.of(
-            b -> b.client(new OpenSearchAsyncClient(transport))
+            b -> b.client(new UdbsxAsyncClient(transport))
                 // Set size limit just above operation's size, leading to 2 operations per request
                 .maxSize(operationSize + 1)
         );
@@ -228,7 +228,7 @@ public class BulkIngesterTest extends Assert {
         TestTransport transport = new TestTransport();
 
         BulkIngester<?> ingester = BulkIngester.of(
-            b -> b.client(new OpenSearchAsyncClient(transport))
+            b -> b.client(new UdbsxAsyncClient(transport))
                 // Flush every 50 ms
                 .flushInterval(50, TimeUnit.MILLISECONDS)
                 // Disable other flushing limits
@@ -289,7 +289,7 @@ public class BulkIngesterTest extends Assert {
         };
 
         BulkIngester<Void> ingester = BulkIngester.of(
-            b -> b.client(new OpenSearchAsyncClient(transport))
+            b -> b.client(new UdbsxAsyncClient(transport))
                 // Flush every 50 ms
                 .flushInterval(50, TimeUnit.MILLISECONDS)
                 // Disable other flushing limits
@@ -343,7 +343,7 @@ public class BulkIngesterTest extends Assert {
         };
 
         BulkIngester<Integer> ingester = BulkIngester.of(
-            b -> b.client(new OpenSearchAsyncClient(transport))
+            b -> b.client(new UdbsxAsyncClient(transport))
                 // Split every 10 operations
                 .maxOperations(10)
                 .listener(listener)
@@ -390,7 +390,7 @@ public class BulkIngesterTest extends Assert {
         };
 
         BulkIngester<Void> ingester = BulkIngester.of(
-            b -> b.client(new OpenSearchAsyncClient(transport)).listener(listener).globalSettings(s -> s.index("foo").routing("bar"))
+            b -> b.client(new UdbsxAsyncClient(transport)).listener(listener).globalSettings(s -> s.index("foo").routing("bar"))
         );
 
         ingester.add(operation);
@@ -494,7 +494,7 @@ public class BulkIngesterTest extends Assert {
         }
     }
 
-    private static class TestTransport implements OpenSearchTransport {
+    private static class TestTransport implements UdbsxTransport {
         public final AtomicInteger requestsStarted = new AtomicInteger();
         public final AtomicInteger requestsCompleted = new AtomicInteger();
         public final AtomicInteger operations = new AtomicInteger();

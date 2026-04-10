@@ -17,21 +17,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ml namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearchMlClient> {
-    public OpenSearchMlClient(OpenSearchTransport transport) {
+public class OpenSearchMlClient extends ApiClient<UdbsxTransport, OpenSearchMlClient> {
+    public OpenSearchMlClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchMlClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchMlClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -45,7 +45,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Add agentic memory to a memory container.
      */
-    public AddAgenticMemoryResponse addAgenticMemory(AddAgenticMemoryRequest request) throws IOException, OpenSearchException {
+    public AddAgenticMemoryResponse addAgenticMemory(AddAgenticMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AddAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -56,7 +56,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final AddAgenticMemoryResponse addAgenticMemory(
         Function<AddAgenticMemoryRequest.Builder, ObjectBuilder<AddAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return addAgenticMemory(fn.apply(new AddAgenticMemoryRequest.Builder()).build());
     }
 
@@ -65,7 +65,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Creates a standalone connector.
      */
-    public CreateConnectorResponse createConnector(CreateConnectorRequest request) throws IOException, OpenSearchException {
+    public CreateConnectorResponse createConnector(CreateConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -75,7 +75,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link CreateConnectorRequest}
      */
     public final CreateConnectorResponse createConnector(Function<CreateConnectorRequest.Builder, ObjectBuilder<CreateConnectorRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createConnector(fn.apply(new CreateConnectorRequest.Builder()).build());
     }
 
@@ -84,7 +84,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Creates a controller.
      */
-    public CreateControllerResponse createController(CreateControllerRequest request) throws IOException, OpenSearchException {
+    public CreateControllerResponse createController(CreateControllerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -95,7 +95,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final CreateControllerResponse createController(
         Function<CreateControllerRequest.Builder, ObjectBuilder<CreateControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createController(fn.apply(new CreateControllerRequest.Builder()).build());
     }
 
@@ -104,7 +104,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Create a memory.
      */
-    public CreateMemoryResponse createMemory(CreateMemoryRequest request) throws IOException, OpenSearchException {
+    public CreateMemoryResponse createMemory(CreateMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -114,14 +114,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link CreateMemoryRequest}
      */
     public final CreateMemoryResponse createMemory(Function<CreateMemoryRequest.Builder, ObjectBuilder<CreateMemoryRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createMemory(fn.apply(new CreateMemoryRequest.Builder()).build());
     }
 
     /**
      * Create a memory.
      */
-    public final CreateMemoryResponse createMemory() throws IOException, OpenSearchException {
+    public final CreateMemoryResponse createMemory() throws IOException, UdbsxException {
         return createMemory(new CreateMemoryRequest.Builder().build());
     }
 
@@ -130,8 +130,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Create a memory container.
      */
-    public CreateMemoryContainerResponse createMemoryContainer(CreateMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+    public CreateMemoryContainerResponse createMemoryContainer(CreateMemoryContainerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -142,7 +141,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final CreateMemoryContainerResponse createMemoryContainer(
         Function<CreateMemoryContainerRequest.Builder, ObjectBuilder<CreateMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createMemoryContainer(fn.apply(new CreateMemoryContainerRequest.Builder()).build());
     }
 
@@ -152,7 +151,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Create session in a memory container.
      */
     public CreateMemoryContainerSessionResponse createMemoryContainerSession(CreateMemoryContainerSessionRequest request)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateMemoryContainerSessionRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -163,7 +162,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final CreateMemoryContainerSessionResponse createMemoryContainerSession(
         Function<CreateMemoryContainerSessionRequest.Builder, ObjectBuilder<CreateMemoryContainerSessionRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return createMemoryContainerSession(fn.apply(new CreateMemoryContainerSessionRequest.Builder()).build());
     }
 
@@ -172,7 +171,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Create a message.
      */
-    public CreateMessageResponse createMessage(CreateMessageRequest request) throws IOException, OpenSearchException {
+    public CreateMessageResponse createMessage(CreateMessageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateMessageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -182,7 +181,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link CreateMessageRequest}
      */
     public final CreateMessageResponse createMessage(Function<CreateMessageRequest.Builder, ObjectBuilder<CreateMessageRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createMessage(fn.apply(new CreateMessageRequest.Builder()).build());
     }
 
@@ -192,7 +191,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Registers model metadata.
      */
     @Deprecated
-    public CreateModelMetaResponse createModelMeta(CreateModelMetaRequest request) throws IOException, OpenSearchException {
+    public CreateModelMetaResponse createModelMeta(CreateModelMetaRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CreateModelMetaRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -203,7 +202,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     @Deprecated
     public final CreateModelMetaResponse createModelMeta(Function<CreateModelMetaRequest.Builder, ObjectBuilder<CreateModelMetaRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return createModelMeta(fn.apply(new CreateModelMetaRequest.Builder()).build());
     }
 
@@ -212,7 +211,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Delete an agent.
      */
-    public DeleteAgentResponse deleteAgent(DeleteAgentRequest request) throws IOException, OpenSearchException {
+    public DeleteAgentResponse deleteAgent(DeleteAgentRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteAgentRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -222,7 +221,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link DeleteAgentRequest}
      */
     public final DeleteAgentResponse deleteAgent(Function<DeleteAgentRequest.Builder, ObjectBuilder<DeleteAgentRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteAgent(fn.apply(new DeleteAgentRequest.Builder()).build());
     }
 
@@ -231,7 +230,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Delete a specific memory by its type and ID.
      */
-    public DeleteAgenticMemoryResponse deleteAgenticMemory(DeleteAgenticMemoryRequest request) throws IOException, OpenSearchException {
+    public DeleteAgenticMemoryResponse deleteAgenticMemory(DeleteAgenticMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -242,7 +241,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final DeleteAgenticMemoryResponse deleteAgenticMemory(
         Function<DeleteAgenticMemoryRequest.Builder, ObjectBuilder<DeleteAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteAgenticMemory(fn.apply(new DeleteAgenticMemoryRequest.Builder()).build());
     }
 
@@ -252,7 +251,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Delete multiple memories using a query to match specific criteria.
      */
     public DeleteAgenticMemoryQueryResponse deleteAgenticMemoryQuery(DeleteAgenticMemoryQueryRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequest(request, DeleteAgenticMemoryQueryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -263,7 +262,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final DeleteAgenticMemoryQueryResponse deleteAgenticMemoryQuery(
         Function<DeleteAgenticMemoryQueryRequest.Builder, ObjectBuilder<DeleteAgenticMemoryQueryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteAgenticMemoryQuery(fn.apply(new DeleteAgenticMemoryQueryRequest.Builder()).build());
     }
 
@@ -272,7 +271,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Deletes a standalone connector.
      */
-    public DeleteConnectorResponse deleteConnector(DeleteConnectorRequest request) throws IOException, OpenSearchException {
+    public DeleteConnectorResponse deleteConnector(DeleteConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -282,7 +281,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link DeleteConnectorRequest}
      */
     public final DeleteConnectorResponse deleteConnector(Function<DeleteConnectorRequest.Builder, ObjectBuilder<DeleteConnectorRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteConnector(fn.apply(new DeleteConnectorRequest.Builder()).build());
     }
 
@@ -291,7 +290,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Deletes a controller.
      */
-    public DeleteControllerResponse deleteController(DeleteControllerRequest request) throws IOException, OpenSearchException {
+    public DeleteControllerResponse deleteController(DeleteControllerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -302,7 +301,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final DeleteControllerResponse deleteController(
         Function<DeleteControllerRequest.Builder, ObjectBuilder<DeleteControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteController(fn.apply(new DeleteControllerRequest.Builder()).build());
     }
 
@@ -311,7 +310,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Delete a memory.
      */
-    public DeleteMemoryResponse deleteMemory(DeleteMemoryRequest request) throws IOException, OpenSearchException {
+    public DeleteMemoryResponse deleteMemory(DeleteMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -321,7 +320,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link DeleteMemoryRequest}
      */
     public final DeleteMemoryResponse deleteMemory(Function<DeleteMemoryRequest.Builder, ObjectBuilder<DeleteMemoryRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteMemory(fn.apply(new DeleteMemoryRequest.Builder()).build());
     }
 
@@ -330,8 +329,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Delete a memory container.
      */
-    public DeleteMemoryContainerResponse deleteMemoryContainer(DeleteMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+    public DeleteMemoryContainerResponse deleteMemoryContainer(DeleteMemoryContainerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -342,7 +340,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final DeleteMemoryContainerResponse deleteMemoryContainer(
         Function<DeleteMemoryContainerRequest.Builder, ObjectBuilder<DeleteMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteMemoryContainer(fn.apply(new DeleteMemoryContainerRequest.Builder()).build());
     }
 
@@ -351,7 +349,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Deletes a model.
      */
-    public DeleteModelResponse deleteModel(DeleteModelRequest request) throws IOException, OpenSearchException {
+    public DeleteModelResponse deleteModel(DeleteModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -361,7 +359,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link DeleteModelRequest}
      */
     public final DeleteModelResponse deleteModel(Function<DeleteModelRequest.Builder, ObjectBuilder<DeleteModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deleteModel(fn.apply(new DeleteModelRequest.Builder()).build());
     }
 
@@ -370,7 +368,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Deletes a model group.
      */
-    public DeleteModelGroupResponse deleteModelGroup(DeleteModelGroupRequest request) throws IOException, OpenSearchException {
+    public DeleteModelGroupResponse deleteModelGroup(DeleteModelGroupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -381,7 +379,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final DeleteModelGroupResponse deleteModelGroup(
         Function<DeleteModelGroupRequest.Builder, ObjectBuilder<DeleteModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteModelGroup(fn.apply(new DeleteModelGroupRequest.Builder()).build());
     }
 
@@ -390,7 +388,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Deletes a task.
      */
-    public DeleteTaskResponse deleteTask(DeleteTaskRequest request) throws IOException, OpenSearchException {
+    public DeleteTaskResponse deleteTask(DeleteTaskRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteTaskRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -400,7 +398,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link DeleteTaskRequest}
      */
     public final DeleteTaskResponse deleteTask(Function<DeleteTaskRequest.Builder, ObjectBuilder<DeleteTaskRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return deleteTask(fn.apply(new DeleteTaskRequest.Builder()).build());
     }
 
@@ -409,7 +407,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Deploys a model.
      */
-    public DeployModelResponse deployModel(DeployModelRequest request) throws IOException, OpenSearchException {
+    public DeployModelResponse deployModel(DeployModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeployModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -419,7 +417,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link DeployModelRequest}
      */
     public final DeployModelResponse deployModel(Function<DeployModelRequest.Builder, ObjectBuilder<DeployModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return deployModel(fn.apply(new DeployModelRequest.Builder()).build());
     }
 
@@ -428,7 +426,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Execute an agent.
      */
-    public ExecuteAgentResponse executeAgent(ExecuteAgentRequest request) throws IOException, OpenSearchException {
+    public ExecuteAgentResponse executeAgent(ExecuteAgentRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExecuteAgentRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -438,7 +436,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link ExecuteAgentRequest}
      */
     public final ExecuteAgentResponse executeAgent(Function<ExecuteAgentRequest.Builder, ObjectBuilder<ExecuteAgentRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return executeAgent(fn.apply(new ExecuteAgentRequest.Builder()).build());
     }
 
@@ -447,7 +445,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Execute an agent in streaming mode.
      */
-    public ExecuteAgentStreamResponse executeAgentStream(ExecuteAgentStreamRequest request) throws IOException, OpenSearchException {
+    public ExecuteAgentStreamResponse executeAgentStream(ExecuteAgentStreamRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExecuteAgentStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -458,7 +456,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final ExecuteAgentStreamResponse executeAgentStream(
         Function<ExecuteAgentStreamRequest.Builder, ObjectBuilder<ExecuteAgentStreamRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return executeAgentStream(fn.apply(new ExecuteAgentStreamRequest.Builder()).build());
     }
 
@@ -467,7 +465,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Execute a tool.
      */
-    public ExecuteToolResponse executeTool(ExecuteToolRequest request) throws IOException, OpenSearchException {
+    public ExecuteToolResponse executeTool(ExecuteToolRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ExecuteToolRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -477,7 +475,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link ExecuteToolRequest}
      */
     public final ExecuteToolResponse executeTool(Function<ExecuteToolRequest.Builder, ObjectBuilder<ExecuteToolRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return executeTool(fn.apply(new ExecuteToolRequest.Builder()).build());
     }
 
@@ -486,7 +484,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get an agent.
      */
-    public GetAgentResponse getAgent(GetAgentRequest request) throws IOException, OpenSearchException {
+    public GetAgentResponse getAgent(GetAgentRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetAgentRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -496,7 +494,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetAgentRequest}
      */
     public final GetAgentResponse getAgent(Function<GetAgentRequest.Builder, ObjectBuilder<GetAgentRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getAgent(fn.apply(new GetAgentRequest.Builder()).build());
     }
 
@@ -505,7 +503,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a specific memory by its type and ID.
      */
-    public GetAgenticMemoryResponse getAgenticMemory(GetAgenticMemoryRequest request) throws IOException, OpenSearchException {
+    public GetAgenticMemoryResponse getAgenticMemory(GetAgenticMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -516,7 +514,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final GetAgenticMemoryResponse getAgenticMemory(
         Function<GetAgenticMemoryRequest.Builder, ObjectBuilder<GetAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getAgenticMemory(fn.apply(new GetAgenticMemoryRequest.Builder()).build());
     }
 
@@ -525,7 +523,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get all memories.
      */
-    public GetAllMemoriesResponse getAllMemories(GetAllMemoriesRequest request) throws IOException, OpenSearchException {
+    public GetAllMemoriesResponse getAllMemories(GetAllMemoriesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetAllMemoriesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -535,14 +533,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetAllMemoriesRequest}
      */
     public final GetAllMemoriesResponse getAllMemories(Function<GetAllMemoriesRequest.Builder, ObjectBuilder<GetAllMemoriesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getAllMemories(fn.apply(new GetAllMemoriesRequest.Builder()).build());
     }
 
     /**
      * Get all memories.
      */
-    public final GetAllMemoriesResponse getAllMemories() throws IOException, OpenSearchException {
+    public final GetAllMemoriesResponse getAllMemories() throws IOException, UdbsxException {
         return getAllMemories(new GetAllMemoriesRequest.Builder().build());
     }
 
@@ -551,7 +549,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get all messages in a memory.
      */
-    public GetAllMessagesResponse getAllMessages(GetAllMessagesRequest request) throws IOException, OpenSearchException {
+    public GetAllMessagesResponse getAllMessages(GetAllMessagesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetAllMessagesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -561,7 +559,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetAllMessagesRequest}
      */
     public final GetAllMessagesResponse getAllMessages(Function<GetAllMessagesRequest.Builder, ObjectBuilder<GetAllMessagesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getAllMessages(fn.apply(new GetAllMessagesRequest.Builder()).build());
     }
 
@@ -570,7 +568,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get tools.
      */
-    public GetAllToolsResponse getAllTools(GetAllToolsRequest request) throws IOException, OpenSearchException {
+    public GetAllToolsResponse getAllTools(GetAllToolsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetAllToolsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -580,14 +578,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetAllToolsRequest}
      */
     public final GetAllToolsResponse getAllTools(Function<GetAllToolsRequest.Builder, ObjectBuilder<GetAllToolsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getAllTools(fn.apply(new GetAllToolsRequest.Builder()).build());
     }
 
     /**
      * Get tools.
      */
-    public final GetAllToolsResponse getAllTools() throws IOException, OpenSearchException {
+    public final GetAllToolsResponse getAllTools() throws IOException, UdbsxException {
         return getAllTools(new GetAllToolsRequest.Builder().build());
     }
 
@@ -596,7 +594,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Retrieves a standalone connector.
      */
-    public GetConnectorResponse getConnector(GetConnectorRequest request) throws IOException, OpenSearchException {
+    public GetConnectorResponse getConnector(GetConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -606,7 +604,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetConnectorRequest}
      */
     public final GetConnectorResponse getConnector(Function<GetConnectorRequest.Builder, ObjectBuilder<GetConnectorRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getConnector(fn.apply(new GetConnectorRequest.Builder()).build());
     }
 
@@ -615,7 +613,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Retrieves a controller.
      */
-    public GetControllerResponse getController(GetControllerRequest request) throws IOException, OpenSearchException {
+    public GetControllerResponse getController(GetControllerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -625,7 +623,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetControllerRequest}
      */
     public final GetControllerResponse getController(Function<GetControllerRequest.Builder, ObjectBuilder<GetControllerRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getController(fn.apply(new GetControllerRequest.Builder()).build());
     }
 
@@ -634,7 +632,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a memory.
      */
-    public GetMemoryResponse getMemory(GetMemoryRequest request) throws IOException, OpenSearchException {
+    public GetMemoryResponse getMemory(GetMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -644,7 +642,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetMemoryRequest}
      */
     public final GetMemoryResponse getMemory(Function<GetMemoryRequest.Builder, ObjectBuilder<GetMemoryRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getMemory(fn.apply(new GetMemoryRequest.Builder()).build());
     }
 
@@ -653,7 +651,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a memory container.
      */
-    public GetMemoryContainerResponse getMemoryContainer(GetMemoryContainerRequest request) throws IOException, OpenSearchException {
+    public GetMemoryContainerResponse getMemoryContainer(GetMemoryContainerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -664,7 +662,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final GetMemoryContainerResponse getMemoryContainer(
         Function<GetMemoryContainerRequest.Builder, ObjectBuilder<GetMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getMemoryContainer(fn.apply(new GetMemoryContainerRequest.Builder()).build());
     }
 
@@ -673,7 +671,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a message.
      */
-    public GetMessageResponse getMessage(GetMessageRequest request) throws IOException, OpenSearchException {
+    public GetMessageResponse getMessage(GetMessageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetMessageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -683,7 +681,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetMessageRequest}
      */
     public final GetMessageResponse getMessage(Function<GetMessageRequest.Builder, ObjectBuilder<GetMessageRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getMessage(fn.apply(new GetMessageRequest.Builder()).build());
     }
 
@@ -692,7 +690,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a message traces.
      */
-    public GetMessageTracesResponse getMessageTraces(GetMessageTracesRequest request) throws IOException, OpenSearchException {
+    public GetMessageTracesResponse getMessageTraces(GetMessageTracesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetMessageTracesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -703,7 +701,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final GetMessageTracesResponse getMessageTraces(
         Function<GetMessageTracesRequest.Builder, ObjectBuilder<GetMessageTracesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getMessageTraces(fn.apply(new GetMessageTracesRequest.Builder()).build());
     }
 
@@ -712,7 +710,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Retrieves a model.
      */
-    public GetModelResponse getModel(GetModelRequest request) throws IOException, OpenSearchException {
+    public GetModelResponse getModel(GetModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -722,7 +720,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetModelRequest}
      */
     public final GetModelResponse getModel(Function<GetModelRequest.Builder, ObjectBuilder<GetModelRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getModel(fn.apply(new GetModelRequest.Builder()).build());
     }
 
@@ -731,7 +729,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Retrieves a model group.
      */
-    public GetModelGroupResponse getModelGroup(GetModelGroupRequest request) throws IOException, OpenSearchException {
+    public GetModelGroupResponse getModelGroup(GetModelGroupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -741,7 +739,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetModelGroupRequest}
      */
     public final GetModelGroupResponse getModelGroup(Function<GetModelGroupRequest.Builder, ObjectBuilder<GetModelGroupRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getModelGroup(fn.apply(new GetModelGroupRequest.Builder()).build());
     }
 
@@ -750,7 +748,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a profile.
      */
-    public GetProfileResponse getProfile(GetProfileRequest request) throws IOException, OpenSearchException {
+    public GetProfileResponse getProfile(GetProfileRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetProfileRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -760,14 +758,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetProfileRequest}
      */
     public final GetProfileResponse getProfile(Function<GetProfileRequest.Builder, ObjectBuilder<GetProfileRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getProfile(fn.apply(new GetProfileRequest.Builder()).build());
     }
 
     /**
      * Get a profile.
      */
-    public final GetProfileResponse getProfile() throws IOException, OpenSearchException {
+    public final GetProfileResponse getProfile() throws IOException, UdbsxException {
         return getProfile(new GetProfileRequest.Builder().build());
     }
 
@@ -776,7 +774,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a profile models.
      */
-    public GetProfileModelsResponse getProfileModels(GetProfileModelsRequest request) throws IOException, OpenSearchException {
+    public GetProfileModelsResponse getProfileModels(GetProfileModelsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetProfileModelsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -787,14 +785,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final GetProfileModelsResponse getProfileModels(
         Function<GetProfileModelsRequest.Builder, ObjectBuilder<GetProfileModelsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getProfileModels(fn.apply(new GetProfileModelsRequest.Builder()).build());
     }
 
     /**
      * Get a profile models.
      */
-    public final GetProfileModelsResponse getProfileModels() throws IOException, OpenSearchException {
+    public final GetProfileModelsResponse getProfileModels() throws IOException, UdbsxException {
         return getProfileModels(new GetProfileModelsRequest.Builder().build());
     }
 
@@ -803,7 +801,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get a profile tasks.
      */
-    public GetProfileTasksResponse getProfileTasks(GetProfileTasksRequest request) throws IOException, OpenSearchException {
+    public GetProfileTasksResponse getProfileTasks(GetProfileTasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetProfileTasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -813,14 +811,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetProfileTasksRequest}
      */
     public final GetProfileTasksResponse getProfileTasks(Function<GetProfileTasksRequest.Builder, ObjectBuilder<GetProfileTasksRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getProfileTasks(fn.apply(new GetProfileTasksRequest.Builder()).build());
     }
 
     /**
      * Get a profile tasks.
      */
-    public final GetProfileTasksResponse getProfileTasks() throws IOException, OpenSearchException {
+    public final GetProfileTasksResponse getProfileTasks() throws IOException, UdbsxException {
         return getProfileTasks(new GetProfileTasksRequest.Builder().build());
     }
 
@@ -829,7 +827,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get stats.
      */
-    public GetStatsResponse getStats(GetStatsRequest request) throws IOException, OpenSearchException {
+    public GetStatsResponse getStats(GetStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -839,14 +837,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetStatsRequest}
      */
     public final GetStatsResponse getStats(Function<GetStatsRequest.Builder, ObjectBuilder<GetStatsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getStats(fn.apply(new GetStatsRequest.Builder()).build());
     }
 
     /**
      * Get stats.
      */
-    public final GetStatsResponse getStats() throws IOException, OpenSearchException {
+    public final GetStatsResponse getStats() throws IOException, UdbsxException {
         return getStats(new GetStatsRequest.Builder().build());
     }
 
@@ -855,7 +853,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Retrieves a task.
      */
-    public GetTaskResponse getTask(GetTaskRequest request) throws IOException, OpenSearchException {
+    public GetTaskResponse getTask(GetTaskRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetTaskRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -865,7 +863,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetTaskRequest}
      */
     public final GetTaskResponse getTask(Function<GetTaskRequest.Builder, ObjectBuilder<GetTaskRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getTask(fn.apply(new GetTaskRequest.Builder()).build());
     }
 
@@ -874,7 +872,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Get tools.
      */
-    public GetToolResponse getTool(GetToolRequest request) throws IOException, OpenSearchException {
+    public GetToolResponse getTool(GetToolRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetToolRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -884,7 +882,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link GetToolRequest}
      */
     public final GetToolResponse getTool(Function<GetToolRequest.Builder, ObjectBuilder<GetToolRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return getTool(fn.apply(new GetToolRequest.Builder()).build());
     }
 
@@ -894,7 +892,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Deploys a model.
      */
     @Deprecated
-    public LoadModelResponse loadModel(LoadModelRequest request) throws IOException, OpenSearchException {
+    public LoadModelResponse loadModel(LoadModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, LoadModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -905,7 +903,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     @Deprecated
     public final LoadModelResponse loadModel(Function<LoadModelRequest.Builder, ObjectBuilder<LoadModelRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return loadModel(fn.apply(new LoadModelRequest.Builder()).build());
     }
 
@@ -914,7 +912,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Predicts a model in streaming mode.
      */
-    public PredictModelStreamResponse predictModelStream(PredictModelStreamRequest request) throws IOException, OpenSearchException {
+    public PredictModelStreamResponse predictModelStream(PredictModelStreamRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PredictModelStreamRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -925,7 +923,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final PredictModelStreamResponse predictModelStream(
         Function<PredictModelStreamRequest.Builder, ObjectBuilder<PredictModelStreamRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return predictModelStream(fn.apply(new PredictModelStreamRequest.Builder()).build());
     }
 
@@ -934,7 +932,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Register an agent.
      */
-    public RegisterAgentsResponse registerAgents(RegisterAgentsRequest request) throws IOException, OpenSearchException {
+    public RegisterAgentsResponse registerAgents(RegisterAgentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RegisterAgentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -944,7 +942,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link RegisterAgentsRequest}
      */
     public final RegisterAgentsResponse registerAgents(Function<RegisterAgentsRequest.Builder, ObjectBuilder<RegisterAgentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return registerAgents(fn.apply(new RegisterAgentsRequest.Builder()).build());
     }
 
@@ -953,7 +951,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Registers a model.
      */
-    public RegisterModelResponse registerModel(RegisterModelRequest request) throws IOException, OpenSearchException {
+    public RegisterModelResponse registerModel(RegisterModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RegisterModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -963,7 +961,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link RegisterModelRequest}
      */
     public final RegisterModelResponse registerModel(Function<RegisterModelRequest.Builder, ObjectBuilder<RegisterModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return registerModel(fn.apply(new RegisterModelRequest.Builder()).build());
     }
 
@@ -972,7 +970,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Registers a model group.
      */
-    public RegisterModelGroupResponse registerModelGroup(RegisterModelGroupRequest request) throws IOException, OpenSearchException {
+    public RegisterModelGroupResponse registerModelGroup(RegisterModelGroupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RegisterModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -983,7 +981,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final RegisterModelGroupResponse registerModelGroup(
         Function<RegisterModelGroupRequest.Builder, ObjectBuilder<RegisterModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return registerModelGroup(fn.apply(new RegisterModelGroupRequest.Builder()).build());
     }
 
@@ -992,7 +990,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Registers model metadata.
      */
-    public RegisterModelMetaResponse registerModelMeta(RegisterModelMetaRequest request) throws IOException, OpenSearchException {
+    public RegisterModelMetaResponse registerModelMeta(RegisterModelMetaRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RegisterModelMetaRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1003,7 +1001,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final RegisterModelMetaResponse registerModelMeta(
         Function<RegisterModelMetaRequest.Builder, ObjectBuilder<RegisterModelMetaRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return registerModelMeta(fn.apply(new RegisterModelMetaRequest.Builder()).build());
     }
 
@@ -1012,7 +1010,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Undeploys a model.
      */
-    public UndeployModelResponse undeployModel(UndeployModelRequest request) throws IOException, OpenSearchException {
+    public UndeployModelResponse undeployModel(UndeployModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UndeployModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1022,14 +1020,14 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link UndeployModelRequest}
      */
     public final UndeployModelResponse undeployModel(Function<UndeployModelRequest.Builder, ObjectBuilder<UndeployModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return undeployModel(fn.apply(new UndeployModelRequest.Builder()).build());
     }
 
     /**
      * Undeploys a model.
      */
-    public final UndeployModelResponse undeployModel() throws IOException, OpenSearchException {
+    public final UndeployModelResponse undeployModel() throws IOException, UdbsxException {
         return undeployModel(new UndeployModelRequest.Builder().build());
     }
 
@@ -1039,7 +1037,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Unloads a model.
      */
     @Deprecated
-    public UnloadModelResponse unloadModel(UnloadModelRequest request) throws IOException, OpenSearchException {
+    public UnloadModelResponse unloadModel(UnloadModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UnloadModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1050,7 +1048,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     @Deprecated
     public final UnloadModelResponse unloadModel(Function<UnloadModelRequest.Builder, ObjectBuilder<UnloadModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return unloadModel(fn.apply(new UnloadModelRequest.Builder()).build());
     }
 
@@ -1058,7 +1056,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Unloads a model.
      */
     @Deprecated
-    public final UnloadModelResponse unloadModel() throws IOException, OpenSearchException {
+    public final UnloadModelResponse unloadModel() throws IOException, UdbsxException {
         return unloadModel(new UnloadModelRequest.Builder().build());
     }
 
@@ -1067,7 +1065,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Update a specific memory by its type and ID.
      */
-    public UpdateAgenticMemoryResponse updateAgenticMemory(UpdateAgenticMemoryRequest request) throws IOException, OpenSearchException {
+    public UpdateAgenticMemoryResponse updateAgenticMemory(UpdateAgenticMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateAgenticMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1078,7 +1076,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final UpdateAgenticMemoryResponse updateAgenticMemory(
         Function<UpdateAgenticMemoryRequest.Builder, ObjectBuilder<UpdateAgenticMemoryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateAgenticMemory(fn.apply(new UpdateAgenticMemoryRequest.Builder()).build());
     }
 
@@ -1087,7 +1085,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Updates a standalone connector.
      */
-    public UpdateConnectorResponse updateConnector(UpdateConnectorRequest request) throws IOException, OpenSearchException {
+    public UpdateConnectorResponse updateConnector(UpdateConnectorRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateConnectorRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1097,7 +1095,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link UpdateConnectorRequest}
      */
     public final UpdateConnectorResponse updateConnector(Function<UpdateConnectorRequest.Builder, ObjectBuilder<UpdateConnectorRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return updateConnector(fn.apply(new UpdateConnectorRequest.Builder()).build());
     }
 
@@ -1106,7 +1104,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Updates a controller.
      */
-    public UpdateControllerResponse updateController(UpdateControllerRequest request) throws IOException, OpenSearchException {
+    public UpdateControllerResponse updateController(UpdateControllerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateControllerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1117,7 +1115,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final UpdateControllerResponse updateController(
         Function<UpdateControllerRequest.Builder, ObjectBuilder<UpdateControllerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateController(fn.apply(new UpdateControllerRequest.Builder()).build());
     }
 
@@ -1126,7 +1124,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Update a memory.
      */
-    public UpdateMemoryResponse updateMemory(UpdateMemoryRequest request) throws IOException, OpenSearchException {
+    public UpdateMemoryResponse updateMemory(UpdateMemoryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateMemoryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1136,7 +1134,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link UpdateMemoryRequest}
      */
     public final UpdateMemoryResponse updateMemory(Function<UpdateMemoryRequest.Builder, ObjectBuilder<UpdateMemoryRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return updateMemory(fn.apply(new UpdateMemoryRequest.Builder()).build());
     }
 
@@ -1145,8 +1143,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Update a memory container.
      */
-    public UpdateMemoryContainerResponse updateMemoryContainer(UpdateMemoryContainerRequest request) throws IOException,
-        OpenSearchException {
+    public UpdateMemoryContainerResponse updateMemoryContainer(UpdateMemoryContainerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateMemoryContainerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1157,7 +1154,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final UpdateMemoryContainerResponse updateMemoryContainer(
         Function<UpdateMemoryContainerRequest.Builder, ObjectBuilder<UpdateMemoryContainerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateMemoryContainer(fn.apply(new UpdateMemoryContainerRequest.Builder()).build());
     }
 
@@ -1166,7 +1163,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Update a message.
      */
-    public UpdateMessageResponse updateMessage(UpdateMessageRequest request) throws IOException, OpenSearchException {
+    public UpdateMessageResponse updateMessage(UpdateMessageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateMessageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1176,7 +1173,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link UpdateMessageRequest}
      */
     public final UpdateMessageResponse updateMessage(Function<UpdateMessageRequest.Builder, ObjectBuilder<UpdateMessageRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return updateMessage(fn.apply(new UpdateMessageRequest.Builder()).build());
     }
 
@@ -1185,7 +1182,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Updates a model.
      */
-    public UpdateModelResponse updateModel(UpdateModelRequest request) throws IOException, OpenSearchException {
+    public UpdateModelResponse updateModel(UpdateModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1195,7 +1192,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link UpdateModelRequest}
      */
     public final UpdateModelResponse updateModel(Function<UpdateModelRequest.Builder, ObjectBuilder<UpdateModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return updateModel(fn.apply(new UpdateModelRequest.Builder()).build());
     }
 
@@ -1204,7 +1201,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Updates a model group.
      */
-    public UpdateModelGroupResponse updateModelGroup(UpdateModelGroupRequest request) throws IOException, OpenSearchException {
+    public UpdateModelGroupResponse updateModelGroup(UpdateModelGroupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UpdateModelGroupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1215,7 +1212,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     public final UpdateModelGroupResponse updateModelGroup(
         Function<UpdateModelGroupRequest.Builder, ObjectBuilder<UpdateModelGroupRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateModelGroup(fn.apply(new UpdateModelGroupRequest.Builder()).build());
     }
 
@@ -1224,7 +1221,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
     /**
      * Uploads model chunk.
      */
-    public UploadChunkResponse uploadChunk(UploadChunkRequest request) throws IOException, OpenSearchException {
+    public UploadChunkResponse uploadChunk(UploadChunkRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UploadChunkRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1234,7 +1231,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * @param fn a function that initializes a builder to create the {@link UploadChunkRequest}
      */
     public final UploadChunkResponse uploadChunk(Function<UploadChunkRequest.Builder, ObjectBuilder<UploadChunkRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return uploadChunk(fn.apply(new UploadChunkRequest.Builder()).build());
     }
 
@@ -1244,7 +1241,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      * Registers a model.
      */
     @Deprecated
-    public UploadModelResponse uploadModel(UploadModelRequest request) throws IOException, OpenSearchException {
+    public UploadModelResponse uploadModel(UploadModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, UploadModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -1255,7 +1252,7 @@ public class OpenSearchMlClient extends ApiClient<OpenSearchTransport, OpenSearc
      */
     @Deprecated
     public final UploadModelResponse uploadModel(Function<UploadModelRequest.Builder, ObjectBuilder<UploadModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return uploadModel(fn.apply(new UploadModelRequest.Builder()).build());
     }
 }

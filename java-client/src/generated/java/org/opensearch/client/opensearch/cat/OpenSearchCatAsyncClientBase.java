@@ -42,9 +42,9 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
@@ -52,9 +52,9 @@ import org.opensearch.client.util.ObjectBuilder;
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
 public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsyncClientBase<Self>> extends ApiClient<
-    OpenSearchTransport,
+    UdbsxTransport,
     Self> {
-    public OpenSearchCatAsyncClientBase(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchCatAsyncClientBase(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -63,7 +63,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Shows information about aliases currently configured to indexes, including filter and routing information.
      */
-    public CompletableFuture<AliasesResponse> aliases(AliasesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<AliasesResponse> aliases(AliasesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, AliasesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -73,14 +73,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link AliasesRequest}
      */
     public final CompletableFuture<AliasesResponse> aliases(Function<AliasesRequest.Builder, ObjectBuilder<AliasesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return aliases(fn.apply(new AliasesRequest.Builder()).build());
     }
 
     /**
      * Shows information about aliases currently configured to indexes, including filter and routing information.
      */
-    public final CompletableFuture<AliasesResponse> aliases() throws IOException, OpenSearchException {
+    public final CompletableFuture<AliasesResponse> aliases() throws IOException, UdbsxException {
         return aliases(new AliasesRequest.Builder().build());
     }
 
@@ -89,7 +89,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Lists all active CAT point-in-time segments.
      */
-    public CompletableFuture<AllPitSegmentsResponse> allPitSegments(AllPitSegmentsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<AllPitSegmentsResponse> allPitSegments(AllPitSegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, AllPitSegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -100,14 +100,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     public final CompletableFuture<AllPitSegmentsResponse> allPitSegments(
         Function<AllPitSegmentsRequest.Builder, ObjectBuilder<AllPitSegmentsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return allPitSegments(fn.apply(new AllPitSegmentsRequest.Builder()).build());
     }
 
     /**
      * Lists all active CAT point-in-time segments.
      */
-    public final CompletableFuture<AllPitSegmentsResponse> allPitSegments() throws IOException, OpenSearchException {
+    public final CompletableFuture<AllPitSegmentsResponse> allPitSegments() throws IOException, UdbsxException {
         return allPitSegments(new AllPitSegmentsRequest.Builder().build());
     }
 
@@ -116,7 +116,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Provides a snapshot of how many shards are allocated to each data node and how much disk space they are using.
      */
-    public CompletableFuture<AllocationResponse> allocation(AllocationRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<AllocationResponse> allocation(AllocationRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, AllocationRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -126,14 +126,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link AllocationRequest}
      */
     public final CompletableFuture<AllocationResponse> allocation(Function<AllocationRequest.Builder, ObjectBuilder<AllocationRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return allocation(fn.apply(new AllocationRequest.Builder()).build());
     }
 
     /**
      * Provides a snapshot of how many shards are allocated to each data node and how much disk space they are using.
      */
-    public final CompletableFuture<AllocationResponse> allocation() throws IOException, OpenSearchException {
+    public final CompletableFuture<AllocationResponse> allocation() throws IOException, UdbsxException {
         return allocation(new AllocationRequest.Builder().build());
     }
 
@@ -142,7 +142,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns information about the cluster-manager node.
      */
-    public CompletableFuture<ClusterManagerResponse> clusterManager(ClusterManagerRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ClusterManagerResponse> clusterManager(ClusterManagerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ClusterManagerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -153,14 +153,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     public final CompletableFuture<ClusterManagerResponse> clusterManager(
         Function<ClusterManagerRequest.Builder, ObjectBuilder<ClusterManagerRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return clusterManager(fn.apply(new ClusterManagerRequest.Builder()).build());
     }
 
     /**
      * Returns information about the cluster-manager node.
      */
-    public final CompletableFuture<ClusterManagerResponse> clusterManager() throws IOException, OpenSearchException {
+    public final CompletableFuture<ClusterManagerResponse> clusterManager() throws IOException, UdbsxException {
         return clusterManager(new ClusterManagerRequest.Builder().build());
     }
 
@@ -169,7 +169,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Provides quick access to the document count of the entire cluster or of an individual index.
      */
-    public CompletableFuture<CountResponse> count(CountRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<CountResponse> count(CountRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, CountRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -179,14 +179,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link CountRequest}
      */
     public final CompletableFuture<CountResponse> count(Function<CountRequest.Builder, ObjectBuilder<CountRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return count(fn.apply(new CountRequest.Builder()).build());
     }
 
     /**
      * Provides quick access to the document count of the entire cluster or of an individual index.
      */
-    public final CompletableFuture<CountResponse> count() throws IOException, OpenSearchException {
+    public final CompletableFuture<CountResponse> count() throws IOException, UdbsxException {
         return count(new CountRequest.Builder().build());
     }
 
@@ -195,7 +195,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Shows how much heap memory is currently being used by field data on every data node in the cluster.
      */
-    public CompletableFuture<FielddataResponse> fielddata(FielddataRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<FielddataResponse> fielddata(FielddataRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, FielddataRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -205,14 +205,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link FielddataRequest}
      */
     public final CompletableFuture<FielddataResponse> fielddata(Function<FielddataRequest.Builder, ObjectBuilder<FielddataRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return fielddata(fn.apply(new FielddataRequest.Builder()).build());
     }
 
     /**
      * Shows how much heap memory is currently being used by field data on every data node in the cluster.
      */
-    public final CompletableFuture<FielddataResponse> fielddata() throws IOException, OpenSearchException {
+    public final CompletableFuture<FielddataResponse> fielddata() throws IOException, UdbsxException {
         return fielddata(new FielddataRequest.Builder().build());
     }
 
@@ -221,7 +221,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns a concise representation of the cluster health.
      */
-    public CompletableFuture<HealthResponse> health(HealthRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<HealthResponse> health(HealthRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, HealthRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -231,14 +231,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link HealthRequest}
      */
     public final CompletableFuture<HealthResponse> health(Function<HealthRequest.Builder, ObjectBuilder<HealthRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return health(fn.apply(new HealthRequest.Builder()).build());
     }
 
     /**
      * Returns a concise representation of the cluster health.
      */
-    public final CompletableFuture<HealthResponse> health() throws IOException, OpenSearchException {
+    public final CompletableFuture<HealthResponse> health() throws IOException, UdbsxException {
         return health(new HealthRequest.Builder().build());
     }
 
@@ -248,7 +248,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Lists information related to indexes, that is, how much disk space they are using, how many shards they have, their health status,
      * and so on.
      */
-    public CompletableFuture<IndicesResponse> indices(IndicesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<IndicesResponse> indices(IndicesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, IndicesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -259,7 +259,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link IndicesRequest}
      */
     public final CompletableFuture<IndicesResponse> indices(Function<IndicesRequest.Builder, ObjectBuilder<IndicesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return indices(fn.apply(new IndicesRequest.Builder()).build());
     }
 
@@ -267,7 +267,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Lists information related to indexes, that is, how much disk space they are using, how many shards they have, their health status,
      * and so on.
      */
-    public final CompletableFuture<IndicesResponse> indices() throws IOException, OpenSearchException {
+    public final CompletableFuture<IndicesResponse> indices() throws IOException, UdbsxException {
         return indices(new IndicesRequest.Builder().build());
     }
 
@@ -277,7 +277,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Returns information about the cluster-manager node.
      */
     @Deprecated
-    public CompletableFuture<MasterResponse> master(MasterRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<MasterResponse> master(MasterRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, MasterRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -288,7 +288,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     @Deprecated
     public final CompletableFuture<MasterResponse> master(Function<MasterRequest.Builder, ObjectBuilder<MasterRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return master(fn.apply(new MasterRequest.Builder()).build());
     }
 
@@ -296,7 +296,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Returns information about the cluster-manager node.
      */
     @Deprecated
-    public final CompletableFuture<MasterResponse> master() throws IOException, OpenSearchException {
+    public final CompletableFuture<MasterResponse> master() throws IOException, UdbsxException {
         return master(new MasterRequest.Builder().build());
     }
 
@@ -305,7 +305,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns information about custom node attributes.
      */
-    public CompletableFuture<NodeattrsResponse> nodeattrs(NodeattrsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<NodeattrsResponse> nodeattrs(NodeattrsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, NodeattrsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -315,14 +315,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link NodeattrsRequest}
      */
     public final CompletableFuture<NodeattrsResponse> nodeattrs(Function<NodeattrsRequest.Builder, ObjectBuilder<NodeattrsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return nodeattrs(fn.apply(new NodeattrsRequest.Builder()).build());
     }
 
     /**
      * Returns information about custom node attributes.
      */
-    public final CompletableFuture<NodeattrsResponse> nodeattrs() throws IOException, OpenSearchException {
+    public final CompletableFuture<NodeattrsResponse> nodeattrs() throws IOException, UdbsxException {
         return nodeattrs(new NodeattrsRequest.Builder().build());
     }
 
@@ -331,7 +331,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns basic statistics about the performance of cluster nodes.
      */
-    public CompletableFuture<NodesResponse> nodes(NodesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<NodesResponse> nodes(NodesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, NodesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -341,14 +341,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link NodesRequest}
      */
     public final CompletableFuture<NodesResponse> nodes(Function<NodesRequest.Builder, ObjectBuilder<NodesRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return nodes(fn.apply(new NodesRequest.Builder()).build());
     }
 
     /**
      * Returns basic statistics about the performance of cluster nodes.
      */
-    public final CompletableFuture<NodesResponse> nodes() throws IOException, OpenSearchException {
+    public final CompletableFuture<NodesResponse> nodes() throws IOException, UdbsxException {
         return nodes(new NodesRequest.Builder().build());
     }
 
@@ -357,7 +357,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns a concise representation of the cluster's pending tasks.
      */
-    public CompletableFuture<PendingTasksResponse> pendingTasks(PendingTasksRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PendingTasksResponse> pendingTasks(PendingTasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PendingTasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -368,14 +368,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     public final CompletableFuture<PendingTasksResponse> pendingTasks(
         Function<PendingTasksRequest.Builder, ObjectBuilder<PendingTasksRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return pendingTasks(fn.apply(new PendingTasksRequest.Builder()).build());
     }
 
     /**
      * Returns a concise representation of the cluster's pending tasks.
      */
-    public final CompletableFuture<PendingTasksResponse> pendingTasks() throws IOException, OpenSearchException {
+    public final CompletableFuture<PendingTasksResponse> pendingTasks() throws IOException, UdbsxException {
         return pendingTasks(new PendingTasksRequest.Builder().build());
     }
 
@@ -384,7 +384,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Lists one or several CAT point-in-time segments.
      */
-    public CompletableFuture<PitSegmentsResponse> pitSegments(PitSegmentsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PitSegmentsResponse> pitSegments(PitSegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PitSegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -395,7 +395,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     public final CompletableFuture<PitSegmentsResponse> pitSegments(
         Function<PitSegmentsRequest.Builder, ObjectBuilder<PitSegmentsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return pitSegments(fn.apply(new PitSegmentsRequest.Builder()).build());
     }
 
@@ -404,7 +404,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns information about the names, components, and versions of the installed plugins.
      */
-    public CompletableFuture<PluginsResponse> plugins(PluginsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PluginsResponse> plugins(PluginsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PluginsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -414,14 +414,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link PluginsRequest}
      */
     public final CompletableFuture<PluginsResponse> plugins(Function<PluginsRequest.Builder, ObjectBuilder<PluginsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return plugins(fn.apply(new PluginsRequest.Builder()).build());
     }
 
     /**
      * Returns information about the names, components, and versions of the installed plugins.
      */
-    public final CompletableFuture<PluginsResponse> plugins() throws IOException, OpenSearchException {
+    public final CompletableFuture<PluginsResponse> plugins() throws IOException, UdbsxException {
         return plugins(new PluginsRequest.Builder().build());
     }
 
@@ -430,7 +430,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns all completed and ongoing index and shard recoveries.
      */
-    public CompletableFuture<RecoveryResponse> recovery(RecoveryRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RecoveryResponse> recovery(RecoveryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RecoveryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -440,14 +440,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link RecoveryRequest}
      */
     public final CompletableFuture<RecoveryResponse> recovery(Function<RecoveryRequest.Builder, ObjectBuilder<RecoveryRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return recovery(fn.apply(new RecoveryRequest.Builder()).build());
     }
 
     /**
      * Returns all completed and ongoing index and shard recoveries.
      */
-    public final CompletableFuture<RecoveryResponse> recovery() throws IOException, OpenSearchException {
+    public final CompletableFuture<RecoveryResponse> recovery() throws IOException, UdbsxException {
         return recovery(new RecoveryRequest.Builder().build());
     }
 
@@ -456,7 +456,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Returns information about all snapshot repositories for a cluster.
      */
-    public CompletableFuture<RepositoriesResponse> repositories(RepositoriesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<RepositoriesResponse> repositories(RepositoriesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, RepositoriesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -467,14 +467,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     public final CompletableFuture<RepositoriesResponse> repositories(
         Function<RepositoriesRequest.Builder, ObjectBuilder<RepositoriesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return repositories(fn.apply(new RepositoriesRequest.Builder()).build());
     }
 
     /**
      * Returns information about all snapshot repositories for a cluster.
      */
-    public final CompletableFuture<RepositoriesResponse> repositories() throws IOException, OpenSearchException {
+    public final CompletableFuture<RepositoriesResponse> repositories() throws IOException, UdbsxException {
         return repositories(new RepositoriesRequest.Builder().build());
     }
 
@@ -485,7 +485,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * metrics. These metrics provide information about how far behind the primary shard the replicas are lagging.
      */
     public CompletableFuture<SegmentReplicationResponse> segmentReplication(SegmentReplicationRequest request) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return this.transport.performRequestAsync(request, SegmentReplicationRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -497,7 +497,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      */
     public final CompletableFuture<SegmentReplicationResponse> segmentReplication(
         Function<SegmentReplicationRequest.Builder, ObjectBuilder<SegmentReplicationRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return segmentReplication(fn.apply(new SegmentReplicationRequest.Builder()).build());
     }
 
@@ -505,7 +505,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Returns information about active and last-completed segment replication events on each replica shard, including related shard-level
      * metrics. These metrics provide information about how far behind the primary shard the replicas are lagging.
      */
-    public final CompletableFuture<SegmentReplicationResponse> segmentReplication() throws IOException, OpenSearchException {
+    public final CompletableFuture<SegmentReplicationResponse> segmentReplication() throws IOException, UdbsxException {
         return segmentReplication(new SegmentReplicationRequest.Builder().build());
     }
 
@@ -514,7 +514,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Provides low-level information about the segments in the shards of an index.
      */
-    public CompletableFuture<SegmentsResponse> segments(SegmentsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SegmentsResponse> segments(SegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -524,14 +524,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link SegmentsRequest}
      */
     public final CompletableFuture<SegmentsResponse> segments(Function<SegmentsRequest.Builder, ObjectBuilder<SegmentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return segments(fn.apply(new SegmentsRequest.Builder()).build());
     }
 
     /**
      * Provides low-level information about the segments in the shards of an index.
      */
-    public final CompletableFuture<SegmentsResponse> segments() throws IOException, OpenSearchException {
+    public final CompletableFuture<SegmentsResponse> segments() throws IOException, UdbsxException {
         return segments(new SegmentsRequest.Builder().build());
     }
 
@@ -540,7 +540,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Lists the states of all primary and replica shards and how they are distributed.
      */
-    public CompletableFuture<ShardsResponse> shards(ShardsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ShardsResponse> shards(ShardsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ShardsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -550,14 +550,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link ShardsRequest}
      */
     public final CompletableFuture<ShardsResponse> shards(Function<ShardsRequest.Builder, ObjectBuilder<ShardsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return shards(fn.apply(new ShardsRequest.Builder()).build());
     }
 
     /**
      * Lists the states of all primary and replica shards and how they are distributed.
      */
-    public final CompletableFuture<ShardsResponse> shards() throws IOException, OpenSearchException {
+    public final CompletableFuture<ShardsResponse> shards() throws IOException, UdbsxException {
         return shards(new ShardsRequest.Builder().build());
     }
 
@@ -566,7 +566,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Lists all of the snapshots stored in a specific repository.
      */
-    public CompletableFuture<SnapshotsResponse> snapshots(SnapshotsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SnapshotsResponse> snapshots(SnapshotsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SnapshotsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -576,14 +576,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link SnapshotsRequest}
      */
     public final CompletableFuture<SnapshotsResponse> snapshots(Function<SnapshotsRequest.Builder, ObjectBuilder<SnapshotsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return snapshots(fn.apply(new SnapshotsRequest.Builder()).build());
     }
 
     /**
      * Lists all of the snapshots stored in a specific repository.
      */
-    public final CompletableFuture<SnapshotsResponse> snapshots() throws IOException, OpenSearchException {
+    public final CompletableFuture<SnapshotsResponse> snapshots() throws IOException, UdbsxException {
         return snapshots(new SnapshotsRequest.Builder().build());
     }
 
@@ -592,7 +592,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Lists the progress of all tasks currently running on the cluster.
      */
-    public CompletableFuture<TasksResponse> tasks(TasksRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<TasksResponse> tasks(TasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, TasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -602,14 +602,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link TasksRequest}
      */
     public final CompletableFuture<TasksResponse> tasks(Function<TasksRequest.Builder, ObjectBuilder<TasksRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return tasks(fn.apply(new TasksRequest.Builder()).build());
     }
 
     /**
      * Lists the progress of all tasks currently running on the cluster.
      */
-    public final CompletableFuture<TasksResponse> tasks() throws IOException, OpenSearchException {
+    public final CompletableFuture<TasksResponse> tasks() throws IOException, UdbsxException {
         return tasks(new TasksRequest.Builder().build());
     }
 
@@ -618,7 +618,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
     /**
      * Lists the names, patterns, order numbers, and version numbers of index templates.
      */
-    public CompletableFuture<TemplatesResponse> templates(TemplatesRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<TemplatesResponse> templates(TemplatesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, TemplatesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -628,14 +628,14 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link TemplatesRequest}
      */
     public final CompletableFuture<TemplatesResponse> templates(Function<TemplatesRequest.Builder, ObjectBuilder<TemplatesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return templates(fn.apply(new TemplatesRequest.Builder()).build());
     }
 
     /**
      * Lists the names, patterns, order numbers, and version numbers of index templates.
      */
-    public final CompletableFuture<TemplatesResponse> templates() throws IOException, OpenSearchException {
+    public final CompletableFuture<TemplatesResponse> templates() throws IOException, UdbsxException {
         return templates(new TemplatesRequest.Builder().build());
     }
 
@@ -645,7 +645,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Returns cluster-wide thread pool statistics per node. By default the active, queued, and rejected statistics are returned for all
      * thread pools.
      */
-    public CompletableFuture<ThreadPoolResponse> threadPool(ThreadPoolRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ThreadPoolResponse> threadPool(ThreadPoolRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ThreadPoolRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -656,7 +656,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * @param fn a function that initializes a builder to create the {@link ThreadPoolRequest}
      */
     public final CompletableFuture<ThreadPoolResponse> threadPool(Function<ThreadPoolRequest.Builder, ObjectBuilder<ThreadPoolRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return threadPool(fn.apply(new ThreadPoolRequest.Builder()).build());
     }
 
@@ -664,7 +664,7 @@ public abstract class OpenSearchCatAsyncClientBase<Self extends OpenSearchCatAsy
      * Returns cluster-wide thread pool statistics per node. By default the active, queued, and rejected statistics are returned for all
      * thread pools.
      */
-    public final CompletableFuture<ThreadPoolResponse> threadPool() throws IOException, OpenSearchException {
+    public final CompletableFuture<ThreadPoolResponse> threadPool() throws IOException, UdbsxException {
         return threadPool(new ThreadPoolRequest.Builder().build());
     }
 }

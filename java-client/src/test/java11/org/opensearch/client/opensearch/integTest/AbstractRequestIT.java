@@ -43,10 +43,10 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import org.opensearch.Version;
 import org.opensearch.client.json.JsonData;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
 import org.opensearch.client.opensearch._types.Refresh;
 import org.opensearch.client.opensearch._types.Time;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch._types.aggregations.Aggregate;
 import org.opensearch.client.opensearch._types.aggregations.HistogramAggregate;
 import org.opensearch.client.opensearch._types.analysis.Analyzer;
@@ -100,7 +100,7 @@ public abstract class AbstractRequestIT extends OpenSearchJavaClientTestCase {
 
     @Test
     public void testIndexCreation() throws Exception {
-        OpenSearchAsyncClient asyncClient = new OpenSearchAsyncClient(javaClient()._transport());
+        UdbsxAsyncClient asyncClient = new UdbsxAsyncClient(javaClient()._transport());
 
         // Ping the server
         assertTrue(javaClient().ping().value());
@@ -413,7 +413,7 @@ public abstract class AbstractRequestIT extends OpenSearchJavaClientTestCase {
         BooleanResponse exists = javaClient().exists(_0 -> _0.index("doesnotexist").id("reallynot"));
         assertFalse(exists.value());
 
-        OpenSearchException ex = assertThrows(OpenSearchException.class, () -> {
+        UdbsxException ex = assertThrows(UdbsxException.class, () -> {
             GetResponse<String> response = javaClient().get(_0 -> _0.index("doesnotexist").id("reallynot"), String.class);
         });
 
@@ -422,11 +422,11 @@ public abstract class AbstractRequestIT extends OpenSearchJavaClientTestCase {
         assertEquals("doesnotexist", ex.error().metadata().get("index").to(String.class));
 
         ExecutionException ee = assertThrows(ExecutionException.class, () -> {
-            OpenSearchAsyncClient aClient = new OpenSearchAsyncClient(javaClient()._transport());
+            UdbsxAsyncClient aClient = new UdbsxAsyncClient(javaClient()._transport());
             GetResponse<String> response = aClient.get(_0 -> _0.index("doesnotexist").id("reallynot"), String.class).get();
         });
 
-        ex = ((OpenSearchException) ee.getCause());
+        ex = ((UdbsxException) ee.getCause());
         assertEquals(404, ex.status());
         assertEquals("index_not_found_exception", ex.error().type());
     }

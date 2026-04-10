@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.opensearch.client.json.JsonData;
-import org.opensearch.client.opensearch.OpenSearchClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.Refresh;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch._types.query_dsl.NeuralQuery;
 import org.opensearch.client.opensearch._types.query_dsl.Query;
 import org.opensearch.client.opensearch.core.SearchRequest;
@@ -49,7 +49,7 @@ public class NeuralSearch {
     private static final Logger LOGGER = LogManager.getLogger(NeuralSearch.class);
 
     public static void main(String[] args) {
-        OpenSearchClient client = null;
+        UdbsxClient client = null;
         String modelGroupId = null;
         String modelRegistrationTaskId = null;
         String modelId = null;
@@ -258,7 +258,7 @@ public class NeuralSearch {
                         var modelDeleted = client.ml().deleteModel(new DeleteModelRequest.Builder().modelId(modelId).build());
                         LOGGER.info("Deleted ML model: {}", modelDeleted.result());
                         break;
-                    } catch (OpenSearchException ex) {
+                    } catch (UdbsxException ex) {
                         var reason = ex.error() != null ? ex.error().reason() : null;
 
                         if (reason == null || !reason.contains("Try undeploy")) break;

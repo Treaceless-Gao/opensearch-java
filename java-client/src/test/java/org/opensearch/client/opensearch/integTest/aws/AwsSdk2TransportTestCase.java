@@ -20,11 +20,11 @@ import org.junit.AfterClass;
 import org.junit.Assume;
 import org.junit.Before;
 import org.opensearch.client.json.JsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch.OpenSearchClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.SortOptions;
 import org.opensearch.client.opensearch._types.SortOrder;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.opensearch._types.query_dsl.Query;
 import org.opensearch.client.opensearch.core.IndexRequest;
 import org.opensearch.client.opensearch.core.IndexResponse;
@@ -72,7 +72,7 @@ public abstract class AwsSdk2TransportTestCase {
         return AwsSdk2TransportOptions.builder();
     }
 
-    protected OpenSearchClient getClient(boolean async, @CheckForNull JsonpMapper mapper, @CheckForNull TransportOptions options) {
+    protected UdbsxClient getClient(boolean async, @CheckForNull JsonpMapper mapper, @CheckForNull TransportOptions options) {
 
         AwsSdk2Transport transport;
         if (async) {
@@ -92,14 +92,10 @@ public abstract class AwsSdk2TransportTestCase {
                 getTransportOptions().build()
             );
         }
-        return new OpenSearchClient(transport);
+        return new UdbsxClient(transport);
     }
 
-    protected OpenSearchAsyncClient getAsyncClient(
-        boolean async,
-        @CheckForNull JsonpMapper mapper,
-        @CheckForNull TransportOptions options
-    ) {
+    protected UdbsxAsyncClient getAsyncClient(boolean async, @CheckForNull JsonpMapper mapper, @CheckForNull TransportOptions options) {
 
         AwsSdk2Transport transport;
         if (async) {
@@ -119,7 +115,7 @@ public abstract class AwsSdk2TransportTestCase {
                 getTransportOptions().build()
             );
         }
-        return new OpenSearchAsyncClient(transport);
+        return new UdbsxAsyncClient(transport);
     }
 
     protected OpenSearchIndicesClient getIndexesClient(
@@ -205,7 +201,7 @@ public abstract class AwsSdk2TransportTestCase {
             if (indexInfo != null) {
                 indexExists = true;
             }
-        } catch (OpenSearchException e) {
+        } catch (UdbsxException e) {
             if (e.status() != 404) {
                 throw e;
             }
@@ -217,12 +213,12 @@ public abstract class AwsSdk2TransportTestCase {
         client.create(req.build());
     }
 
-    protected void addDoc(OpenSearchClient client, String id, SimplePojo doc) throws Exception {
+    protected void addDoc(UdbsxClient client, String id, SimplePojo doc) throws Exception {
         IndexRequest.Builder<SimplePojo> req = new IndexRequest.Builder<SimplePojo>().index(TEST_INDEX).document(doc).id(id);
         client.index(req.build());
     }
 
-    protected CompletableFuture<IndexResponse> addDoc(OpenSearchAsyncClient client, String id, SimplePojo doc) {
+    protected CompletableFuture<IndexResponse> addDoc(UdbsxAsyncClient client, String id, SimplePojo doc) {
         IndexRequest.Builder<SimplePojo> req = new IndexRequest.Builder<SimplePojo>().index(TEST_INDEX).document(doc).id(id);
         try {
             return client.index(req.build());
@@ -233,7 +229,7 @@ public abstract class AwsSdk2TransportTestCase {
         }
     }
 
-    protected SearchResponse<SimplePojo> query(OpenSearchClient client, String title, String text) throws Exception {
+    protected SearchResponse<SimplePojo> query(UdbsxClient client, String title, String text) throws Exception {
         final Query query = Query.of(qb -> {
             if (title != null) {
                 qb.match(mb -> mb.field("title").query(vb -> vb.stringValue(title)));
@@ -256,7 +252,7 @@ public abstract class AwsSdk2TransportTestCase {
         return client.search(req.build(), SimplePojo.class);
     }
 
-    protected CompletableFuture<SearchResponse<SimplePojo>> query(OpenSearchAsyncClient client, String title, String text) {
+    protected CompletableFuture<SearchResponse<SimplePojo>> query(UdbsxAsyncClient client, String title, String text) {
         Query query = Query.of(qb -> {
             if (title != null) {
                 qb.match(mb -> mb.field("title").query(vb -> vb.stringValue(title)));

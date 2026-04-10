@@ -11,8 +11,8 @@ package org.opensearch.client.opensearch.integTest.aws;
 import java.util.concurrent.CompletableFuture;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.core.GetRequest;
 import org.opensearch.client.opensearch.core.GetResponse;
 
@@ -20,7 +20,7 @@ public class AwsSdk2GetRequestIT extends AwsSdk2TransportTestCase {
     @Test
     public void testSyncGetRequest() throws Exception {
         resetTestIndex(false);
-        final OpenSearchClient client = getClient(false, null, null);
+        final UdbsxClient client = getClient(false, null, null);
 
         SimplePojo doc1 = new SimplePojo("Document 1", "The text of document 1");
         addDoc(client, "id1", doc1);
@@ -39,7 +39,7 @@ public class AwsSdk2GetRequestIT extends AwsSdk2TransportTestCase {
     @Test
     public void testAsyncGetRequest() throws Exception {
         resetTestIndex(false);
-        final OpenSearchAsyncClient client = getAsyncClient(false, null, null);
+        final UdbsxAsyncClient client = getAsyncClient(false, null, null);
 
         SimplePojo doc1 = new SimplePojo("Document 1", "The text of document 1");
         addDoc(client, "id1", doc1).join();

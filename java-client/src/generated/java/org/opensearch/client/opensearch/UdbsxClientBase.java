@@ -37,15 +37,13 @@
 package org.opensearch.client.opensearch;
 
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
 import org.opensearch.client.opensearch._types.ErrorResponse;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.opensearch.cat.OpenSearchCatAsyncClient;
-import org.opensearch.client.opensearch.cluster.OpenSearchClusterAsyncClient;
+import org.opensearch.client.opensearch._types.UdbsxException;
+import org.opensearch.client.opensearch.cat.OpenSearchCatClient;
+import org.opensearch.client.opensearch.cluster.OpenSearchClusterClient;
 import org.opensearch.client.opensearch.core.ClearScrollRequest;
 import org.opensearch.client.opensearch.core.ClearScrollResponse;
 import org.opensearch.client.opensearch.core.CountRequest;
@@ -111,25 +109,25 @@ import org.opensearch.client.opensearch.core.UpdateByQueryRequest;
 import org.opensearch.client.opensearch.core.UpdateByQueryResponse;
 import org.opensearch.client.opensearch.core.UpdateByQueryRethrottleRequest;
 import org.opensearch.client.opensearch.core.UpdateByQueryRethrottleResponse;
-import org.opensearch.client.opensearch.dangling_indices.OpenSearchDanglingIndicesAsyncClient;
-import org.opensearch.client.opensearch.geospatial.OpenSearchGeospatialAsyncClient;
-import org.opensearch.client.opensearch.indices.OpenSearchIndicesAsyncClient;
-import org.opensearch.client.opensearch.ingest.OpenSearchIngestAsyncClient;
-import org.opensearch.client.opensearch.ingestion.OpenSearchIngestionAsyncClient;
-import org.opensearch.client.opensearch.ism.OpenSearchIsmAsyncClient;
-import org.opensearch.client.opensearch.knn.OpenSearchKnnAsyncClient;
-import org.opensearch.client.opensearch.ltr.OpenSearchLtrAsyncClient;
-import org.opensearch.client.opensearch.ml.OpenSearchMlAsyncClient;
-import org.opensearch.client.opensearch.nodes.OpenSearchNodesAsyncClient;
-import org.opensearch.client.opensearch.search_pipeline.OpenSearchSearchPipelineAsyncClient;
-import org.opensearch.client.opensearch.search_relevance.OpenSearchSearchRelevanceAsyncClient;
-import org.opensearch.client.opensearch.security.OpenSearchSecurityAsyncClient;
-import org.opensearch.client.opensearch.snapshot.OpenSearchSnapshotAsyncClient;
-import org.opensearch.client.opensearch.tasks.OpenSearchTasksAsyncClient;
-import org.opensearch.client.opensearch.ubi.OpenSearchUbiAsyncClient;
+import org.opensearch.client.opensearch.dangling_indices.OpenSearchDanglingIndicesClient;
+import org.opensearch.client.opensearch.geospatial.OpenSearchGeospatialClient;
+import org.opensearch.client.opensearch.indices.OpenSearchIndicesClient;
+import org.opensearch.client.opensearch.ingest.OpenSearchIngestClient;
+import org.opensearch.client.opensearch.ingestion.OpenSearchIngestionClient;
+import org.opensearch.client.opensearch.ism.OpenSearchIsmClient;
+import org.opensearch.client.opensearch.knn.OpenSearchKnnClient;
+import org.opensearch.client.opensearch.ltr.OpenSearchLtrClient;
+import org.opensearch.client.opensearch.ml.OpenSearchMlClient;
+import org.opensearch.client.opensearch.nodes.OpenSearchNodesClient;
+import org.opensearch.client.opensearch.search_pipeline.OpenSearchSearchPipelineClient;
+import org.opensearch.client.opensearch.search_relevance.OpenSearchSearchRelevanceClient;
+import org.opensearch.client.opensearch.security.OpenSearchSecurityClient;
+import org.opensearch.client.opensearch.snapshot.OpenSearchSnapshotClient;
+import org.opensearch.client.opensearch.tasks.OpenSearchTasksClient;
+import org.opensearch.client.opensearch.ubi.OpenSearchUbiClient;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.transport.endpoints.EndpointWithResponseMapperAttr;
 import org.opensearch.client.util.ObjectBuilder;
@@ -137,84 +135,84 @@ import org.opensearch.client.util.ObjectBuilder;
 /**
  * Client for the namespace.
  */
-@Generated("org.opensearch.client.codegen.CodeGenerator")
-public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClientBase<Self>> extends ApiClient<OpenSearchTransport, Self> {
-    public OpenSearchAsyncClientBase(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+// @Generated("org.opensearch.client.codegen.CodeGenerator")
+public abstract class UdbsxClientBase<Self extends UdbsxClientBase<Self>> extends ApiClient<UdbsxTransport, Self> {
+    public UdbsxClientBase(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
     // ----- Child clients
 
-    public OpenSearchCatAsyncClient cat() {
-        return new OpenSearchCatAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchCatClient cat() {
+        return new OpenSearchCatClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchClusterAsyncClient cluster() {
-        return new OpenSearchClusterAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchClusterClient cluster() {
+        return new OpenSearchClusterClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchDanglingIndicesAsyncClient danglingIndices() {
-        return new OpenSearchDanglingIndicesAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchDanglingIndicesClient danglingIndices() {
+        return new OpenSearchDanglingIndicesClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchGeospatialAsyncClient geospatial() {
-        return new OpenSearchGeospatialAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchGeospatialClient geospatial() {
+        return new OpenSearchGeospatialClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchIndicesAsyncClient indices() {
-        return new OpenSearchIndicesAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchIndicesClient indices() {
+        return new OpenSearchIndicesClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchIngestAsyncClient ingest() {
-        return new OpenSearchIngestAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchIngestClient ingest() {
+        return new OpenSearchIngestClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchIngestionAsyncClient ingestion() {
-        return new OpenSearchIngestionAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchIngestionClient ingestion() {
+        return new OpenSearchIngestionClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchIsmAsyncClient ism() {
-        return new OpenSearchIsmAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchIsmClient ism() {
+        return new OpenSearchIsmClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchKnnAsyncClient knn() {
-        return new OpenSearchKnnAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchKnnClient knn() {
+        return new OpenSearchKnnClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchLtrAsyncClient ltr() {
-        return new OpenSearchLtrAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchLtrClient ltr() {
+        return new OpenSearchLtrClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchMlAsyncClient ml() {
-        return new OpenSearchMlAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchMlClient ml() {
+        return new OpenSearchMlClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchNodesAsyncClient nodes() {
-        return new OpenSearchNodesAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchNodesClient nodes() {
+        return new OpenSearchNodesClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchSearchPipelineAsyncClient searchPipeline() {
-        return new OpenSearchSearchPipelineAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchSearchPipelineClient searchPipeline() {
+        return new OpenSearchSearchPipelineClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchSearchRelevanceAsyncClient searchRelevance() {
-        return new OpenSearchSearchRelevanceAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchSearchRelevanceClient searchRelevance() {
+        return new OpenSearchSearchRelevanceClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchSecurityAsyncClient security() {
-        return new OpenSearchSecurityAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchSecurityClient security() {
+        return new OpenSearchSecurityClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchSnapshotAsyncClient snapshot() {
-        return new OpenSearchSnapshotAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchSnapshotClient snapshot() {
+        return new OpenSearchSnapshotClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchTasksAsyncClient tasks() {
-        return new OpenSearchTasksAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchTasksClient tasks() {
+        return new OpenSearchTasksClient(this.transport, this.transportOptions);
     }
 
-    public OpenSearchUbiAsyncClient ubi() {
-        return new OpenSearchUbiAsyncClient(this.transport, this.transportOptions);
+    public OpenSearchUbiClient ubi() {
+        return new OpenSearchUbiClient(this.transport, this.transportOptions);
     }
 
     // ----- Endpoint: clear_scroll
@@ -222,8 +220,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Explicitly clears the search context for a scroll.
      */
-    public CompletableFuture<ClearScrollResponse> clearScroll(ClearScrollRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, ClearScrollRequest._ENDPOINT, this.transportOptions);
+    public ClearScrollResponse clearScroll(ClearScrollRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, ClearScrollRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -231,16 +229,15 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ClearScrollRequest}
      */
-    public final CompletableFuture<ClearScrollResponse> clearScroll(
-        Function<ClearScrollRequest.Builder, ObjectBuilder<ClearScrollRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final ClearScrollResponse clearScroll(Function<ClearScrollRequest.Builder, ObjectBuilder<ClearScrollRequest>> fn)
+        throws IOException, UdbsxException {
         return clearScroll(fn.apply(new ClearScrollRequest.Builder()).build());
     }
 
     /**
      * Explicitly clears the search context for a scroll.
      */
-    public final CompletableFuture<ClearScrollResponse> clearScroll() throws IOException, OpenSearchException {
+    public final ClearScrollResponse clearScroll() throws IOException, UdbsxException {
         return clearScroll(new ClearScrollRequest.Builder().build());
     }
 
@@ -249,8 +246,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns number of documents matching a query.
      */
-    public CompletableFuture<CountResponse> count(CountRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, CountRequest._ENDPOINT, this.transportOptions);
+    public CountResponse count(CountRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, CountRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -258,15 +255,14 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link CountRequest}
      */
-    public final CompletableFuture<CountResponse> count(Function<CountRequest.Builder, ObjectBuilder<CountRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final CountResponse count(Function<CountRequest.Builder, ObjectBuilder<CountRequest>> fn) throws IOException, UdbsxException {
         return count(fn.apply(new CountRequest.Builder()).build());
     }
 
     /**
      * Returns number of documents matching a query.
      */
-    public final CompletableFuture<CountResponse> count() throws IOException, OpenSearchException {
+    public final CountResponse count() throws IOException, UdbsxException {
         return count(new CountRequest.Builder().build());
     }
 
@@ -275,8 +271,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Creates point in time context.
      */
-    public CompletableFuture<CreatePitResponse> createPit(CreatePitRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, CreatePitRequest._ENDPOINT, this.transportOptions);
+    public CreatePitResponse createPit(CreatePitRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, CreatePitRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -284,8 +280,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link CreatePitRequest}
      */
-    public final CompletableFuture<CreatePitResponse> createPit(Function<CreatePitRequest.Builder, ObjectBuilder<CreatePitRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final CreatePitResponse createPit(Function<CreatePitRequest.Builder, ObjectBuilder<CreatePitRequest>> fn) throws IOException,
+        UdbsxException {
         return createPit(fn.apply(new CreatePitRequest.Builder()).build());
     }
 
@@ -294,8 +290,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Removes a document from the index.
      */
-    public CompletableFuture<DeleteResponse> delete(DeleteRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, DeleteRequest._ENDPOINT, this.transportOptions);
+    public DeleteResponse delete(DeleteRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, DeleteRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -303,8 +299,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link DeleteRequest}
      */
-    public final CompletableFuture<DeleteResponse> delete(Function<DeleteRequest.Builder, ObjectBuilder<DeleteRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final DeleteResponse delete(Function<DeleteRequest.Builder, ObjectBuilder<DeleteRequest>> fn) throws IOException,
+        UdbsxException {
         return delete(fn.apply(new DeleteRequest.Builder()).build());
     }
 
@@ -313,8 +309,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Deletes all active point in time searches.
      */
-    public CompletableFuture<DeleteAllPitsResponse> deleteAllPits(DeleteAllPitsRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, DeleteAllPitsRequest._ENDPOINT, this.transportOptions);
+    public DeleteAllPitsResponse deleteAllPits(DeleteAllPitsRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, DeleteAllPitsRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -322,16 +318,15 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link DeleteAllPitsRequest}
      */
-    public final CompletableFuture<DeleteAllPitsResponse> deleteAllPits(
-        Function<DeleteAllPitsRequest.Builder, ObjectBuilder<DeleteAllPitsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final DeleteAllPitsResponse deleteAllPits(Function<DeleteAllPitsRequest.Builder, ObjectBuilder<DeleteAllPitsRequest>> fn)
+        throws IOException, UdbsxException {
         return deleteAllPits(fn.apply(new DeleteAllPitsRequest.Builder()).build());
     }
 
     /**
      * Deletes all active point in time searches.
      */
-    public final CompletableFuture<DeleteAllPitsResponse> deleteAllPits() throws IOException, OpenSearchException {
+    public final DeleteAllPitsResponse deleteAllPits() throws IOException, UdbsxException {
         return deleteAllPits(new DeleteAllPitsRequest.Builder().build());
     }
 
@@ -340,8 +335,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Deletes documents matching the provided query.
      */
-    public CompletableFuture<DeleteByQueryResponse> deleteByQuery(DeleteByQueryRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, DeleteByQueryRequest._ENDPOINT, this.transportOptions);
+    public DeleteByQueryResponse deleteByQuery(DeleteByQueryRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, DeleteByQueryRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -349,9 +344,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link DeleteByQueryRequest}
      */
-    public final CompletableFuture<DeleteByQueryResponse> deleteByQuery(
-        Function<DeleteByQueryRequest.Builder, ObjectBuilder<DeleteByQueryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final DeleteByQueryResponse deleteByQuery(Function<DeleteByQueryRequest.Builder, ObjectBuilder<DeleteByQueryRequest>> fn)
+        throws IOException, UdbsxException {
         return deleteByQuery(fn.apply(new DeleteByQueryRequest.Builder()).build());
     }
 
@@ -360,9 +354,9 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Changes the number of requests per second for a particular Delete By Query operation.
      */
-    public CompletableFuture<DeleteByQueryRethrottleResponse> deleteByQueryRethrottle(DeleteByQueryRethrottleRequest request)
-        throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, DeleteByQueryRethrottleRequest._ENDPOINT, this.transportOptions);
+    public DeleteByQueryRethrottleResponse deleteByQueryRethrottle(DeleteByQueryRethrottleRequest request) throws IOException,
+        UdbsxException {
+        return this.transport.performRequest(request, DeleteByQueryRethrottleRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -370,9 +364,9 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link DeleteByQueryRethrottleRequest}
      */
-    public final CompletableFuture<DeleteByQueryRethrottleResponse> deleteByQueryRethrottle(
+    public final DeleteByQueryRethrottleResponse deleteByQueryRethrottle(
         Function<DeleteByQueryRethrottleRequest.Builder, ObjectBuilder<DeleteByQueryRethrottleRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteByQueryRethrottle(fn.apply(new DeleteByQueryRethrottleRequest.Builder()).build());
     }
 
@@ -381,8 +375,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Deletes one or more point in time searches based on the IDs passed.
      */
-    public CompletableFuture<DeletePitResponse> deletePit(DeletePitRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, DeletePitRequest._ENDPOINT, this.transportOptions);
+    public DeletePitResponse deletePit(DeletePitRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, DeletePitRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -390,8 +384,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link DeletePitRequest}
      */
-    public final CompletableFuture<DeletePitResponse> deletePit(Function<DeletePitRequest.Builder, ObjectBuilder<DeletePitRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final DeletePitResponse deletePit(Function<DeletePitRequest.Builder, ObjectBuilder<DeletePitRequest>> fn) throws IOException,
+        UdbsxException {
         return deletePit(fn.apply(new DeletePitRequest.Builder()).build());
     }
 
@@ -400,8 +394,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Deletes a script.
      */
-    public CompletableFuture<DeleteScriptResponse> deleteScript(DeleteScriptRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, DeleteScriptRequest._ENDPOINT, this.transportOptions);
+    public DeleteScriptResponse deleteScript(DeleteScriptRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, DeleteScriptRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -409,9 +403,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link DeleteScriptRequest}
      */
-    public final CompletableFuture<DeleteScriptResponse> deleteScript(
-        Function<DeleteScriptRequest.Builder, ObjectBuilder<DeleteScriptRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final DeleteScriptResponse deleteScript(Function<DeleteScriptRequest.Builder, ObjectBuilder<DeleteScriptRequest>> fn)
+        throws IOException, UdbsxException {
         return deleteScript(fn.apply(new DeleteScriptRequest.Builder()).build());
     }
 
@@ -420,8 +413,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns information about whether a document exists in an index.
      */
-    public CompletableFuture<BooleanResponse> exists(ExistsRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, ExistsRequest._ENDPOINT, this.transportOptions);
+    public BooleanResponse exists(ExistsRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, ExistsRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -429,8 +422,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ExistsRequest}
      */
-    public final CompletableFuture<BooleanResponse> exists(Function<ExistsRequest.Builder, ObjectBuilder<ExistsRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final BooleanResponse exists(Function<ExistsRequest.Builder, ObjectBuilder<ExistsRequest>> fn) throws IOException,
+        UdbsxException {
         return exists(fn.apply(new ExistsRequest.Builder()).build());
     }
 
@@ -439,8 +432,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns information about whether a document source exists in an index.
      */
-    public CompletableFuture<BooleanResponse> existsSource(ExistsSourceRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, ExistsSourceRequest._ENDPOINT, this.transportOptions);
+    public BooleanResponse existsSource(ExistsSourceRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, ExistsSourceRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -448,9 +441,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ExistsSourceRequest}
      */
-    public final CompletableFuture<BooleanResponse> existsSource(
-        Function<ExistsSourceRequest.Builder, ObjectBuilder<ExistsSourceRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final BooleanResponse existsSource(Function<ExistsSourceRequest.Builder, ObjectBuilder<ExistsSourceRequest>> fn)
+        throws IOException, UdbsxException {
         return existsSource(fn.apply(new ExistsSourceRequest.Builder()).build());
     }
 
@@ -459,8 +451,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns information about why a specific document matches (or doesn't match) a query.
      */
-    public <TDocument> CompletableFuture<ExplainResponse<TDocument>> explain(ExplainRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> ExplainResponse<TDocument> explain(ExplainRequest request, Class<TDocument> tDocumentClass) throws IOException,
+        UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<ExplainRequest, ExplainResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             ExplainRequest,
@@ -472,7 +464,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -480,10 +472,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ExplainRequest}
      */
-    public final <TDocument> CompletableFuture<ExplainResponse<TDocument>> explain(
+    public final <TDocument> ExplainResponse<TDocument> explain(
         Function<ExplainRequest.Builder, ObjectBuilder<ExplainRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return explain(fn.apply(new ExplainRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -492,8 +484,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns the information about the capabilities of fields among multiple indexes.
      */
-    public CompletableFuture<FieldCapsResponse> fieldCaps(FieldCapsRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, FieldCapsRequest._ENDPOINT, this.transportOptions);
+    public FieldCapsResponse fieldCaps(FieldCapsRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, FieldCapsRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -501,15 +493,15 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link FieldCapsRequest}
      */
-    public final CompletableFuture<FieldCapsResponse> fieldCaps(Function<FieldCapsRequest.Builder, ObjectBuilder<FieldCapsRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final FieldCapsResponse fieldCaps(Function<FieldCapsRequest.Builder, ObjectBuilder<FieldCapsRequest>> fn) throws IOException,
+        UdbsxException {
         return fieldCaps(fn.apply(new FieldCapsRequest.Builder()).build());
     }
 
     /**
      * Returns the information about the capabilities of fields among multiple indexes.
      */
-    public final CompletableFuture<FieldCapsResponse> fieldCaps() throws IOException, OpenSearchException {
+    public final FieldCapsResponse fieldCaps() throws IOException, UdbsxException {
         return fieldCaps(new FieldCapsRequest.Builder().build());
     }
 
@@ -518,8 +510,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns a document.
      */
-    public <TDocument> CompletableFuture<GetResponse<TDocument>> get(GetRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> GetResponse<TDocument> get(GetRequest request, Class<TDocument> tDocumentClass) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetRequest, GetResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetRequest,
@@ -531,7 +522,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -539,10 +530,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link GetRequest}
      */
-    public final <TDocument> CompletableFuture<GetResponse<TDocument>> get(
+    public final <TDocument> GetResponse<TDocument> get(
         Function<GetRequest.Builder, ObjectBuilder<GetRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return get(fn.apply(new GetRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -551,8 +542,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Lists all active point in time searches.
      */
-    public CompletableFuture<GetAllPitsResponse> getAllPits(GetAllPitsRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, GetAllPitsRequest._ENDPOINT, this.transportOptions);
+    public GetAllPitsResponse getAllPits(GetAllPitsRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, GetAllPitsRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -560,15 +551,15 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link GetAllPitsRequest}
      */
-    public final CompletableFuture<GetAllPitsResponse> getAllPits(Function<GetAllPitsRequest.Builder, ObjectBuilder<GetAllPitsRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final GetAllPitsResponse getAllPits(Function<GetAllPitsRequest.Builder, ObjectBuilder<GetAllPitsRequest>> fn) throws IOException,
+        UdbsxException {
         return getAllPits(fn.apply(new GetAllPitsRequest.Builder()).build());
     }
 
     /**
      * Lists all active point in time searches.
      */
-    public final CompletableFuture<GetAllPitsResponse> getAllPits() throws IOException, OpenSearchException {
+    public final GetAllPitsResponse getAllPits() throws IOException, UdbsxException {
         return getAllPits(new GetAllPitsRequest.Builder().build());
     }
 
@@ -577,8 +568,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns a script.
      */
-    public CompletableFuture<GetScriptResponse> getScript(GetScriptRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, GetScriptRequest._ENDPOINT, this.transportOptions);
+    public GetScriptResponse getScript(GetScriptRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, GetScriptRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -586,8 +577,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link GetScriptRequest}
      */
-    public final CompletableFuture<GetScriptResponse> getScript(Function<GetScriptRequest.Builder, ObjectBuilder<GetScriptRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final GetScriptResponse getScript(Function<GetScriptRequest.Builder, ObjectBuilder<GetScriptRequest>> fn) throws IOException,
+        UdbsxException {
         return getScript(fn.apply(new GetScriptRequest.Builder()).build());
     }
 
@@ -596,9 +587,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns all script contexts.
      */
-    public CompletableFuture<GetScriptContextResponse> getScriptContext(GetScriptContextRequest request) throws IOException,
-        OpenSearchException {
-        return this.transport.performRequestAsync(request, GetScriptContextRequest._ENDPOINT, this.transportOptions);
+    public GetScriptContextResponse getScriptContext(GetScriptContextRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, GetScriptContextRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -606,16 +596,16 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link GetScriptContextRequest}
      */
-    public final CompletableFuture<GetScriptContextResponse> getScriptContext(
+    public final GetScriptContextResponse getScriptContext(
         Function<GetScriptContextRequest.Builder, ObjectBuilder<GetScriptContextRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getScriptContext(fn.apply(new GetScriptContextRequest.Builder()).build());
     }
 
     /**
      * Returns all script contexts.
      */
-    public final CompletableFuture<GetScriptContextResponse> getScriptContext() throws IOException, OpenSearchException {
+    public final GetScriptContextResponse getScriptContext() throws IOException, UdbsxException {
         return getScriptContext(new GetScriptContextRequest.Builder().build());
     }
 
@@ -624,9 +614,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns available script types, languages and contexts.
      */
-    public CompletableFuture<GetScriptLanguagesResponse> getScriptLanguages(GetScriptLanguagesRequest request) throws IOException,
-        OpenSearchException {
-        return this.transport.performRequestAsync(request, GetScriptLanguagesRequest._ENDPOINT, this.transportOptions);
+    public GetScriptLanguagesResponse getScriptLanguages(GetScriptLanguagesRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, GetScriptLanguagesRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -634,16 +623,16 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link GetScriptLanguagesRequest}
      */
-    public final CompletableFuture<GetScriptLanguagesResponse> getScriptLanguages(
+    public final GetScriptLanguagesResponse getScriptLanguages(
         Function<GetScriptLanguagesRequest.Builder, ObjectBuilder<GetScriptLanguagesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getScriptLanguages(fn.apply(new GetScriptLanguagesRequest.Builder()).build());
     }
 
     /**
      * Returns available script types, languages and contexts.
      */
-    public final CompletableFuture<GetScriptLanguagesResponse> getScriptLanguages() throws IOException, OpenSearchException {
+    public final GetScriptLanguagesResponse getScriptLanguages() throws IOException, UdbsxException {
         return getScriptLanguages(new GetScriptLanguagesRequest.Builder().build());
     }
 
@@ -652,8 +641,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns the source of a document.
      */
-    public <TDocument> CompletableFuture<GetSourceResponse<TDocument>> getSource(GetSourceRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> GetSourceResponse<TDocument> getSource(GetSourceRequest request, Class<TDocument> tDocumentClass) throws IOException,
+        UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<GetSourceRequest, GetSourceResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             GetSourceRequest,
@@ -665,7 +654,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -673,10 +662,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link GetSourceRequest}
      */
-    public final <TDocument> CompletableFuture<GetSourceResponse<TDocument>> getSource(
+    public final <TDocument> GetSourceResponse<TDocument> getSource(
         Function<GetSourceRequest.Builder, ObjectBuilder<GetSourceRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getSource(fn.apply(new GetSourceRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -685,8 +674,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns basic information about the cluster.
      */
-    public CompletableFuture<InfoResponse> info(InfoRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, InfoRequest._ENDPOINT, this.transportOptions);
+    public InfoResponse info(InfoRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, InfoRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -694,15 +683,14 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link InfoRequest}
      */
-    public final CompletableFuture<InfoResponse> info(Function<InfoRequest.Builder, ObjectBuilder<InfoRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final InfoResponse info(Function<InfoRequest.Builder, ObjectBuilder<InfoRequest>> fn) throws IOException, UdbsxException {
         return info(fn.apply(new InfoRequest.Builder()).build());
     }
 
     /**
      * Returns basic information about the cluster.
      */
-    public final CompletableFuture<InfoResponse> info() throws IOException, OpenSearchException {
+    public final InfoResponse info() throws IOException, UdbsxException {
         return info(new InfoRequest.Builder().build());
     }
 
@@ -711,8 +699,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns multiple termvectors in one request.
      */
-    public CompletableFuture<MtermvectorsResponse> mtermvectors(MtermvectorsRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, MtermvectorsRequest._ENDPOINT, this.transportOptions);
+    public MtermvectorsResponse mtermvectors(MtermvectorsRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, MtermvectorsRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -720,16 +708,15 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link MtermvectorsRequest}
      */
-    public final CompletableFuture<MtermvectorsResponse> mtermvectors(
-        Function<MtermvectorsRequest.Builder, ObjectBuilder<MtermvectorsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final MtermvectorsResponse mtermvectors(Function<MtermvectorsRequest.Builder, ObjectBuilder<MtermvectorsRequest>> fn)
+        throws IOException, UdbsxException {
         return mtermvectors(fn.apply(new MtermvectorsRequest.Builder()).build());
     }
 
     /**
      * Returns multiple termvectors in one request.
      */
-    public final CompletableFuture<MtermvectorsResponse> mtermvectors() throws IOException, OpenSearchException {
+    public final MtermvectorsResponse mtermvectors() throws IOException, UdbsxException {
         return mtermvectors(new MtermvectorsRequest.Builder().build());
     }
 
@@ -738,8 +725,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns whether the cluster is running.
      */
-    public CompletableFuture<BooleanResponse> ping(PingRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, PingRequest._ENDPOINT, this.transportOptions);
+    public BooleanResponse ping(PingRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, PingRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -747,15 +734,14 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link PingRequest}
      */
-    public final CompletableFuture<BooleanResponse> ping(Function<PingRequest.Builder, ObjectBuilder<PingRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final BooleanResponse ping(Function<PingRequest.Builder, ObjectBuilder<PingRequest>> fn) throws IOException, UdbsxException {
         return ping(fn.apply(new PingRequest.Builder()).build());
     }
 
     /**
      * Returns whether the cluster is running.
      */
-    public final CompletableFuture<BooleanResponse> ping() throws IOException, OpenSearchException {
+    public final BooleanResponse ping() throws IOException, UdbsxException {
         return ping(new PingRequest.Builder().build());
     }
 
@@ -764,8 +750,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Creates or updates a script.
      */
-    public CompletableFuture<PutScriptResponse> putScript(PutScriptRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, PutScriptRequest._ENDPOINT, this.transportOptions);
+    public PutScriptResponse putScript(PutScriptRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, PutScriptRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -773,8 +759,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link PutScriptRequest}
      */
-    public final CompletableFuture<PutScriptResponse> putScript(Function<PutScriptRequest.Builder, ObjectBuilder<PutScriptRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final PutScriptResponse putScript(Function<PutScriptRequest.Builder, ObjectBuilder<PutScriptRequest>> fn) throws IOException,
+        UdbsxException {
         return putScript(fn.apply(new PutScriptRequest.Builder()).build());
     }
 
@@ -783,8 +769,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Allows to evaluate the quality of ranked search results over a set of typical search queries.
      */
-    public CompletableFuture<RankEvalResponse> rankEval(RankEvalRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, RankEvalRequest._ENDPOINT, this.transportOptions);
+    public RankEvalResponse rankEval(RankEvalRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, RankEvalRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -792,8 +778,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link RankEvalRequest}
      */
-    public final CompletableFuture<RankEvalResponse> rankEval(Function<RankEvalRequest.Builder, ObjectBuilder<RankEvalRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final RankEvalResponse rankEval(Function<RankEvalRequest.Builder, ObjectBuilder<RankEvalRequest>> fn) throws IOException,
+        UdbsxException {
         return rankEval(fn.apply(new RankEvalRequest.Builder()).build());
     }
 
@@ -803,8 +789,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      * Allows to copy documents from one index to another, optionally filtering the source documents by a query, changing the destination
      * index settings, or fetching the documents from a remote cluster.
      */
-    public CompletableFuture<ReindexResponse> reindex(ReindexRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, ReindexRequest._ENDPOINT, this.transportOptions);
+    public ReindexResponse reindex(ReindexRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, ReindexRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -813,8 +799,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ReindexRequest}
      */
-    public final CompletableFuture<ReindexResponse> reindex(Function<ReindexRequest.Builder, ObjectBuilder<ReindexRequest>> fn)
-        throws IOException, OpenSearchException {
+    public final ReindexResponse reindex(Function<ReindexRequest.Builder, ObjectBuilder<ReindexRequest>> fn) throws IOException,
+        UdbsxException {
         return reindex(fn.apply(new ReindexRequest.Builder()).build());
     }
 
@@ -823,9 +809,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Changes the number of requests per second for a particular reindex operation.
      */
-    public CompletableFuture<ReindexRethrottleResponse> reindexRethrottle(ReindexRethrottleRequest request) throws IOException,
-        OpenSearchException {
-        return this.transport.performRequestAsync(request, ReindexRethrottleRequest._ENDPOINT, this.transportOptions);
+    public ReindexRethrottleResponse reindexRethrottle(ReindexRethrottleRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, ReindexRethrottleRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -833,9 +818,9 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ReindexRethrottleRequest}
      */
-    public final CompletableFuture<ReindexRethrottleResponse> reindexRethrottle(
+    public final ReindexRethrottleResponse reindexRethrottle(
         Function<ReindexRethrottleRequest.Builder, ObjectBuilder<ReindexRethrottleRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return reindexRethrottle(fn.apply(new ReindexRethrottleRequest.Builder()).build());
     }
 
@@ -844,9 +829,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Allows to use the Mustache language to pre-render a search definition.
      */
-    public CompletableFuture<RenderSearchTemplateResponse> renderSearchTemplate(RenderSearchTemplateRequest request) throws IOException,
-        OpenSearchException {
-        return this.transport.performRequestAsync(request, RenderSearchTemplateRequest._ENDPOINT, this.transportOptions);
+    public RenderSearchTemplateResponse renderSearchTemplate(RenderSearchTemplateRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, RenderSearchTemplateRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -854,16 +838,16 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link RenderSearchTemplateRequest}
      */
-    public final CompletableFuture<RenderSearchTemplateResponse> renderSearchTemplate(
+    public final RenderSearchTemplateResponse renderSearchTemplate(
         Function<RenderSearchTemplateRequest.Builder, ObjectBuilder<RenderSearchTemplateRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return renderSearchTemplate(fn.apply(new RenderSearchTemplateRequest.Builder()).build());
     }
 
     /**
      * Allows to use the Mustache language to pre-render a search definition.
      */
-    public final CompletableFuture<RenderSearchTemplateResponse> renderSearchTemplate() throws IOException, OpenSearchException {
+    public final RenderSearchTemplateResponse renderSearchTemplate() throws IOException, UdbsxException {
         return renderSearchTemplate(new RenderSearchTemplateRequest.Builder().build());
     }
 
@@ -872,10 +856,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Allows an arbitrary script to be executed and a result to be returned.
      */
-    public <TResult> CompletableFuture<ScriptsPainlessExecuteResponse<TResult>> scriptsPainlessExecute(
+    public <TResult> ScriptsPainlessExecuteResponse<TResult> scriptsPainlessExecute(
         ScriptsPainlessExecuteRequest request,
         Class<TResult> tResultClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<ScriptsPainlessExecuteRequest, ScriptsPainlessExecuteResponse<TResult>, ErrorResponse> endpoint = (JsonEndpoint<
             ScriptsPainlessExecuteRequest,
@@ -887,7 +871,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tResultClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -895,10 +879,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ScriptsPainlessExecuteRequest}
      */
-    public final <TResult> CompletableFuture<ScriptsPainlessExecuteResponse<TResult>> scriptsPainlessExecute(
+    public final <TResult> ScriptsPainlessExecuteResponse<TResult> scriptsPainlessExecute(
         Function<ScriptsPainlessExecuteRequest.Builder, ObjectBuilder<ScriptsPainlessExecuteRequest>> fn,
         Class<TResult> tResultClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return scriptsPainlessExecute(fn.apply(new ScriptsPainlessExecuteRequest.Builder()).build(), tResultClass);
     }
 
@@ -907,8 +891,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Allows to retrieve a large numbers of results from a single search request.
      */
-    public <TDocument> CompletableFuture<ScrollResponse<TDocument>> scroll(ScrollRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> ScrollResponse<TDocument> scroll(ScrollRequest request, Class<TDocument> tDocumentClass) throws IOException,
+        UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<ScrollRequest, ScrollResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             ScrollRequest,
@@ -920,7 +904,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -928,10 +912,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link ScrollRequest}
      */
-    public final <TDocument> CompletableFuture<ScrollResponse<TDocument>> scroll(
+    public final <TDocument> ScrollResponse<TDocument> scroll(
         Function<ScrollRequest.Builder, ObjectBuilder<ScrollRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return scroll(fn.apply(new ScrollRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -940,8 +924,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns results matching a query.
      */
-    public <TDocument> CompletableFuture<SearchResponse<TDocument>> search(SearchRequest request, Class<TDocument> tDocumentClass)
-        throws IOException, OpenSearchException {
+    public <TDocument> SearchResponse<TDocument> search(SearchRequest request, Class<TDocument> tDocumentClass) throws IOException,
+        UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<SearchRequest, SearchResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             SearchRequest,
@@ -953,7 +937,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -961,10 +945,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link SearchRequest}
      */
-    public final <TDocument> CompletableFuture<SearchResponse<TDocument>> search(
+    public final <TDocument> SearchResponse<TDocument> search(
         Function<SearchRequest.Builder, ObjectBuilder<SearchRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return search(fn.apply(new SearchRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -973,8 +957,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Returns information about the indexes and shards that a search request would be executed against.
      */
-    public CompletableFuture<SearchShardsResponse> searchShards(SearchShardsRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, SearchShardsRequest._ENDPOINT, this.transportOptions);
+    public SearchShardsResponse searchShards(SearchShardsRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, SearchShardsRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -982,16 +966,15 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link SearchShardsRequest}
      */
-    public final CompletableFuture<SearchShardsResponse> searchShards(
-        Function<SearchShardsRequest.Builder, ObjectBuilder<SearchShardsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final SearchShardsResponse searchShards(Function<SearchShardsRequest.Builder, ObjectBuilder<SearchShardsRequest>> fn)
+        throws IOException, UdbsxException {
         return searchShards(fn.apply(new SearchShardsRequest.Builder()).build());
     }
 
     /**
      * Returns information about the indexes and shards that a search request would be executed against.
      */
-    public final CompletableFuture<SearchShardsResponse> searchShards() throws IOException, OpenSearchException {
+    public final SearchShardsResponse searchShards() throws IOException, UdbsxException {
         return searchShards(new SearchShardsRequest.Builder().build());
     }
 
@@ -1000,10 +983,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Allows to use the Mustache language to pre-render a search definition.
      */
-    public <TDocument> CompletableFuture<SearchTemplateResponse<TDocument>> searchTemplate(
-        SearchTemplateRequest request,
-        Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    public <TDocument> SearchTemplateResponse<TDocument> searchTemplate(SearchTemplateRequest request, Class<TDocument> tDocumentClass)
+        throws IOException, UdbsxException {
         @SuppressWarnings("unchecked")
         JsonEndpoint<SearchTemplateRequest, SearchTemplateResponse<TDocument>, ErrorResponse> endpoint = (JsonEndpoint<
             SearchTemplateRequest,
@@ -1015,7 +996,7 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
             getDeserializer(tDocumentClass)
         );
 
-        return this.transport.performRequestAsync(request, endpoint, this.transportOptions);
+        return this.transport.performRequest(request, endpoint, this.transportOptions);
     }
 
     /**
@@ -1023,10 +1004,10 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link SearchTemplateRequest}
      */
-    public final <TDocument> CompletableFuture<SearchTemplateResponse<TDocument>> searchTemplate(
+    public final <TDocument> SearchTemplateResponse<TDocument> searchTemplate(
         Function<SearchTemplateRequest.Builder, ObjectBuilder<SearchTemplateRequest>> fn,
         Class<TDocument> tDocumentClass
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return searchTemplate(fn.apply(new SearchTemplateRequest.Builder()).build(), tDocumentClass);
     }
 
@@ -1035,8 +1016,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Performs an update on every document in the index without changing the source, for example to pick up a mapping change.
      */
-    public CompletableFuture<UpdateByQueryResponse> updateByQuery(UpdateByQueryRequest request) throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, UpdateByQueryRequest._ENDPOINT, this.transportOptions);
+    public UpdateByQueryResponse updateByQuery(UpdateByQueryRequest request) throws IOException, UdbsxException {
+        return this.transport.performRequest(request, UpdateByQueryRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -1044,9 +1025,8 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link UpdateByQueryRequest}
      */
-    public final CompletableFuture<UpdateByQueryResponse> updateByQuery(
-        Function<UpdateByQueryRequest.Builder, ObjectBuilder<UpdateByQueryRequest>> fn
-    ) throws IOException, OpenSearchException {
+    public final UpdateByQueryResponse updateByQuery(Function<UpdateByQueryRequest.Builder, ObjectBuilder<UpdateByQueryRequest>> fn)
+        throws IOException, UdbsxException {
         return updateByQuery(fn.apply(new UpdateByQueryRequest.Builder()).build());
     }
 
@@ -1055,9 +1035,9 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
     /**
      * Changes the number of requests per second for a particular Update By Query operation.
      */
-    public CompletableFuture<UpdateByQueryRethrottleResponse> updateByQueryRethrottle(UpdateByQueryRethrottleRequest request)
-        throws IOException, OpenSearchException {
-        return this.transport.performRequestAsync(request, UpdateByQueryRethrottleRequest._ENDPOINT, this.transportOptions);
+    public UpdateByQueryRethrottleResponse updateByQueryRethrottle(UpdateByQueryRethrottleRequest request) throws IOException,
+        UdbsxException {
+        return this.transport.performRequest(request, UpdateByQueryRethrottleRequest._ENDPOINT, this.transportOptions);
     }
 
     /**
@@ -1065,9 +1045,9 @@ public abstract class OpenSearchAsyncClientBase<Self extends OpenSearchAsyncClie
      *
      * @param fn a function that initializes a builder to create the {@link UpdateByQueryRethrottleRequest}
      */
-    public final CompletableFuture<UpdateByQueryRethrottleResponse> updateByQueryRethrottle(
+    public final UpdateByQueryRethrottleResponse updateByQueryRethrottle(
         Function<UpdateByQueryRethrottleRequest.Builder, ObjectBuilder<UpdateByQueryRethrottleRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return updateByQueryRethrottle(fn.apply(new UpdateByQueryRethrottleRequest.Builder()).build());
     }
 }

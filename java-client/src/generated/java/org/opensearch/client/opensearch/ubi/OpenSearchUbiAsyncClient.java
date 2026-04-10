@@ -42,9 +42,9 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.util.ObjectBuilder;
 
@@ -52,12 +52,12 @@ import org.opensearch.client.util.ObjectBuilder;
  * Client for the ubi namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchUbiAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchUbiAsyncClient> {
-    public OpenSearchUbiAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchUbiAsyncClient extends ApiClient<UdbsxTransport, OpenSearchUbiAsyncClient> {
+    public OpenSearchUbiAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchUbiAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchUbiAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -71,7 +71,7 @@ public class OpenSearchUbiAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Initializes the UBI indexes.
      */
-    public CompletableFuture<BooleanResponse> initialize(InitializeRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<BooleanResponse> initialize(InitializeRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, InitializeRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -81,14 +81,14 @@ public class OpenSearchUbiAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link InitializeRequest}
      */
     public final CompletableFuture<BooleanResponse> initialize(Function<InitializeRequest.Builder, ObjectBuilder<InitializeRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return initialize(fn.apply(new InitializeRequest.Builder()).build());
     }
 
     /**
      * Initializes the UBI indexes.
      */
-    public final CompletableFuture<BooleanResponse> initialize() throws IOException, OpenSearchException {
+    public final CompletableFuture<BooleanResponse> initialize() throws IOException, UdbsxException {
         return initialize(new InitializeRequest.Builder().build());
     }
 }

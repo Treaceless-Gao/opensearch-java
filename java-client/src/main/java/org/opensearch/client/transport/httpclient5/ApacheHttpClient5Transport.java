@@ -83,15 +83,15 @@ import org.apache.hc.core5.util.Args;
 import org.opensearch.client.json.JsonpDeserializer;
 import org.opensearch.client.json.JsonpMapper;
 import org.opensearch.client.json.NdJsonpSerializable;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.opensearch.generic.OpenSearchClientException;
+import org.opensearch.client.opensearch._types.UdbsxException;
+import org.opensearch.client.opensearch.generic.UdbsxClientException;
 import org.opensearch.client.transport.Endpoint;
 import org.opensearch.client.transport.GenericEndpoint;
 import org.opensearch.client.transport.GenericSerializable;
 import org.opensearch.client.transport.JsonEndpoint;
-import org.opensearch.client.transport.OpenSearchTransport;
 import org.opensearch.client.transport.TransportException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.endpoints.BooleanEndpoint;
 import org.opensearch.client.transport.endpoints.BooleanResponse;
 import org.opensearch.client.transport.httpclient5.internal.HttpUriRequestProducer;
@@ -103,7 +103,7 @@ import org.opensearch.client.util.MissingRequiredPropertyException;
 /**
  * Apache HttpClient 5 based client transport.
  */
-public class ApacheHttpClient5Transport implements OpenSearchTransport {
+public class ApacheHttpClient5Transport implements UdbsxTransport {
     private static final Log logger = LogFactory.getLog(ApacheHttpClient5Transport.class);
     static final ContentType JsonContentType = ContentType.APPLICATION_JSON;
 
@@ -1148,13 +1148,13 @@ public class ApacheHttpClient5Transport implements OpenSearchTransport {
         if (exception instanceof IOException) {
             return new IOException(exception.getMessage(), exception);
         }
-        if (exception instanceof OpenSearchException) {
-            final OpenSearchException e = new OpenSearchException(((OpenSearchException) exception).response());
+        if (exception instanceof UdbsxException) {
+            final UdbsxException e = new UdbsxException(((UdbsxException) exception).response());
             e.initCause(exception);
             return e;
         }
-        if (exception instanceof OpenSearchClientException) {
-            final OpenSearchClientException e = new OpenSearchClientException(((OpenSearchClientException) exception).response());
+        if (exception instanceof UdbsxClientException) {
+            final UdbsxClientException e = new UdbsxClientException(((UdbsxClientException) exception).response());
             e.initCause(exception);
             return e;
         }

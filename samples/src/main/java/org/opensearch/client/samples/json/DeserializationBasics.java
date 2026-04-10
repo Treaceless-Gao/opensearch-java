@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.indices.PutIndexTemplateRequest;
 import org.opensearch.client.opensearch.indices.PutIndexTemplateResponse;
 import org.opensearch.client.opensearch.indices.put_index_template.IndexTemplateMapping;
@@ -23,7 +23,7 @@ import org.opensearch.client.samples.Search;
 public class DeserializationBasics {
     private static final Logger LOGGER = LogManager.getLogger(Search.class);
 
-    private static OpenSearchClient client;
+    private static UdbsxClient client;
 
     public static void main(String[] args) {
         try {

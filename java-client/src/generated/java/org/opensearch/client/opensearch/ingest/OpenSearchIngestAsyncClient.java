@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the ingest namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchIngestAsyncClient> {
-    public OpenSearchIngestAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchIngestAsyncClient extends ApiClient<UdbsxTransport, OpenSearchIngestAsyncClient> {
+    public OpenSearchIngestAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchIngestAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchIngestAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -70,7 +70,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
     /**
      * Deletes an ingest pipeline.
      */
-    public CompletableFuture<DeletePipelineResponse> deletePipeline(DeletePipelineRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeletePipelineResponse> deletePipeline(DeletePipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeletePipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -81,7 +81,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
      */
     public final CompletableFuture<DeletePipelineResponse> deletePipeline(
         Function<DeletePipelineRequest.Builder, ObjectBuilder<DeletePipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deletePipeline(fn.apply(new DeletePipelineRequest.Builder()).build());
     }
 
@@ -90,7 +90,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
     /**
      * Returns an ingest pipeline.
      */
-    public CompletableFuture<GetPipelineResponse> getPipeline(GetPipelineRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetPipelineResponse> getPipeline(GetPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -101,14 +101,14 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
      */
     public final CompletableFuture<GetPipelineResponse> getPipeline(
         Function<GetPipelineRequest.Builder, ObjectBuilder<GetPipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return getPipeline(fn.apply(new GetPipelineRequest.Builder()).build());
     }
 
     /**
      * Returns an ingest pipeline.
      */
-    public final CompletableFuture<GetPipelineResponse> getPipeline() throws IOException, OpenSearchException {
+    public final CompletableFuture<GetPipelineResponse> getPipeline() throws IOException, UdbsxException {
         return getPipeline(new GetPipelineRequest.Builder().build());
     }
 
@@ -117,7 +117,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
     /**
      * Returns a list of built-in grok patterns.
      */
-    public CompletableFuture<ProcessorGrokResponse> processorGrok(ProcessorGrokRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<ProcessorGrokResponse> processorGrok(ProcessorGrokRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, ProcessorGrokRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -128,14 +128,14 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
      */
     public final CompletableFuture<ProcessorGrokResponse> processorGrok(
         Function<ProcessorGrokRequest.Builder, ObjectBuilder<ProcessorGrokRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return processorGrok(fn.apply(new ProcessorGrokRequest.Builder()).build());
     }
 
     /**
      * Returns a list of built-in grok patterns.
      */
-    public final CompletableFuture<ProcessorGrokResponse> processorGrok() throws IOException, OpenSearchException {
+    public final CompletableFuture<ProcessorGrokResponse> processorGrok() throws IOException, UdbsxException {
         return processorGrok(new ProcessorGrokRequest.Builder().build());
     }
 
@@ -144,7 +144,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
     /**
      * Creates or updates an ingest pipeline.
      */
-    public CompletableFuture<PutPipelineResponse> putPipeline(PutPipelineRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<PutPipelineResponse> putPipeline(PutPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, PutPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -155,7 +155,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
      */
     public final CompletableFuture<PutPipelineResponse> putPipeline(
         Function<PutPipelineRequest.Builder, ObjectBuilder<PutPipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return putPipeline(fn.apply(new PutPipelineRequest.Builder()).build());
     }
 
@@ -164,7 +164,7 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
     /**
      * Simulates an ingest pipeline with example documents.
      */
-    public CompletableFuture<SimulateResponse> simulate(SimulateRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SimulateResponse> simulate(SimulateRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SimulateRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -174,14 +174,14 @@ public class OpenSearchIngestAsyncClient extends ApiClient<OpenSearchTransport, 
      * @param fn a function that initializes a builder to create the {@link SimulateRequest}
      */
     public final CompletableFuture<SimulateResponse> simulate(Function<SimulateRequest.Builder, ObjectBuilder<SimulateRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return simulate(fn.apply(new SimulateRequest.Builder()).build());
     }
 
     /**
      * Simulates an ingest pipeline with example documents.
      */
-    public final CompletableFuture<SimulateResponse> simulate() throws IOException, OpenSearchException {
+    public final CompletableFuture<SimulateResponse> simulate() throws IOException, UdbsxException {
         return simulate(new SimulateRequest.Builder().build());
     }
 }

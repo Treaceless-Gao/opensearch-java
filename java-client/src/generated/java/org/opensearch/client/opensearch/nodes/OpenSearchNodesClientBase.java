@@ -41,17 +41,17 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the nodes namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClientBase<Self>> extends ApiClient<OpenSearchTransport, Self> {
-    public OpenSearchNodesClientBase(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClientBase<Self>> extends ApiClient<UdbsxTransport, Self> {
+    public OpenSearchNodesClientBase(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -60,7 +60,7 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
     /**
      * Returns information about nodes in the cluster.
      */
-    public NodesInfoResponse info(NodesInfoRequest request) throws IOException, OpenSearchException {
+    public NodesInfoResponse info(NodesInfoRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, NodesInfoRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -70,14 +70,14 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
      * @param fn a function that initializes a builder to create the {@link NodesInfoRequest}
      */
     public final NodesInfoResponse info(Function<NodesInfoRequest.Builder, ObjectBuilder<NodesInfoRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return info(fn.apply(new NodesInfoRequest.Builder()).build());
     }
 
     /**
      * Returns information about nodes in the cluster.
      */
-    public final NodesInfoResponse info() throws IOException, OpenSearchException {
+    public final NodesInfoResponse info() throws IOException, UdbsxException {
         return info(new NodesInfoRequest.Builder().build());
     }
 
@@ -86,7 +86,7 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
     /**
      * Reloads secure settings.
      */
-    public ReloadSecureSettingsResponse reloadSecureSettings(ReloadSecureSettingsRequest request) throws IOException, OpenSearchException {
+    public ReloadSecureSettingsResponse reloadSecureSettings(ReloadSecureSettingsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ReloadSecureSettingsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -97,14 +97,14 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
      */
     public final ReloadSecureSettingsResponse reloadSecureSettings(
         Function<ReloadSecureSettingsRequest.Builder, ObjectBuilder<ReloadSecureSettingsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return reloadSecureSettings(fn.apply(new ReloadSecureSettingsRequest.Builder()).build());
     }
 
     /**
      * Reloads secure settings.
      */
-    public final ReloadSecureSettingsResponse reloadSecureSettings() throws IOException, OpenSearchException {
+    public final ReloadSecureSettingsResponse reloadSecureSettings() throws IOException, UdbsxException {
         return reloadSecureSettings(new ReloadSecureSettingsRequest.Builder().build());
     }
 
@@ -113,7 +113,7 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
     /**
      * Returns statistical information about nodes in the cluster.
      */
-    public NodesStatsResponse stats(NodesStatsRequest request) throws IOException, OpenSearchException {
+    public NodesStatsResponse stats(NodesStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, NodesStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -123,14 +123,14 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
      * @param fn a function that initializes a builder to create the {@link NodesStatsRequest}
      */
     public final NodesStatsResponse stats(Function<NodesStatsRequest.Builder, ObjectBuilder<NodesStatsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return stats(fn.apply(new NodesStatsRequest.Builder()).build());
     }
 
     /**
      * Returns statistical information about nodes in the cluster.
      */
-    public final NodesStatsResponse stats() throws IOException, OpenSearchException {
+    public final NodesStatsResponse stats() throws IOException, UdbsxException {
         return stats(new NodesStatsRequest.Builder().build());
     }
 
@@ -139,7 +139,7 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
     /**
      * Returns low-level information about REST actions usage on nodes.
      */
-    public NodesUsageResponse usage(NodesUsageRequest request) throws IOException, OpenSearchException {
+    public NodesUsageResponse usage(NodesUsageRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, NodesUsageRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -149,14 +149,14 @@ public abstract class OpenSearchNodesClientBase<Self extends OpenSearchNodesClie
      * @param fn a function that initializes a builder to create the {@link NodesUsageRequest}
      */
     public final NodesUsageResponse usage(Function<NodesUsageRequest.Builder, ObjectBuilder<NodesUsageRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return usage(fn.apply(new NodesUsageRequest.Builder()).build());
     }
 
     /**
      * Returns low-level information about REST actions usage on nodes.
      */
-    public final NodesUsageResponse usage() throws IOException, OpenSearchException {
+    public final NodesUsageResponse usage() throws IOException, UdbsxException {
         return usage(new NodesUsageRequest.Builder().build());
     }
 }

@@ -41,17 +41,17 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the cat namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBase<Self>> extends ApiClient<OpenSearchTransport, Self> {
-    public OpenSearchCatClientBase(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBase<Self>> extends ApiClient<UdbsxTransport, Self> {
+    public OpenSearchCatClientBase(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -60,7 +60,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Shows information about aliases currently configured to indexes, including filter and routing information.
      */
-    public AliasesResponse aliases(AliasesRequest request) throws IOException, OpenSearchException {
+    public AliasesResponse aliases(AliasesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AliasesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -70,14 +70,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link AliasesRequest}
      */
     public final AliasesResponse aliases(Function<AliasesRequest.Builder, ObjectBuilder<AliasesRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return aliases(fn.apply(new AliasesRequest.Builder()).build());
     }
 
     /**
      * Shows information about aliases currently configured to indexes, including filter and routing information.
      */
-    public final AliasesResponse aliases() throws IOException, OpenSearchException {
+    public final AliasesResponse aliases() throws IOException, UdbsxException {
         return aliases(new AliasesRequest.Builder().build());
     }
 
@@ -86,7 +86,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Lists all active CAT point-in-time segments.
      */
-    public AllPitSegmentsResponse allPitSegments(AllPitSegmentsRequest request) throws IOException, OpenSearchException {
+    public AllPitSegmentsResponse allPitSegments(AllPitSegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AllPitSegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -96,14 +96,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link AllPitSegmentsRequest}
      */
     public final AllPitSegmentsResponse allPitSegments(Function<AllPitSegmentsRequest.Builder, ObjectBuilder<AllPitSegmentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return allPitSegments(fn.apply(new AllPitSegmentsRequest.Builder()).build());
     }
 
     /**
      * Lists all active CAT point-in-time segments.
      */
-    public final AllPitSegmentsResponse allPitSegments() throws IOException, OpenSearchException {
+    public final AllPitSegmentsResponse allPitSegments() throws IOException, UdbsxException {
         return allPitSegments(new AllPitSegmentsRequest.Builder().build());
     }
 
@@ -112,7 +112,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Provides a snapshot of how many shards are allocated to each data node and how much disk space they are using.
      */
-    public AllocationResponse allocation(AllocationRequest request) throws IOException, OpenSearchException {
+    public AllocationResponse allocation(AllocationRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, AllocationRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -122,14 +122,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link AllocationRequest}
      */
     public final AllocationResponse allocation(Function<AllocationRequest.Builder, ObjectBuilder<AllocationRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return allocation(fn.apply(new AllocationRequest.Builder()).build());
     }
 
     /**
      * Provides a snapshot of how many shards are allocated to each data node and how much disk space they are using.
      */
-    public final AllocationResponse allocation() throws IOException, OpenSearchException {
+    public final AllocationResponse allocation() throws IOException, UdbsxException {
         return allocation(new AllocationRequest.Builder().build());
     }
 
@@ -138,7 +138,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns information about the cluster-manager node.
      */
-    public ClusterManagerResponse clusterManager(ClusterManagerRequest request) throws IOException, OpenSearchException {
+    public ClusterManagerResponse clusterManager(ClusterManagerRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ClusterManagerRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -148,14 +148,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link ClusterManagerRequest}
      */
     public final ClusterManagerResponse clusterManager(Function<ClusterManagerRequest.Builder, ObjectBuilder<ClusterManagerRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return clusterManager(fn.apply(new ClusterManagerRequest.Builder()).build());
     }
 
     /**
      * Returns information about the cluster-manager node.
      */
-    public final ClusterManagerResponse clusterManager() throws IOException, OpenSearchException {
+    public final ClusterManagerResponse clusterManager() throws IOException, UdbsxException {
         return clusterManager(new ClusterManagerRequest.Builder().build());
     }
 
@@ -164,7 +164,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Provides quick access to the document count of the entire cluster or of an individual index.
      */
-    public CountResponse count(CountRequest request) throws IOException, OpenSearchException {
+    public CountResponse count(CountRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CountRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -173,15 +173,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      *
      * @param fn a function that initializes a builder to create the {@link CountRequest}
      */
-    public final CountResponse count(Function<CountRequest.Builder, ObjectBuilder<CountRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final CountResponse count(Function<CountRequest.Builder, ObjectBuilder<CountRequest>> fn) throws IOException, UdbsxException {
         return count(fn.apply(new CountRequest.Builder()).build());
     }
 
     /**
      * Provides quick access to the document count of the entire cluster or of an individual index.
      */
-    public final CountResponse count() throws IOException, OpenSearchException {
+    public final CountResponse count() throws IOException, UdbsxException {
         return count(new CountRequest.Builder().build());
     }
 
@@ -190,7 +189,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Shows how much heap memory is currently being used by field data on every data node in the cluster.
      */
-    public FielddataResponse fielddata(FielddataRequest request) throws IOException, OpenSearchException {
+    public FielddataResponse fielddata(FielddataRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, FielddataRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -200,14 +199,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link FielddataRequest}
      */
     public final FielddataResponse fielddata(Function<FielddataRequest.Builder, ObjectBuilder<FielddataRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return fielddata(fn.apply(new FielddataRequest.Builder()).build());
     }
 
     /**
      * Shows how much heap memory is currently being used by field data on every data node in the cluster.
      */
-    public final FielddataResponse fielddata() throws IOException, OpenSearchException {
+    public final FielddataResponse fielddata() throws IOException, UdbsxException {
         return fielddata(new FielddataRequest.Builder().build());
     }
 
@@ -216,7 +215,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns a concise representation of the cluster health.
      */
-    public HealthResponse health(HealthRequest request) throws IOException, OpenSearchException {
+    public HealthResponse health(HealthRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, HealthRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -226,14 +225,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link HealthRequest}
      */
     public final HealthResponse health(Function<HealthRequest.Builder, ObjectBuilder<HealthRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return health(fn.apply(new HealthRequest.Builder()).build());
     }
 
     /**
      * Returns a concise representation of the cluster health.
      */
-    public final HealthResponse health() throws IOException, OpenSearchException {
+    public final HealthResponse health() throws IOException, UdbsxException {
         return health(new HealthRequest.Builder().build());
     }
 
@@ -243,7 +242,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Lists information related to indexes, that is, how much disk space they are using, how many shards they have, their health status,
      * and so on.
      */
-    public IndicesResponse indices(IndicesRequest request) throws IOException, OpenSearchException {
+    public IndicesResponse indices(IndicesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, IndicesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -254,7 +253,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link IndicesRequest}
      */
     public final IndicesResponse indices(Function<IndicesRequest.Builder, ObjectBuilder<IndicesRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return indices(fn.apply(new IndicesRequest.Builder()).build());
     }
 
@@ -262,7 +261,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Lists information related to indexes, that is, how much disk space they are using, how many shards they have, their health status,
      * and so on.
      */
-    public final IndicesResponse indices() throws IOException, OpenSearchException {
+    public final IndicesResponse indices() throws IOException, UdbsxException {
         return indices(new IndicesRequest.Builder().build());
     }
 
@@ -272,7 +271,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Returns information about the cluster-manager node.
      */
     @Deprecated
-    public MasterResponse master(MasterRequest request) throws IOException, OpenSearchException {
+    public MasterResponse master(MasterRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, MasterRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -283,7 +282,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      */
     @Deprecated
     public final MasterResponse master(Function<MasterRequest.Builder, ObjectBuilder<MasterRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return master(fn.apply(new MasterRequest.Builder()).build());
     }
 
@@ -291,7 +290,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Returns information about the cluster-manager node.
      */
     @Deprecated
-    public final MasterResponse master() throws IOException, OpenSearchException {
+    public final MasterResponse master() throws IOException, UdbsxException {
         return master(new MasterRequest.Builder().build());
     }
 
@@ -300,7 +299,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns information about custom node attributes.
      */
-    public NodeattrsResponse nodeattrs(NodeattrsRequest request) throws IOException, OpenSearchException {
+    public NodeattrsResponse nodeattrs(NodeattrsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, NodeattrsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -310,14 +309,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link NodeattrsRequest}
      */
     public final NodeattrsResponse nodeattrs(Function<NodeattrsRequest.Builder, ObjectBuilder<NodeattrsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return nodeattrs(fn.apply(new NodeattrsRequest.Builder()).build());
     }
 
     /**
      * Returns information about custom node attributes.
      */
-    public final NodeattrsResponse nodeattrs() throws IOException, OpenSearchException {
+    public final NodeattrsResponse nodeattrs() throws IOException, UdbsxException {
         return nodeattrs(new NodeattrsRequest.Builder().build());
     }
 
@@ -326,7 +325,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns basic statistics about the performance of cluster nodes.
      */
-    public NodesResponse nodes(NodesRequest request) throws IOException, OpenSearchException {
+    public NodesResponse nodes(NodesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, NodesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -335,15 +334,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      *
      * @param fn a function that initializes a builder to create the {@link NodesRequest}
      */
-    public final NodesResponse nodes(Function<NodesRequest.Builder, ObjectBuilder<NodesRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final NodesResponse nodes(Function<NodesRequest.Builder, ObjectBuilder<NodesRequest>> fn) throws IOException, UdbsxException {
         return nodes(fn.apply(new NodesRequest.Builder()).build());
     }
 
     /**
      * Returns basic statistics about the performance of cluster nodes.
      */
-    public final NodesResponse nodes() throws IOException, OpenSearchException {
+    public final NodesResponse nodes() throws IOException, UdbsxException {
         return nodes(new NodesRequest.Builder().build());
     }
 
@@ -352,7 +350,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns a concise representation of the cluster's pending tasks.
      */
-    public PendingTasksResponse pendingTasks(PendingTasksRequest request) throws IOException, OpenSearchException {
+    public PendingTasksResponse pendingTasks(PendingTasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PendingTasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -362,14 +360,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link PendingTasksRequest}
      */
     public final PendingTasksResponse pendingTasks(Function<PendingTasksRequest.Builder, ObjectBuilder<PendingTasksRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return pendingTasks(fn.apply(new PendingTasksRequest.Builder()).build());
     }
 
     /**
      * Returns a concise representation of the cluster's pending tasks.
      */
-    public final PendingTasksResponse pendingTasks() throws IOException, OpenSearchException {
+    public final PendingTasksResponse pendingTasks() throws IOException, UdbsxException {
         return pendingTasks(new PendingTasksRequest.Builder().build());
     }
 
@@ -378,7 +376,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Lists one or several CAT point-in-time segments.
      */
-    public PitSegmentsResponse pitSegments(PitSegmentsRequest request) throws IOException, OpenSearchException {
+    public PitSegmentsResponse pitSegments(PitSegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PitSegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -388,7 +386,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link PitSegmentsRequest}
      */
     public final PitSegmentsResponse pitSegments(Function<PitSegmentsRequest.Builder, ObjectBuilder<PitSegmentsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return pitSegments(fn.apply(new PitSegmentsRequest.Builder()).build());
     }
 
@@ -397,7 +395,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns information about the names, components, and versions of the installed plugins.
      */
-    public PluginsResponse plugins(PluginsRequest request) throws IOException, OpenSearchException {
+    public PluginsResponse plugins(PluginsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PluginsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -407,14 +405,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link PluginsRequest}
      */
     public final PluginsResponse plugins(Function<PluginsRequest.Builder, ObjectBuilder<PluginsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return plugins(fn.apply(new PluginsRequest.Builder()).build());
     }
 
     /**
      * Returns information about the names, components, and versions of the installed plugins.
      */
-    public final PluginsResponse plugins() throws IOException, OpenSearchException {
+    public final PluginsResponse plugins() throws IOException, UdbsxException {
         return plugins(new PluginsRequest.Builder().build());
     }
 
@@ -423,7 +421,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns all completed and ongoing index and shard recoveries.
      */
-    public RecoveryResponse recovery(RecoveryRequest request) throws IOException, OpenSearchException {
+    public RecoveryResponse recovery(RecoveryRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RecoveryRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -433,14 +431,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link RecoveryRequest}
      */
     public final RecoveryResponse recovery(Function<RecoveryRequest.Builder, ObjectBuilder<RecoveryRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return recovery(fn.apply(new RecoveryRequest.Builder()).build());
     }
 
     /**
      * Returns all completed and ongoing index and shard recoveries.
      */
-    public final RecoveryResponse recovery() throws IOException, OpenSearchException {
+    public final RecoveryResponse recovery() throws IOException, UdbsxException {
         return recovery(new RecoveryRequest.Builder().build());
     }
 
@@ -449,7 +447,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Returns information about all snapshot repositories for a cluster.
      */
-    public RepositoriesResponse repositories(RepositoriesRequest request) throws IOException, OpenSearchException {
+    public RepositoriesResponse repositories(RepositoriesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, RepositoriesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -459,14 +457,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link RepositoriesRequest}
      */
     public final RepositoriesResponse repositories(Function<RepositoriesRequest.Builder, ObjectBuilder<RepositoriesRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return repositories(fn.apply(new RepositoriesRequest.Builder()).build());
     }
 
     /**
      * Returns information about all snapshot repositories for a cluster.
      */
-    public final RepositoriesResponse repositories() throws IOException, OpenSearchException {
+    public final RepositoriesResponse repositories() throws IOException, UdbsxException {
         return repositories(new RepositoriesRequest.Builder().build());
     }
 
@@ -476,7 +474,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Returns information about active and last-completed segment replication events on each replica shard, including related shard-level
      * metrics. These metrics provide information about how far behind the primary shard the replicas are lagging.
      */
-    public SegmentReplicationResponse segmentReplication(SegmentReplicationRequest request) throws IOException, OpenSearchException {
+    public SegmentReplicationResponse segmentReplication(SegmentReplicationRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SegmentReplicationRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -488,7 +486,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      */
     public final SegmentReplicationResponse segmentReplication(
         Function<SegmentReplicationRequest.Builder, ObjectBuilder<SegmentReplicationRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return segmentReplication(fn.apply(new SegmentReplicationRequest.Builder()).build());
     }
 
@@ -496,7 +494,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Returns information about active and last-completed segment replication events on each replica shard, including related shard-level
      * metrics. These metrics provide information about how far behind the primary shard the replicas are lagging.
      */
-    public final SegmentReplicationResponse segmentReplication() throws IOException, OpenSearchException {
+    public final SegmentReplicationResponse segmentReplication() throws IOException, UdbsxException {
         return segmentReplication(new SegmentReplicationRequest.Builder().build());
     }
 
@@ -505,7 +503,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Provides low-level information about the segments in the shards of an index.
      */
-    public SegmentsResponse segments(SegmentsRequest request) throws IOException, OpenSearchException {
+    public SegmentsResponse segments(SegmentsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SegmentsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -515,14 +513,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link SegmentsRequest}
      */
     public final SegmentsResponse segments(Function<SegmentsRequest.Builder, ObjectBuilder<SegmentsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return segments(fn.apply(new SegmentsRequest.Builder()).build());
     }
 
     /**
      * Provides low-level information about the segments in the shards of an index.
      */
-    public final SegmentsResponse segments() throws IOException, OpenSearchException {
+    public final SegmentsResponse segments() throws IOException, UdbsxException {
         return segments(new SegmentsRequest.Builder().build());
     }
 
@@ -531,7 +529,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Lists the states of all primary and replica shards and how they are distributed.
      */
-    public ShardsResponse shards(ShardsRequest request) throws IOException, OpenSearchException {
+    public ShardsResponse shards(ShardsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ShardsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -541,14 +539,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link ShardsRequest}
      */
     public final ShardsResponse shards(Function<ShardsRequest.Builder, ObjectBuilder<ShardsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return shards(fn.apply(new ShardsRequest.Builder()).build());
     }
 
     /**
      * Lists the states of all primary and replica shards and how they are distributed.
      */
-    public final ShardsResponse shards() throws IOException, OpenSearchException {
+    public final ShardsResponse shards() throws IOException, UdbsxException {
         return shards(new ShardsRequest.Builder().build());
     }
 
@@ -557,7 +555,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Lists all of the snapshots stored in a specific repository.
      */
-    public SnapshotsResponse snapshots(SnapshotsRequest request) throws IOException, OpenSearchException {
+    public SnapshotsResponse snapshots(SnapshotsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, SnapshotsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -567,14 +565,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link SnapshotsRequest}
      */
     public final SnapshotsResponse snapshots(Function<SnapshotsRequest.Builder, ObjectBuilder<SnapshotsRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return snapshots(fn.apply(new SnapshotsRequest.Builder()).build());
     }
 
     /**
      * Lists all of the snapshots stored in a specific repository.
      */
-    public final SnapshotsResponse snapshots() throws IOException, OpenSearchException {
+    public final SnapshotsResponse snapshots() throws IOException, UdbsxException {
         return snapshots(new SnapshotsRequest.Builder().build());
     }
 
@@ -583,7 +581,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Lists the progress of all tasks currently running on the cluster.
      */
-    public TasksResponse tasks(TasksRequest request) throws IOException, OpenSearchException {
+    public TasksResponse tasks(TasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, TasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -592,15 +590,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      *
      * @param fn a function that initializes a builder to create the {@link TasksRequest}
      */
-    public final TasksResponse tasks(Function<TasksRequest.Builder, ObjectBuilder<TasksRequest>> fn) throws IOException,
-        OpenSearchException {
+    public final TasksResponse tasks(Function<TasksRequest.Builder, ObjectBuilder<TasksRequest>> fn) throws IOException, UdbsxException {
         return tasks(fn.apply(new TasksRequest.Builder()).build());
     }
 
     /**
      * Lists the progress of all tasks currently running on the cluster.
      */
-    public final TasksResponse tasks() throws IOException, OpenSearchException {
+    public final TasksResponse tasks() throws IOException, UdbsxException {
         return tasks(new TasksRequest.Builder().build());
     }
 
@@ -609,7 +606,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
     /**
      * Lists the names, patterns, order numbers, and version numbers of index templates.
      */
-    public TemplatesResponse templates(TemplatesRequest request) throws IOException, OpenSearchException {
+    public TemplatesResponse templates(TemplatesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, TemplatesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -619,14 +616,14 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link TemplatesRequest}
      */
     public final TemplatesResponse templates(Function<TemplatesRequest.Builder, ObjectBuilder<TemplatesRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return templates(fn.apply(new TemplatesRequest.Builder()).build());
     }
 
     /**
      * Lists the names, patterns, order numbers, and version numbers of index templates.
      */
-    public final TemplatesResponse templates() throws IOException, OpenSearchException {
+    public final TemplatesResponse templates() throws IOException, UdbsxException {
         return templates(new TemplatesRequest.Builder().build());
     }
 
@@ -636,7 +633,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Returns cluster-wide thread pool statistics per node. By default the active, queued, and rejected statistics are returned for all
      * thread pools.
      */
-    public ThreadPoolResponse threadPool(ThreadPoolRequest request) throws IOException, OpenSearchException {
+    public ThreadPoolResponse threadPool(ThreadPoolRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ThreadPoolRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -647,7 +644,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * @param fn a function that initializes a builder to create the {@link ThreadPoolRequest}
      */
     public final ThreadPoolResponse threadPool(Function<ThreadPoolRequest.Builder, ObjectBuilder<ThreadPoolRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return threadPool(fn.apply(new ThreadPoolRequest.Builder()).build());
     }
 
@@ -655,7 +652,7 @@ public abstract class OpenSearchCatClientBase<Self extends OpenSearchCatClientBa
      * Returns cluster-wide thread pool statistics per node. By default the active, queued, and rejected statistics are returned for all
      * thread pools.
      */
-    public final ThreadPoolResponse threadPool() throws IOException, OpenSearchException {
+    public final ThreadPoolResponse threadPool() throws IOException, UdbsxException {
         return threadPool(new ThreadPoolRequest.Builder().build());
     }
 }

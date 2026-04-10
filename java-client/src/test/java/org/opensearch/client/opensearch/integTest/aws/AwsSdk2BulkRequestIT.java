@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch._types.Refresh;
 import org.opensearch.client.opensearch._types.query_dsl.Query;
 import org.opensearch.client.opensearch.core.BulkRequest;
@@ -27,7 +27,7 @@ public class AwsSdk2BulkRequestIT extends AwsSdk2TransportTestCase {
     @Test
     public void testBulkRequest() throws Exception {
         resetTestIndex(false);
-        final OpenSearchClient client = getClient(false, null, null);
+        final UdbsxClient client = getClient(false, null, null);
 
         ArrayList<BulkOperation> ops = new ArrayList<>();
         SimplePojo doc1 = new SimplePojo("Document 1", "The text of document 1");

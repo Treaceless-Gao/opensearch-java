@@ -35,7 +35,7 @@ import org.apache.hc.core5.reactor.ssl.TlsDetails;
 import org.apache.hc.core5.ssl.SSLContextBuilder;
 import org.apache.hc.core5.util.Timeout;
 import org.opensearch.client.opensearch.integTest.OpenSearchTransportSupport;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.transport.httpclient5.ApacheHttpClient5TransportBuilder;
 import org.opensearch.common.settings.Settings;
 import org.opensearch.common.unit.TimeValue;
@@ -43,7 +43,7 @@ import org.opensearch.common.util.concurrent.ThreadContext;
 
 interface HttpClient5TransportSupport extends OpenSearchTransportSupport {
     @Override
-    default OpenSearchTransport buildTransport(Settings settings, HttpHost[] hosts) throws IOException {
+    default UdbsxTransport buildTransport(Settings settings, HttpHost[] hosts) throws IOException {
         final ApacheHttpClient5TransportBuilder builder = ApacheHttpClient5TransportBuilder.builder(hosts);
         configure(builder, settings, hosts);
         return builder.setStrictDeprecationMode(true).build();

@@ -20,15 +20,15 @@ import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
 import org.apache.hc.core5.http.HttpHost;
 import org.apache.hc.core5.ssl.SSLContextBuilder;
 import org.opensearch.client.json.jackson.JacksonJsonpMapper;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.transport.httpclient5.ApacheHttpClient5TransportBuilder;
 
 public class SampleClient {
-    public static OpenSearchClient create() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
+    public static UdbsxClient create() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
         var env = System.getenv();
         var https = Boolean.parseBoolean(env.getOrDefault("HTTPS", "true"));
         var hostname = env.getOrDefault("HOST", "localhost");
-        var port = Integer.parseInt(env.getOrDefault("PORT", "9200"));
+        var port = Integer.parseInt(env.getOrDefault("PORT", "10200"));
         var user = env.getOrDefault("USERNAME", "admin");
         var pass = env.getOrDefault("PASSWORD", "admin");
 
@@ -55,6 +55,6 @@ public class SampleClient {
                 return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider).setConnectionManager(connectionManager);
             })
             .build();
-        return new OpenSearchClient(transport);
+        return new UdbsxClient(transport);
     }
 }

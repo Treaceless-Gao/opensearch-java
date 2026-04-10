@@ -42,21 +42,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the knn namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, OpenSearchKnnAsyncClient> {
-    public OpenSearchKnnAsyncClient(OpenSearchTransport transport) {
+public class OpenSearchKnnAsyncClient extends ApiClient<UdbsxTransport, OpenSearchKnnAsyncClient> {
+    public OpenSearchKnnAsyncClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchKnnAsyncClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchKnnAsyncClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -70,7 +70,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Used to delete a particular model in the cluster.
      */
-    public CompletableFuture<DeleteModelResponse> deleteModel(DeleteModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<DeleteModelResponse> deleteModel(DeleteModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, DeleteModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -81,7 +81,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<DeleteModelResponse> deleteModel(
         Function<DeleteModelRequest.Builder, ObjectBuilder<DeleteModelRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteModel(fn.apply(new DeleteModelRequest.Builder()).build());
     }
 
@@ -90,7 +90,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Used to retrieve information about models present in the cluster.
      */
-    public CompletableFuture<GetModelResponse> getModel(GetModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<GetModelResponse> getModel(GetModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, GetModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -100,7 +100,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link GetModelRequest}
      */
     public final CompletableFuture<GetModelResponse> getModel(Function<GetModelRequest.Builder, ObjectBuilder<GetModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return getModel(fn.apply(new GetModelRequest.Builder()).build());
     }
 
@@ -109,7 +109,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Use an OpenSearch query to search for models in the index.
      */
-    public CompletableFuture<SearchModelsResponse> searchModels(SearchModelsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<SearchModelsResponse> searchModels(SearchModelsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, SearchModelsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -120,14 +120,14 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
      */
     public final CompletableFuture<SearchModelsResponse> searchModels(
         Function<SearchModelsRequest.Builder, ObjectBuilder<SearchModelsRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return searchModels(fn.apply(new SearchModelsRequest.Builder()).build());
     }
 
     /**
      * Use an OpenSearch query to search for models in the index.
      */
-    public final CompletableFuture<SearchModelsResponse> searchModels() throws IOException, OpenSearchException {
+    public final CompletableFuture<SearchModelsResponse> searchModels() throws IOException, UdbsxException {
         return searchModels(new SearchModelsRequest.Builder().build());
     }
 
@@ -136,7 +136,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Provides information about the current status of the k-NN plugin.
      */
-    public CompletableFuture<KnnStatsResponse> stats(KnnStatsRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<KnnStatsResponse> stats(KnnStatsRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, KnnStatsRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -146,14 +146,14 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link KnnStatsRequest}
      */
     public final CompletableFuture<KnnStatsResponse> stats(Function<KnnStatsRequest.Builder, ObjectBuilder<KnnStatsRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return stats(fn.apply(new KnnStatsRequest.Builder()).build());
     }
 
     /**
      * Provides information about the current status of the k-NN plugin.
      */
-    public final CompletableFuture<KnnStatsResponse> stats() throws IOException, OpenSearchException {
+    public final CompletableFuture<KnnStatsResponse> stats() throws IOException, UdbsxException {
         return stats(new KnnStatsRequest.Builder().build());
     }
 
@@ -162,7 +162,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Create and train a model that can be used for initializing k-NN native library indexes during indexing.
      */
-    public CompletableFuture<TrainModelResponse> trainModel(TrainModelRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<TrainModelResponse> trainModel(TrainModelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, TrainModelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -172,7 +172,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link TrainModelRequest}
      */
     public final CompletableFuture<TrainModelResponse> trainModel(Function<TrainModelRequest.Builder, ObjectBuilder<TrainModelRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return trainModel(fn.apply(new TrainModelRequest.Builder()).build());
     }
 
@@ -181,7 +181,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
     /**
      * Preloads native library files into memory, reducing initial search latency for specified indexes.
      */
-    public CompletableFuture<WarmupResponse> warmup(WarmupRequest request) throws IOException, OpenSearchException {
+    public CompletableFuture<WarmupResponse> warmup(WarmupRequest request) throws IOException, UdbsxException {
         return this.transport.performRequestAsync(request, WarmupRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -191,7 +191,7 @@ public class OpenSearchKnnAsyncClient extends ApiClient<OpenSearchTransport, Ope
      * @param fn a function that initializes a builder to create the {@link WarmupRequest}
      */
     public final CompletableFuture<WarmupResponse> warmup(Function<WarmupRequest.Builder, ObjectBuilder<WarmupRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return warmup(fn.apply(new WarmupRequest.Builder()).build());
     }
 }

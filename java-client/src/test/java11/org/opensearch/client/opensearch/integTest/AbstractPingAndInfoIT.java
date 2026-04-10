@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.is;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.core.InfoResponse;
 import org.opensearch.client.opensearch.generic.Bodies;
 import org.opensearch.client.opensearch.generic.Requests;
@@ -28,8 +28,8 @@ public abstract class AbstractPingAndInfoIT extends OpenSearchJavaClientTestCase
     }
 
     public void testInfo() throws IOException {
-        OpenSearchClient openSearchClient = javaClient();
-        InfoResponse info = openSearchClient.info();
+        UdbsxClient udbsxClient = javaClient();
+        InfoResponse info = udbsxClient.info();
 
         // compare with what the low level client outputs
         try (Response response = javaClient().generic().execute(Requests.builder().endpoint("/").method("GET").build())) {

@@ -27,8 +27,12 @@ dependencies {
     implementation("com.fasterxml.jackson.core", "jackson-databind", "2.15.2")
 }
 
+//application {
+//    mainClass.set("org.opensearch.client.samples.Main")
+//}
+
 application {
-    mainClass.set("org.opensearch.client.samples.Main")
+    mainClass.set("org.opensearch.client.samples.UdbsxVerificationTest")
 }
 
 tasks.named<JavaExec>("run") {

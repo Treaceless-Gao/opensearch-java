@@ -41,21 +41,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the tasks namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSearchTasksClient> {
-    public OpenSearchTasksClient(OpenSearchTransport transport) {
+public class OpenSearchTasksClient extends ApiClient<UdbsxTransport, OpenSearchTasksClient> {
+    public OpenSearchTasksClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchTasksClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchTasksClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,7 +69,7 @@ public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSe
     /**
      * Cancels a task, if it can be cancelled through an API.
      */
-    public CancelResponse cancel(CancelRequest request) throws IOException, OpenSearchException {
+    public CancelResponse cancel(CancelRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, CancelRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -79,14 +79,14 @@ public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSe
      * @param fn a function that initializes a builder to create the {@link CancelRequest}
      */
     public final CancelResponse cancel(Function<CancelRequest.Builder, ObjectBuilder<CancelRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return cancel(fn.apply(new CancelRequest.Builder()).build());
     }
 
     /**
      * Cancels a task, if it can be cancelled through an API.
      */
-    public final CancelResponse cancel() throws IOException, OpenSearchException {
+    public final CancelResponse cancel() throws IOException, UdbsxException {
         return cancel(new CancelRequest.Builder().build());
     }
 
@@ -95,7 +95,7 @@ public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSe
     /**
      * Returns information about a task.
      */
-    public GetTasksResponse get(GetTasksRequest request) throws IOException, OpenSearchException {
+    public GetTasksResponse get(GetTasksRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetTasksRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -105,7 +105,7 @@ public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSe
      * @param fn a function that initializes a builder to create the {@link GetTasksRequest}
      */
     public final GetTasksResponse get(Function<GetTasksRequest.Builder, ObjectBuilder<GetTasksRequest>> fn) throws IOException,
-        OpenSearchException {
+        UdbsxException {
         return get(fn.apply(new GetTasksRequest.Builder()).build());
     }
 
@@ -114,7 +114,7 @@ public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSe
     /**
      * Returns a list of tasks.
      */
-    public ListResponse list(ListRequest request) throws IOException, OpenSearchException {
+    public ListResponse list(ListRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ListRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -123,14 +123,14 @@ public class OpenSearchTasksClient extends ApiClient<OpenSearchTransport, OpenSe
      *
      * @param fn a function that initializes a builder to create the {@link ListRequest}
      */
-    public final ListResponse list(Function<ListRequest.Builder, ObjectBuilder<ListRequest>> fn) throws IOException, OpenSearchException {
+    public final ListResponse list(Function<ListRequest.Builder, ObjectBuilder<ListRequest>> fn) throws IOException, UdbsxException {
         return list(fn.apply(new ListRequest.Builder()).build());
     }
 
     /**
      * Returns a list of tasks.
      */
-    public final ListResponse list() throws IOException, OpenSearchException {
+    public final ListResponse list() throws IOException, UdbsxException {
         return list(new ListRequest.Builder().build());
     }
 }

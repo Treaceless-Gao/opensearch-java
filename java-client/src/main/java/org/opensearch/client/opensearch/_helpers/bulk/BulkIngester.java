@@ -53,8 +53,8 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.opensearch.client.opensearch.OpenSearchAsyncClient;
-import org.opensearch.client.opensearch.OpenSearchClient;
+import org.opensearch.client.opensearch.UdbsxAsyncClient;
+import org.opensearch.client.opensearch.UdbsxClient;
 import org.opensearch.client.opensearch.core.BulkRequest;
 import org.opensearch.client.opensearch.core.BulkResponse;
 import org.opensearch.client.opensearch.core.bulk.BulkOperation;
@@ -110,7 +110,7 @@ public class BulkIngester<Context> implements AutoCloseable {
     private static final AtomicInteger idCounter = new AtomicInteger();
 
     // Configuration
-    private final OpenSearchAsyncClient client;
+    private final UdbsxAsyncClient client;
     private final @Nullable BulkRequest globalSettings;
     private final int maxRequests;
     private final long maxSize;
@@ -648,7 +648,7 @@ public class BulkIngester<Context> implements AutoCloseable {
 
     /**
      * Close this ingester, first flushing any buffered operations. This <strong>does not close</strong>
-     * the underlying {@link OpenSearchClient} and {@link org.opensearch.client.transport.Transport}.
+     * the underlying {@link UdbsxClient} and {@link org.opensearch.client.transport.Transport}.
      */
     @Override
     public void close() {
@@ -682,7 +682,7 @@ public class BulkIngester<Context> implements AutoCloseable {
     }
 
     public static class Builder<Context> implements ObjectBuilder<BulkIngester<Context>> {
-        private OpenSearchAsyncClient client;
+        private UdbsxAsyncClient client;
         private BulkRequest globalSettings;
         private int bulkOperations = 1000;
         private long bulkSize = 5 * 1024 * 1024;
@@ -692,17 +692,17 @@ public class BulkIngester<Context> implements AutoCloseable {
         private ScheduledExecutorService scheduler;
         private BackoffPolicy backoffPolicy;
 
-        public Builder<Context> client(OpenSearchAsyncClient client) {
+        public Builder<Context> client(UdbsxAsyncClient client) {
             this.client = client;
             return this;
         }
 
-        public Builder<Context> client(OpenSearchClient client) {
+        public Builder<Context> client(UdbsxClient client) {
             TransportOptions options = client._transportOptions();
             if (options == client._transport().options()) {
                 options = null;
             }
-            return client(new OpenSearchAsyncClient(client._transport(), options));
+            return client(new UdbsxAsyncClient(client._transport(), options));
         }
 
         /**

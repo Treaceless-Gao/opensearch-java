@@ -41,21 +41,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the search_pipeline namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTransport, OpenSearchSearchPipelineClient> {
-    public OpenSearchSearchPipelineClient(OpenSearchTransport transport) {
+public class OpenSearchSearchPipelineClient extends ApiClient<UdbsxTransport, OpenSearchSearchPipelineClient> {
+    public OpenSearchSearchPipelineClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchSearchPipelineClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchSearchPipelineClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,7 +69,7 @@ public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTranspor
     /**
      * Deletes the specified search pipeline.
      */
-    public DeleteSearchPipelineResponse delete(DeleteSearchPipelineRequest request) throws IOException, OpenSearchException {
+    public DeleteSearchPipelineResponse delete(DeleteSearchPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteSearchPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -80,7 +80,7 @@ public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTranspor
      */
     public final DeleteSearchPipelineResponse delete(
         Function<DeleteSearchPipelineRequest.Builder, ObjectBuilder<DeleteSearchPipelineRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return delete(fn.apply(new DeleteSearchPipelineRequest.Builder()).build());
     }
 
@@ -89,7 +89,7 @@ public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTranspor
     /**
      * Retrieves information about a specified search pipeline.
      */
-    public GetSearchPipelineResponse get(GetSearchPipelineRequest request) throws IOException, OpenSearchException {
+    public GetSearchPipelineResponse get(GetSearchPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, GetSearchPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -99,14 +99,14 @@ public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTranspor
      * @param fn a function that initializes a builder to create the {@link GetSearchPipelineRequest}
      */
     public final GetSearchPipelineResponse get(Function<GetSearchPipelineRequest.Builder, ObjectBuilder<GetSearchPipelineRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return get(fn.apply(new GetSearchPipelineRequest.Builder()).build());
     }
 
     /**
      * Retrieves information about a specified search pipeline.
      */
-    public final GetSearchPipelineResponse get() throws IOException, OpenSearchException {
+    public final GetSearchPipelineResponse get() throws IOException, UdbsxException {
         return get(new GetSearchPipelineRequest.Builder().build());
     }
 
@@ -115,7 +115,7 @@ public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTranspor
     /**
      * Creates or replaces the specified search pipeline.
      */
-    public PutSearchPipelineResponse put(PutSearchPipelineRequest request) throws IOException, OpenSearchException {
+    public PutSearchPipelineResponse put(PutSearchPipelineRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, PutSearchPipelineRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -125,7 +125,7 @@ public class OpenSearchSearchPipelineClient extends ApiClient<OpenSearchTranspor
      * @param fn a function that initializes a builder to create the {@link PutSearchPipelineRequest}
      */
     public final PutSearchPipelineResponse put(Function<PutSearchPipelineRequest.Builder, ObjectBuilder<PutSearchPipelineRequest>> fn)
-        throws IOException, OpenSearchException {
+        throws IOException, UdbsxException {
         return put(fn.apply(new PutSearchPipelineRequest.Builder()).build());
     }
 }

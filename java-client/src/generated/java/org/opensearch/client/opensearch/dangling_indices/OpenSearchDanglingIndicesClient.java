@@ -41,21 +41,21 @@ import java.util.function.Function;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 import org.opensearch.client.ApiClient;
-import org.opensearch.client.opensearch._types.OpenSearchException;
-import org.opensearch.client.transport.OpenSearchTransport;
+import org.opensearch.client.opensearch._types.UdbsxException;
 import org.opensearch.client.transport.TransportOptions;
+import org.opensearch.client.transport.UdbsxTransport;
 import org.opensearch.client.util.ObjectBuilder;
 
 /**
  * Client for the dangling_indices namespace.
  */
 @Generated("org.opensearch.client.codegen.CodeGenerator")
-public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTransport, OpenSearchDanglingIndicesClient> {
-    public OpenSearchDanglingIndicesClient(OpenSearchTransport transport) {
+public class OpenSearchDanglingIndicesClient extends ApiClient<UdbsxTransport, OpenSearchDanglingIndicesClient> {
+    public OpenSearchDanglingIndicesClient(UdbsxTransport transport) {
         super(transport, null);
     }
 
-    public OpenSearchDanglingIndicesClient(OpenSearchTransport transport, @Nullable TransportOptions transportOptions) {
+    public OpenSearchDanglingIndicesClient(UdbsxTransport transport, @Nullable TransportOptions transportOptions) {
         super(transport, transportOptions);
     }
 
@@ -69,7 +69,7 @@ public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTranspo
     /**
      * Deletes the specified dangling index.
      */
-    public DeleteDanglingIndexResponse deleteDanglingIndex(DeleteDanglingIndexRequest request) throws IOException, OpenSearchException {
+    public DeleteDanglingIndexResponse deleteDanglingIndex(DeleteDanglingIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, DeleteDanglingIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -80,7 +80,7 @@ public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTranspo
      */
     public final DeleteDanglingIndexResponse deleteDanglingIndex(
         Function<DeleteDanglingIndexRequest.Builder, ObjectBuilder<DeleteDanglingIndexRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return deleteDanglingIndex(fn.apply(new DeleteDanglingIndexRequest.Builder()).build());
     }
 
@@ -89,7 +89,7 @@ public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTranspo
     /**
      * Imports the specified dangling index.
      */
-    public ImportDanglingIndexResponse importDanglingIndex(ImportDanglingIndexRequest request) throws IOException, OpenSearchException {
+    public ImportDanglingIndexResponse importDanglingIndex(ImportDanglingIndexRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ImportDanglingIndexRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -100,7 +100,7 @@ public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTranspo
      */
     public final ImportDanglingIndexResponse importDanglingIndex(
         Function<ImportDanglingIndexRequest.Builder, ObjectBuilder<ImportDanglingIndexRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return importDanglingIndex(fn.apply(new ImportDanglingIndexRequest.Builder()).build());
     }
 
@@ -109,7 +109,7 @@ public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTranspo
     /**
      * Returns all dangling indexes.
      */
-    public ListDanglingIndicesResponse listDanglingIndices(ListDanglingIndicesRequest request) throws IOException, OpenSearchException {
+    public ListDanglingIndicesResponse listDanglingIndices(ListDanglingIndicesRequest request) throws IOException, UdbsxException {
         return this.transport.performRequest(request, ListDanglingIndicesRequest._ENDPOINT, this.transportOptions);
     }
 
@@ -120,14 +120,14 @@ public class OpenSearchDanglingIndicesClient extends ApiClient<OpenSearchTranspo
      */
     public final ListDanglingIndicesResponse listDanglingIndices(
         Function<ListDanglingIndicesRequest.Builder, ObjectBuilder<ListDanglingIndicesRequest>> fn
-    ) throws IOException, OpenSearchException {
+    ) throws IOException, UdbsxException {
         return listDanglingIndices(fn.apply(new ListDanglingIndicesRequest.Builder()).build());
     }
 
     /**
      * Returns all dangling indexes.
      */
-    public final ListDanglingIndicesResponse listDanglingIndices() throws IOException, OpenSearchException {
+    public final ListDanglingIndicesResponse listDanglingIndices() throws IOException, UdbsxException {
         return listDanglingIndices(new ListDanglingIndicesRequest.Builder().build());
     }
 }
