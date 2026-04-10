@@ -38,10 +38,11 @@ allprojects {
 
     repositories {
         mavenLocal()
-        maven(url = "https://ci.opensearch.org/ci/dbc/snapshots/maven/")
         mavenCentral()
-        maven(url = "https://aws.oss.sonatype.org/content/repositories/snapshots")
         maven(url = "https://maven.aliyun.com/repository/public")
+        maven(url = "https://maven.aliyun.com/repository/central")
+        maven(url = "https://ci.opensearch.org/ci/dbc/snapshots/maven/")
+        maven(url = "https://aws.oss.sonatype.org/content/repositories/snapshots")
     }
 }
 
